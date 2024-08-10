@@ -374,6 +374,7 @@ form textarea {
 }
 
 footer {
+    text-align: center;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -461,6 +462,7 @@ footer {
 
     .home-content div {
         text-align: center;
+        margin-top: 2rem;
     }
 
     .home-content h1, .about-content h1 {
