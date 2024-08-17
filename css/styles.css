@@ -504,6 +504,18 @@ footer {
     }
 }
 
+     header {
+        height: auto;
+        padding: 10px;
+    }
+
+    body {
+        margin-top: 0;
+    }
+
+    p {
+    letter-spacing: normal; 
+}
 
 /*Small (sm): Smartphone (landscape)*/
 @media (min-width: 576px) {
@@ -539,6 +551,21 @@ footer {
         text-align: center;
     }
 }
+
+
+    header {
+        height: auto;
+        padding: 10px;
+    }
+
+    body {
+        margin-top: 0;
+    }
+
+    p {
+    letter-spacing: normal;
+}
+
 
 /*Medium (md): Tablet*/
 @media (min-width: 768px) {
