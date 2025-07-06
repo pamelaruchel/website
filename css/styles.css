@@ -639,8 +639,8 @@ footer {
 @media (min-width: 992px) {
 
     .home-img, .about-img {
-        width: 85%;
-        max-width: 85%;
+        width: 65%;
+        max-width: 65%;
     }
 
     .home-img img, .about-img img {
