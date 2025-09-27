@@ -1,0 +1,19 @@
+Nome fictício: Dr. Emily Carter
+Perfil: Psicóloga focada em casais, terapia de relacionamento e autoconhecimento.
+Estrutura sugerida:
+
+paleta:
+
+| Uso                            | Cor       | Comentário                                                                 |
+| ------------------------------ | --------- | -------------------------------------------------------------------------- |
+| **Background principal**       | `#FFF9F2` |
+         |
+| **Headings**                   | `#2C3E50`]
+
+| **Paragraphs**                 | `#4D4D4D` | 
+                           |
+| **Highlights / links**         | `#FF7F50` | 
+           |
+| **Accents / botões**           | `#F2C94C` | 
+          |
+| **Secondary sections / cards** | `#FFF1E6` 
