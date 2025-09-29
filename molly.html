@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects | Pâmela Ruchel</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #000;
+      color: #fff;
+    }
+
+    :root {
+      --main-color: #3d69b4ce;
+      --text-color: #ffffff;
+      --cor-principal: #000000ee;
+      --color-02: #B3E7F5;
+      --color-highlight: #3d69b4ce;
+    }
+
+    @font-face {
+        font-family: 'space-age';
+        src: url('fonts/space-age.ttf') format(truetype); 
+        font-weight: normal;
+        font-style: normal;    
+        }
+  </style>
+</head>
+
+<body class="overflow-x-hidden max-w-[100vw]">
+    <header
+    style="padding: 1.2rem; background:var(--cor-principal);"
+    class="sticky top-0 left-0 w-full flex items-center justify-between z-[100]">
+  
+    <a href="index.html"
+       class="logo text-sm sm:text-base"
+       style="font-family:'space-age', sans-serif; font-size:2rem; color:var(--text-color); cursor:default; margin-bottom:10px;">
+      Pâmela Ruchel
+    </a>
+  
+    <nav class="hidden lg:flex items-center space-x-6 pr-12" aria-label="Main navigation">
+      <a href="index.html#home" class="relative pb-1 text-[1.2rem] text-[var(--text-color)] font-semibold after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-full after:bg-[#93A1A7]">Home</a>
+      <a href="index.html#what" class="relative pb-1 text-[1.2rem] text-[var(--text-color)] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[#93A1A7] after:transition-all hover:after:w-full">What I Deliver</a>
+      <a href="index.html#portfolio" class="relative pb-1 text-[1.2rem] text-[var(--text-color)] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[#93A1A7] after:transition-all hover:after:w-full">Projects</a>
+      <a href="index.html#about" class="relative pb-1 text-[1.2rem] text-[var(--text-color)] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[#93A1A7] after:transition-all hover:after:w-full">About</a>
+      <a href="index.html#contact" class="relative pb-1 text-[1.2rem] text-[var(--text-color)] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[#93A1A7] after:transition-all hover:after:w-full">Contact</a>
+    </nav>
+  
+    <button class="menu-hamburguer flex flex-col items-center justify-center gap-[0.25rem] p-2 lg:hidden"
+            aria-expanded="false" aria-label="Open menu" type="button">
+      <span class="bar block w-8 h-[0.3rem] bg-[var(--text-color)] rounded transition-transform duration-300"></span>
+      <span class="bar block w-8 h-[0.3rem] bg-[var(--text-color)] rounded transition-opacity duration-300"></span>
+      <span class="bar block w-8 h-[0.3rem] bg-[var(--text-color)] rounded transition-transform duration-300"></span>
+    </button>
+  
+    <div class="nav-responsive hidden absolute top-full left-0 w-full p-4 bg-[var(--cor-principal)]">
+      <a href="index.html#home" class="block text-[1.2rem] text-[var(--text-color)] py-2 hover:text-[var(--color-02)] transition">Home</a>
+      <a href="index.html#what" class="block text-[1.2rem] text-[var(--text-color)] py-2 hover:text-[var(--color-02)] transition">What I Deliver</a>
+      <a href="index.html#portfolio" class="block text-[1.2rem] text-[var(--text-color)] py-2 hover:text-[var(--color-02)] transition">Projects</a>
+      <a href="index.html#about" class="block text-[1.2rem] text-[var(--text-color)] py-2 hover:text-[var(--color-02)] transition">About</a>
+      <a href="index.html#contact" class="block text-[1.2rem] text-[var(--text-color)] py-2 hover:text-[var(--color-02)] transition">Contact</a>
+    </div>
+  </header>
+
+  <section class="max-w-3xl mx-auto px-6 pt-12">
+    <h1 class="text-3xl md:text-5xl font-bold text-center mb-8">
+      Project Molly Black
+    </h1>
+  </section>
+  
+  <section class="w-full justify-center mb-12">
+    <img
+      src="images/molly.png"
+      alt="Project Hero"
+      class="w-full max-w-4xl rounded-2xl shadow-lg object-cover mx-auto"
+    >
+  </section>
+  
+  <section class="max-w-3xl mx-auto px-6 pb-20 space-y-8">
+    <p class="text-lg text-gray-300 leading-relaxed text-left">
+      <strong>Challenge:</strong> For Molly Black, a fictional couples therapist, the task was to create a website that feels warm and trustworthy while highlighting her focus on helping couples rebuild trust, strengthen communication, and reconnect emotionally. As a portfolio project, it also needed to demonstrate my ability to design niche service websites with empathy and clarity.
+    </p>
+  
+    <p class="text-lg text-gray-300 leading-relaxed text-left">
+      <strong>Solution:</strong> I designed a soft and elegant visual identity using calm, neutral tones paired with a refined serif headline font to convey warmth and credibility. The layout emphasizes storytelling: an engaging hero section, a clear explanation of Molly’s therapeutic approach, and service areas tailored to couples in different life stages. Subtle interactive details and smooth animations add modern appeal without taking away from the professional tone. The site is fully responsive, ensuring a consistent experience across all devices.
+    </p>
+  
+    <p class="text-lg text-gray-300 leading-relaxed text-left">
+      <strong>Impact:</strong> This project shows how design choices can foster trust and emotional connection in a digital environment. The final result presents Molly’s practice as welcoming and reassuring, while staying structured and easy to navigate for couples seeking guidance. Within my portfolio, it highlights my ability to craft specialized websites that balance emotional resonance with usability and clear communication.
+    </p>
+  
+    <div class="flex justify-center pt-4">
+      <a href="projects/project2/index.html" target="_blank"
+        class="inline-flex whitespace-nowrap items-center justify-center px-6 py-3 rounded-full font-semibold bg-[#3d69b4ce] text-white border border-[#3d69b4ce] 
+               hover:bg-transparent hover:text-[var(--color-02)] hover:shadow-[0_0_6px_var(--color-highlight)] transition-all duration-300">
+        View the full website
+      </a>
+    </div>
+  </section>
+
+  <footer class="bg-[var(--cor-principal)] text-[var(--text-color)] py-8">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 px-6">
+      <div class="flex-1 flex justify-center sm:justify-start">
+        <a href="../index.html" class="text-xl md:text-2xl" style="font-family:'space-age', sans-serif;">
+          Pâmela Ruchel
+        </a>
+      </div>
+      <div class="flex-1 flex justify-center">
+        <p class="text-sm text-[var(--text-color)] text-center">
+          © <span id="year"></span> Pâmela Ruchel. All rights reserved.
+        </p>
+      </div>
+      <div class="flex-1 flex justify-center sm:justify-end gap-3">
+        <a href="https://www.linkedin.com/in/pâmelahartwig" target="_blank" aria-label="LinkedIn"
+           class="w-8 h-8 flex items-center justify-center rounded-full border border-[#3d69b4ce] text-[#3d69b4ce] hover:bg-[#3d69b4ce] hover:text-white transition">
+          <i class="bx bxl-linkedin text-base"></i>
+        </a>
+        <a href="https://www.instagram.com/pamelaruchel.dev" target="_blank" aria-label="Instagram"
+           class="w-8 h-8 flex items-center justify-center rounded-full border border-[#3d69b4ce] text-[#3d69b4ce] hover:bg-[#3d69b4ce] hover:text-white transition">
+          <i class="bx bxl-instagram text-base"></i>
+        </a>
+        <a href="https://github.com/pamelaruchel" target="_blank" aria-label="GitHub"
+           class="w-8 h-8 flex items-center justify-center rounded-full border border-[#3d69b4ce] text-[#3d69b4ce] hover:bg-[#3d69b4ce] hover:text-white transition">
+          <i class="bx bxl-github text-base"></i>
+        </a>
+        <a href="https://x.com/pamelaruchel" target="_blank" aria-label="X / Twitter"
+           class="w-8 h-8 flex items-center justify-center rounded-full border border-[#3d69b4ce] text-[#3d69b4ce] hover:bg-[#3d69b4ce] hover:text-white transition">
+          <i class="bx bxl-twitter text-base"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+<script>
+    (function () {
+      const burger = document.querySelector('.menu-hamburguer');
+      const navResp = document.querySelector('.nav-responsive');
+      if (!burger || !navResp) return;
+  
+      const bars = burger.querySelectorAll('.bar');
+  
+      function openMenu() {
+        burger.setAttribute('aria-expanded', 'true');
+        navResp.classList.remove('hidden');
+        bars[0].classList.add('translate-y-2', 'rotate-45');
+        bars[1].classList.add('opacity-0');
+        bars[2].classList.add('-translate-y-2', '-rotate-45');
+      }
+  
+      function closeMenu() {
+        burger.setAttribute('aria-expanded', 'false');
+        navResp.classList.add('hidden');
+        bars[0].classList.remove('translate-y-2', 'rotate-45');
+        bars[1].classList.remove('opacity-0');
+        bars[2].classList.remove('-translate-y-2', '-rotate-45');
+      }
+  
+      burger.addEventListener('click', function () {
+        const expanded = burger.getAttribute('aria-expanded') === 'true';
+        if (expanded) closeMenu();
+        else openMenu();
+      });
+  
+      navResp.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => closeMenu());
+      });
+  
+      document.addEventListener('click', (e) => {
+        if (!navResp.classList.contains('hidden')) {
+          if (!navResp.contains(e.target) && !burger.contains(e.target)) {
+            closeMenu();
+          }
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
