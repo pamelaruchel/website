@@ -815,22 +815,20 @@ class="block p-2 text-[var(--brand-dark)] border rounded-full hover:bg-[var(--br
   </div>
 </footer>
 
-
-<!-- COOKIE BANNER -->
 <div id="cookie-wrapper"
-  class="fixed bottom-4 left-0 w-full z-50 flex justify-center px-4 pointer-events-none">
+  class="fixed inset-x-0 bottom-4 z-50 flex justify-center px-4 pointer-events-none overflow-hidden">
   
   <div id="cookie"
-    class="pointer-events-auto w-full max-w-sm sm:max-w-md bg-white/90 backdrop-blur-md shadow-xl rounded-2xl p-5 border border-gray-200 animate-fade-in">
-    
-    <h4 class="font-semibold text-lg mb-2 text-[var(--ink)]">
+    class="pointer-events-auto w-full max-w-[420px] bg-white/90 backdrop-blur-md shadow-xl rounded-2xl p-5 border border-gray-200 animate-fade-in box-border overflow-hidden">
+
+    <h4 class="font-semibold text-lg mb-2 text-[var(--ink)] text-center sm:text-left">
       We value your privacy
     </h4>
-    <p class="text-sm text-[var(--ink-soft)] mb-4">
+    <p class="text-sm text-[var(--ink-soft)] mb-4 text-center sm:text-left">
       This site uses cookies to enhance your experience. You can accept or decline — either way, your privacy matters to us.
     </p>
 
-    <div class="flex justify-end gap-3 flex-wrap">
+    <div class="flex justify-center sm:justify-end gap-3 flex-wrap">
       <button id="denyCookies" 
         class="px-4 py-2 rounded-full text-sm border border-gray-300 text-[var(--ink-soft)] hover:bg-gray-100 transition">
         Decline
@@ -840,9 +838,10 @@ class="block p-2 text-[var(--brand-dark)] border rounded-full hover:bg-[var(--br
         Accept
       </button>
     </div>
+
   </div>
 </div>
-
+    
   <script>
     const menuBtn = document.getElementById("menuBtn");
     const mobileMenu = document.getElementById("mobileMenu");
@@ -943,3 +942,4 @@ observer.observe(timelineSection);
 </script>
   </body>
 </html>
+
