@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Molly Black — Couples Therapy</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+   :root {
+  --bg: #fdfdf9;
+  --ink: #1f1f1f;
+  --ink-soft: #5c5c5c;
+  
+  --brand: #511730;
+  --brand-dark: #320A28;
+  
+  --highlight: #a66a6a;
+  --card: #f6f3ef;
+  --hover-color: #0E1C36;
+}
+
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); }
+  h1,h2,h3,h4,h5,h6 { font-family: 'Libre Caslon Text', serif; }
+  body, p, span, a, li, button, input, textarea { font-family: 'Lato', system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, sans-serif; }
+  .glass {
+    background: rgba(255,255,255,0.65);
+    backdrop-filter: blur(8px);
+    }
+
+  @keyframes pulse-custom {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    }
+
+  .animate-pulse-custom {
+  animation: pulse-custom 2s ease-in-out infinite;
+    } 
+
+  </style>
+
+  <meta name="description" content="Couples therapy centered on your story. Rebuild trust, communicate with clarity, and reconnect with love. Work with Molly Black, couples therapist." />
+
+</head>
+
+<body class="text-[var(--ink)] overflow-x-hidden max-w-[100vw]">
+
+  <header class="sticky top-0 z-40 bg-[var(--bg)]/80 backdrop-blur border-b border-black/5">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="#home" class="text-2xl sm:text-3xl font-bold tracking-tight">
+          Molly Black<span class="text-[var(--brand)]">.</span>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-8 text-base font-medium">
+          <a href="#approach" 
+             class="relative px-2 py-1 rounded-lg transition 
+                    hover:text-[var(--brand)] hover:font-semibold 
+                    hover:bg-[var(--highlight)]/10">
+            How It Helps
+          </a>
+          <a href="#services" 
+             class="relative px-2 py-1 rounded-lg transition 
+                    hover:text-[var(--brand)] hover:font-semibold 
+                    hover:bg-[var(--highlight)]/10">
+            For Couples
+          </a>
+          <a href="#about" 
+             class="relative px-2 py-1 rounded-lg transition 
+                    hover:text-[var(--brand)] hover:font-semibold 
+                    hover:bg-[var(--highlight)]/10">
+            About
+          </a>
+          <a href="#testimonials" 
+             class="relative px-2 py-1 rounded-lg transition 
+                    hover:text-[var(--brand)] hover:font-semibold 
+                    hover:bg-[var(--highlight)]/10">
+            Stories
+          </a>
+          <a href="#faqs" 
+             class="relative px-2 py-1 rounded-lg transition 
+                    hover:text-[var(--brand)] hover:font-semibold 
+                    hover:bg-[var(--highlight)]/10">
+            FAQs
+          </a>
+          <a href="#contact" 
+             class="relative px-2 py-1 rounded-lg transition 
+                    hover:text-[var(--brand)] hover:font-semibold 
+                    hover:bg-[var(--highlight)]/10">
+            Contact
+          </a>
+        </nav>
+        
+        <div class="hidden lg:flex items-center gap-3">
+          <a href="#booking" class="inline-flex items-center rounded-xl px-4 py-2 bg-[var(--ink)] text-white transition-transform duration-300 ease-out transform hover:shadow-lg hover:bg-[var(--brand)]">Book a Session</a>
+        </div>
+
+        <button id="menu-btn" class="lg:hidden inline-flex items-center justify-center rounded-lg p-2 border border-black/10">
+          <span class="sr-only">Open menu</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="lg:hidden hidden border-t border-black/5 bg-[var(--bg)]">
+      <div class="max-w-6xl mx-auto px-4 py-4 grid gap-3 text-[15px]">
+        <a href="#approach" class="py-2 hover:text-[var(--brand)]">How It Helps</a>
+        <a href="#services" class="py-2 hover:text-[var(--brand)]">For Couples</a>
+        <a href="#about" class="py-2 hover:text-[var(--brand)]">About</a>
+        <a href="#testimonials" class="py-2 hover:text-[var(--brand)]">Stories</a>
+        <a href="#faqs" class="py-2 hover:text-[var(--brand)]">FAQs</a>
+        <a href="#contact" class="py-2 hover:text-[var(--brand)]">Contact</a>
+        <a href="#booking"
+        class="inline-flex items-center justify-center rounded-lg px-4 py-2 mt-2 bg-[var(--ink)] text-white transition-all duration-300 ease-out transform hover:shadow-lg hover:bg-[var(--brand)]">Book a Session</a>
+      </div>
+    </div>
+  </header>
+
+  <!--hero-->
+  <section id="home" class="relative">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-10 items-center py-14 sm:py-20">
+        <div>
+          <h1 class="text-4xl sm:text-5xl leading-tight font-bold" data-aos="fade-up" data-aos-delay="100">
+            Your relationship deserves to thrive.
+          </h1>
+          <p class="mt-4 text-lg text-[var(--ink-soft)]" data-aos="fade-up" data-aos-delay="200">
+            Couples therapy that centers <span class="font-semibold text-[var(--ink)]">your</span> story — rebuild trust, communicate with clarity, and reconnect with love.
+          </p>
+          <div class="mt-8 flex flex-wrap items-center gap-3" data-aos="zoom-in" data-aos-delay="300">
+            <a href="#booking" 
+               class="inline-flex items-center gap-2 rounded-xl px-5 py-3 bg-[var(--brand)] text-white 
+                      hover:bg-[var(--brand-dark)] hover:shadow-lg transition-transform transition-shadow duration-300 shadow">
+              Start your first conversation
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+          
+            <a href="#approach" 
+               class="inline-flex items-center gap-2 rounded-xl px-5 py-3 border border-black/10 
+                      hover:bg-white hover:shadow-lg transition-transform transition-shadow duration-300">
+              How therapy helps
+            </a>
+          </div>
+          
+          <ul class="mt-8 grid sm:grid-cols-2 gap-3 text-sm md:text-base leading-tight text-gray-700" data-aos="fade-up" data-aos-delay="600" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+            <li class="flex items-start gap-3">
+              <span class="mt-1 h-2 w-2 rounded-full bg-[var(--brand)]"></span>
+              Feel closeness, trust, and emotional intimacy daily
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-1 h-2 w-2 rounded-full bg-[var(--brand)]"></span>
+              Communicate openly, honestly, and with deep understanding
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-1 h-2 w-2 rounded-full bg-[var(--brand)]"></span>
+              Reignite passion, joy, and shared meaningful moments
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-1 h-2 w-2 rounded-full bg-[var(--brand)]"></span>
+              Build stronger connection, respect, and unwavering support
+            </li>
+          </ul>
+        </div>
+        <div class="relative">
+          <div class="aspect-[4/5] rounded-2xl overflow-hidden shadow-xl border border-black/5" data-aos="fade-left" data-aos-delay="400">
+            <img src="clients.jpg" alt="Couple holding hands during a therapy walk" class="w-full h-full object-cover"/>
+          </div>
+          <div class="absolute -bottom-6 left-0 right-0 mx-auto sm:right-auto sm:left-[-1.5rem] bg-white shadow-lg rounded-2xl p-5 border border-black/5 max-w-xs animate-pulse-custom hidden md:block" data-aos="fade-up" data-aos-delay="500">
+            <p class="text-sm text-[var(--ink-soft)]">“We finally learned how to listen without defense. It changed our daily life.”</p>
+            <p class="mt-2 text-sm font-semibold">— A & J, former clients</p>
+          </div>          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--how it helps-->
+  <section id="approach" class="py-16 sm:py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-3 gap-10">
+        <div class="lg:col-span-1">
+          <h2 class="text-3xl sm:text-4xl font-bold text-center md:text-left" data-aos="fade-right">What changes with therapy</h2>
+          <p class="mt-3 text-[var(--ink-soft)] text-center md:text-left" data-aos="fade-right" data-aos-delay="100">
+            Clear communication, practical tools, and a safe space for both voices.
+          </p>
+        </div>
+        <div class="lg:col-span-2 grid sm:grid-cols-2 gap-6">
+          <div class="rounded-2xl bg-[var(--card)] p-6 shadow-sm border border-black/5
+                      hover:shadow-lg hover:border-[var(--brand)]
+                      transition-transform transition-shadow duration-300"
+               data-aos="zoom-in" data-aos-delay="200">
+            <h3 class="font-semibold text-lg">Rebuild trust</h3>
+            <p class="mt-2 text-[var(--ink-soft)]">
+              Create new agreements, repair after rupture, and build consistency that lasts.
+            </p>
+          </div>
+          <div class="rounded-2xl bg-[var(--card)] p-6 shadow-sm border border-black/5
+                      hover:shadow-lg hover:border-[var(--brand)]
+                      transition-transform transition-shadow duration-300"
+               data-aos="zoom-in" data-aos-delay="300">
+            <h3 class="font-semibold text-lg">Communicate with clarity</h3>
+            <p class="mt-2 text-[var(--ink-soft)]">
+              Learn to speak needs, set boundaries, and resolve conflict with respect.
+            </p>
+          </div>
+          <div class="rounded-2xl bg-[var(--card)] p-6 shadow-sm border border-black/5
+                      hover:shadow-lg hover:border-[var(--brand)]
+                      transition-transform transition-shadow duration-300"
+               data-aos="zoom-in" data-aos-delay="400">
+            <h3 class="font-semibold text-lg">Reconnect emotionally</h3>
+            <p class="mt-2 text-[var(--ink-soft)]">
+              Understand each other’s inner world and restore emotional safety.
+            </p>
+          </div>
+          <div class="rounded-2xl bg-[var(--card)] p-6 shadow-sm border border-black/5
+                      hover:shadow-lg hover:border-[var(--brand)]
+                      transition-transform transition-shadow duration-300"
+               data-aos="zoom-in" data-aos-delay="500">
+            <h3 class="font-semibold text-lg">Navigate transitions</h3>
+            <p class="mt-2 text-[var(--ink-soft)]">
+              Life changes—parenthood, career, relocation—without losing connection.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!--process-->
+  <section class="py-16 sm:py-20 border-y border-black/5 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <h2 class="text-3xl sm:text-4xl font-bold" data-aos="fade-up">How we’ll work together</h2>
+        <p class="mt-3 text-[var(--ink-soft)]" data-aos="fade-up" data-aos-delay="200">Simple, supportive, and tailored to your story.</p>
+      </div>
+  
+      <div class="mt-10 grid sm:grid-cols-3 gap-6">
+        <div class="rounded-2xl p-6 border border-black/5 bg-[var(--bg)]
+                    hover:shadow-lg hover:border-[var(--brand)]
+                    transition-transform transition-shadow duration-300"
+             data-aos="fade-up" data-aos-delay="300">
+          <span class="text-sm font-semibold text-[var(--brand-dark)]">Step 1</span>
+          <h3 class="mt-1 font-semibold text-lg">Book your first session</h3>
+          <p class="mt-2 text-[var(--ink-soft)]">We map your goals, agreements, and what would make therapy feel safe.</p>
+        </div>
+  
+        <div class="rounded-2xl p-6 border border-black/5 bg-[var(--bg)]
+                    hover:shadow-lg hover:border-[var(--brand)]
+                    transition-transform transition-shadow duration-300"
+             data-aos="fade-up" data-aos-delay="400">
+          <span class="text-sm font-semibold text-[var(--brand-dark)]">Step 2</span>
+          <h3 class="mt-1 font-semibold text-lg">Understand the pattern</h3>
+          <p class="mt-2 text-[var(--ink-soft)]">We identify what keeps conflicts looping and practice new tools together.</p>
+        </div>
+  
+        <div class="rounded-2xl p-6 border border-black/5 bg-[var(--bg)]
+                    hover:shadow-lg hover:border-[var(--brand)]
+                    transition-transform transition-shadow duration-300"
+             data-aos="fade-up" data-aos-delay="500">
+          <span class="text-sm font-semibold text-[var(--brand-dark)]">Step 3</span>
+          <h3 class="mt-1 font-semibold text-lg">Build a stronger bond</h3>
+          <p class="mt-2 text-[var(--ink-soft)]">Turn insights into everyday habits of care, respect, and closeness.</p>
+        </div>
+      </div>
+  
+      <div class="mt-8 flex justify-center">
+        <a href="#booking" class="inline-flex items-center animate-pulse-custom rounded-xl px-5 py-3 bg-[var(--ink)] text-white transition-transform duration-300 ease-out transform hover:shadow-lg hover:bg-[var(--brand)] shadow" data-aos="zoom-in-up" data-aos-delay="600">
+          Book now
+        </a>
+      </div>
+    </div>
+  </section>
+  
+
+  <!--for couples-->
+<section id="services" class="py-16 sm:py-20">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-3 gap-10 items-start">
+      <div class="lg:col-span-1">
+        <h2 class="text-3xl sm:text-4xl font-bold text-center md:text-left" data-aos="fade-right">Support for your season</h2>
+        <p class="mt-3 text-[var(--ink-soft)] text-center md:text-left" data-aos="fade-right" data-aos-delay="200">
+          Every couple is unique. Your plan will be too.
+        </p>
+      </div>
+      <div class="lg:col-span-2 grid sm:grid-cols-2 gap-6">
+        <div class="rounded-2xl bg-white border border-black/5 p-6 shadow-sm
+                    hover:shadow-lg hover:border-[var(--brand)]
+                    transition-transform transition-shadow duration-300"
+             data-aos="fade-up" data-aos-delay="300">
+          <h3 class="font-semibold">Premarital & commitment</h3>
+          <p class="mt-2 text-[var(--ink-soft)]">
+            Build foundations for communication, finances, family, and shared values.
+          </p>
+        </div>
+
+        <div class="rounded-2xl bg-white border border-black/5 p-6 shadow-sm
+                    hover:shadow-lg hover:border-[var(--brand)]
+                    transition-transform transition-shadow duration-300"
+             data-aos="fade-up" data-aos-delay="400">
+          <h3 class="font-semibold">Repair after rupture</h3>
+          <p class="mt-2 text-[var(--ink-soft)]">
+            Affair recovery, major conflict, or long-standing resentments—slow, steady repair.
+          </p>
+        </div>
+
+        <div class="rounded-2xl bg-white border border-black/5 p-6 shadow-sm
+                    hover:shadow-lg hover:border-[var(--brand)]
+                    transition-transform transition-shadow duration-300"
+             data-aos="fade-up" data-aos-delay="500">
+          <h3 class="font-semibold">Parenting & life transitions</h3>
+          <p class="mt-2 text-[var(--ink-soft)]">
+            Sleep loss, stress, new roles—keep us connected through the changes.
+          </p>
+        </div>
+
+        <div class="rounded-2xl bg-white border border-black/5 p-6 shadow-sm
+                    hover:shadow-lg hover:border-[var(--brand)]
+                    transition-transform transition-shadow duration-300"
+             data-aos="fade-up" data-aos-delay="600">
+          <h3 class="font-semibold">Intimacy & connection</h3>
+          <p class="mt-2 text-[var(--ink-soft)]">
+            From mismatched desires to emotional distance, learn to meet in the middle.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!--about-->
+  <section id="about" class="py-16 sm:py-20 bg-white border-y border-black/5">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-10 items-center">
+        <div class="order-2 lg:order-1" data-aos="fade-right" data-aos-delay="200">
+          <h2 class="text-4xl sm:text-4xl font-bold">Hi, I’m Molly Black.</h2>
+          <p class="mt-4 text-lg text-[var(--ink-soft)]">
+            My role is to provide a calm, structured space where both voices are heard. Together, we’ll build tools that make everyday life kinder and more connected.
+          </p>
+          <ul class="mt-6 space-y-2 text-base leading-tight text-[var(--ink-soft)]">
+            <li>• Couples-focused practice</li>
+            <li>• Trauma-informed and attachment-aware</li>
+            <li>• LGBTQIA+ affirming</li>
+            <li>• Online sessions available</li>
+          </ul>
+          <div class="mt-6 flex gap-3" data-aos="zoom-in" data-aos-delay="300">
+            <a href="#booking" 
+               class="inline-flex items-center rounded-xl px-5 py-3 bg-[var(--brand)] text-white 
+                      hover:bg-[var(--brand-dark)] hover:shadow-lg transition-transform transition-shadow duration-300 shadow animate-pulse-custom">
+              Work with me
+            </a>
+          
+            <a href="#faqs" 
+               class="inline-flex items-center rounded-xl px-5 py-3 border border-black/10 
+                      hover:bg-[var(--bg)] hover:shadow-lg transition-transform transition-shadow duration-300">
+              Questions I’m often asked
+            </a>
+          </div>
+          
+        </div>
+        <div class="order-1 lg:order-2">
+          <div class="aspect-[4/5] rounded-2xl overflow-hidden shadow-xl border border-black/5">
+            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1200&q=80" alt="Warm therapy space" class="w-full h-full object-cover" data-aos="fade-left"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--testimonials-->
+  <section id="testimonials" class="py-16 sm:py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <h2 class="text-3xl sm:text-4xl font-bold" data-aos="fade-up">Stories of change</h2>
+        <p class="mt-3 text-[var(--ink-soft)]" data-aos="fade-up" data-aos-delay="100">
+          Shared with permission. Names abbreviated for privacy.
+        </p>
+      </div>
+  
+      <div class="mt-10 grid lg:grid-cols-3 gap-6">
+ 
+        <blockquote class="rounded-2xl bg-[var(--card)] p-6 border border-black/5 shadow-sm transform transition-transform duration-300 hover:shadow-lg hover:border-[var(--brand)]"
+                    data-aos="fade-up" data-aos-delay="200">
+          <p class="text-[var(--ink-soft)]">“We came in ready to give up. Molly helped us see the pattern, not the enemy. She guided us with patience, clarity, and care, and now we’re laughing again, feeling understood, connected, and hopeful for the future.”</p>
+          <footer class="mt-3 text-sm font-semibold">— L & R</footer>
+        </blockquote>
+  
+        <blockquote class="rounded-2xl bg-[var(--card)] p-6 border border-black/5 shadow-sm transform transition-transform duration-300 hover:shadow-lg hover:border-[var(--brand)]"
+                    data-aos="fade-up" data-aos-delay="300">
+          <p class="text-[var(--ink-soft)]">“Fights don’t spiral like before. We finally know how to pause, listen, reflect, and repair, building understanding and trust. Molly’s guidance helped us communicate openly, respect boundaries, and feel truly supported in every conversation.”</p>
+          <footer class="mt-3 text-sm font-semibold">— L.L. & K.J.</footer>
+        </blockquote>
+  
+        <blockquote class="rounded-2xl bg-[var(--card)] p-6 border border-black/5 shadow-sm transform transition-transform duration-300 hover:shadow-lg hover:border-[var(--brand)]"
+                    data-aos="fade-up" data-aos-delay="400">
+          <p class="text-[var(--ink-soft)]">“The tools were simple and human. We left each session with something we could actually do. Molly’s guidance helped us practice new habits, communicate more openly, and feel more confident and connected in our daily lives.”</p>
+          <footer class="mt-3 text-sm font-semibold">— A & M</footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+  
+  
+  <!--faqs-->
+  <section id="faqs" class="py-16 sm:py-20 bg-white border-y border-black/5">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-10 items-start">
+        <div>
+          <h2 class="text-3xl sm:text-4xl font-bold text-center sm:text-left" data-aos="fade-right">FAQs</h2>
+          <p class="mt-3 text-[var(--ink-soft)] text-center sm:text-left" data-aos="fade-right" data-aos-delay="200">
+            Quick answers to common questions.
+          </p>
+        </div>
+        <div class="space-y-6">
+          <details class="group rounded-2xl border border-black/5 p-5 bg-[var(--bg)] shadow-sm transform transition-all duration-300 hover:shadow-lg open:border-[var(--brand)] open:shadow-lg"
+                   data-aos="fade-up" data-aos-delay="300">
+            <summary class="flex cursor-pointer items-center justify-between">
+              <h3 class="font-semibold">Do we need to attend together?</h3>
+              <span class="ml-4 text-[var(--ink-soft)] group-open:text-[var(--brand)] transition-all duration-300 group-open:rotate-180">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </span>
+            </summary>
+            <p class="mt-3 text-[var(--ink-soft)] transition-all duration-300">
+              Ideally yes, but individual sessions can support the process when needed.
+            </p>
+          </details>
+  
+          <details class="group rounded-2xl border border-black/5 p-5 bg-[var(--bg)] shadow-sm transform transition-all duration-300 105 hover:shadow-lg open:border-[var(--brand)] open:shadow-lg"
+                   data-aos="fade-up" data-aos-delay="400">
+            <summary class="flex cursor-pointer items-center justify-between">
+              <h3 class="font-semibold">How long are sessions?</h3>
+              <span class="ml-4 text-[var(--ink-soft)] group-open:text-[var(--brand)] transition-all duration-300 group-open:rotate-180">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </span>
+            </summary>
+            <p class="mt-3 text-[var(--ink-soft)] transition-all duration-300">
+              50 minutes. Extended sessions available on request.
+            </p>
+          </details>
+  
+          <details class="group rounded-2xl border border-black/5 p-5 bg-[var(--bg)] shadow-sm transform transition-all duration-300 hover:shadow-lg open:border-[var(--brand)] open:shadow-lg"
+                   data-aos="fade-up" data-aos-delay="500">
+            <summary class="flex cursor-pointer items-center justify-between">
+              <h3 class="font-semibold">Do you offer online sessions?</h3>
+              <span class="ml-4 text-[var(--ink-soft)] group-open:text-[var(--brand)] transition-all duration-300 group-open:rotate-180">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </span>
+            </summary>
+            <p class="mt-3 text-[var(--ink-soft)] transition-all duration-300">
+              Yes. Secure video sessions are available for couples in eligible regions.
+            </p>
+          </details>
+  
+          <details class="group rounded-2xl border border-black/5 p-5 bg-[var(--bg)] shadow-sm transform transition-all duration-300 hover:shadow-lg open:border-[var(--brand)] open:shadow-lg"
+                   data-aos="fade-up" data-aos-delay="600">
+            <summary class="flex cursor-pointer items-center justify-between">
+              <h3 class="font-semibold">What’s the investment?</h3>
+              <span class="ml-4 text-[var(--ink-soft)] group-open:text-[var(--brand)] transition-all duration-300 group-open:rotate-180">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </span>
+            </summary>
+            <p class="mt-3 text-[var(--ink-soft)] transition-all duration-300">
+              Transparent pricing is shared before booking. Sliding scale spots open periodically.
+            </p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>  
+
+<!--booking-->
+<section id="booking" class="py-16 sm:py-20">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-10 items-center" data-aos="fade-right">
+      
+      <div class="text-left lg:text-left">
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold">Ready to begin?</h2>
+        <p class="mt-7 text-[var(--ink-soft)] text-lg">
+          Choose a time that works for both of you. You’ll receive a confirmation email with all details.
+        </p>
+        <ul class="mt-6 space-y-2 text-base leading-tight text-[var(--ink-soft)]">
+          <li>• 50-minute sessions</li>
+          <li>• Clear next steps after each meeting</li>
+          <li>• Online and in-person options</li>
+        </ul>
+        <a href="#contact" 
+           class="inline-flex items-center gap-2 justify-center rounded-xl px-5 py-3 bg-[var(--brand)] text-white 
+                  hover:bg-[var(--brand-dark)] hover:shadow-lg transition-transform transition-shadow duration-300 shadow mt-6">
+          Prefer to message first?
+        </a>
+      </div>
+
+      <div class="rounded-2xl overflow-hidden border border-black/5 shadow-sm bg-white w-full max-w-full">
+        <iframe 
+          src="https://calendly.com/ruchelpamela/30min"
+          class="w-full h-[500px] sm:h-[560px] max-w-full"
+          frameborder="0"
+          title="Booking calendar">
+        </iframe>
+      </div>       
+    </div>
+  </div>
+</section>
+
+  <!--contact-->
+<section id="contact" class="py-16 sm:py-20 bg-white border-y border-black/5">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-3 gap-10">
+      <div data-aos="fade-right" data-aos-duration="1000" data-aos-easing="ease-out-cubic" data-aos-delay="200">
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold">Contact</h2>
+        <p class="mt-5 text-[var(--ink-soft)]">DM's welcome. E-mail replies within 1–2 business days.</p>
+        <div class="mt-6 space-y-3 text-sm">
+          <p class="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[var(--brand)] transition-transform duration-300" fill="currentColor" viewBox="0 0 24 24" stroke="none">
+              <path d="M22.675 0h-21.35C.596 0 0 .593 0 1.326v21.348C0 23.406.596 24 1.325 24h11.495v-9.294H9.692V11.04h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.098 2.795.142v3.24h-1.918c-1.504 0-1.795.715-1.795 1.762v2.312h3.587l-.467 3.666h-3.12V24h6.116C23.406 24 24 23.406 24 22.674V1.326C24 .593 23.406 0 22.675 0z"/>
+            </svg>
+            <span class="font-semibold">Facebook:</span>
+            <a href="https://www.facebook.com/mollyblack.therapy" target="_blank" class="text-[var(--brand)] hover:underline transition">mollyblack.therapy</a>
+          </p>
+        
+          <p class="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[var(--brand)] transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke-width="2"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.5 6.5h.01"/>
+            </svg>
+            <span class="font-semibold">Instagram:</span>
+            <a href="https://instagram.com/mollyblack.therapy" target="_blank" class="text-[var(--brand)] hover:underline transition">@mollyblack.therapy</a>
+          </p>
+        
+          <p class="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[var(--brand)] transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0-1.657-1.343-3-3-3s-3 1.343-3 3c0 2.5 3 8 3 8s3-5.5 3-8z"/>
+              <circle cx="9" cy="11" r="2" stroke-width="2"/>
+            </svg>
+            <span class="font-semibold">Location:</span> 350 5th Ave, New York, NY 10118
+          </p>
+        </div>
+      </div>
+
+      <!--form-->
+      <form class="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4"
+            data-aos="fade-left" data-aos-duration="1000" data-aos-easing="ease-out-cubic" data-aos-delay="400">
+        <div class="sm:col-span-1">
+          <label for="name" class="block text-sm font-medium">Your name</label>
+          <input id="name" type="text" class="mt-2 w-full rounded-xl border border-black/10 bg-[var(--bg)] px-4 py-3 outline-none focus:ring-2 focus:ring-[var(--brand)]" placeholder="Alex & Jamie"/>
+        </div>
+        <div class="sm:col-span-1">
+          <label for="email" class="block text-sm font-medium">Email</label>
+          <input id="email" type="email" class="mt-2 w-full rounded-xl border border-black/10 bg-[var(--bg)] px-4 py-3 outline-none focus:ring-2 focus:ring-[var(--brand)]" placeholder="you@example.com"/>
+        </div>
+        <div class="sm:col-span-2">
+          <label for="message" class="block text-sm font-medium">How can I help?</label>
+          <textarea id="message" rows="5" class="mt-2 w-full rounded-xl border border-black/10 bg-[var(--bg)] px-4 py-3 outline-none focus:ring-2 focus:ring-[var(--brand)]" placeholder="Tell me a bit about what brings you here."></textarea>
+        </div>
+        <div class="sm:col-span-2" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="600">
+          <button type="button" 
+        class="inline-flex items-center justify-center rounded-lg px-4 py-2 mt-2 bg-[var(--ink)] text-white 
+               transition-all duration-300 ease-out transform hover:shadow-lg hover:bg-[var(--brand)]">
+                Send message </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="py-10">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-up" data-aos-delay="100">
+    <div class="flex flex-col items-center sm:flex-row sm:items-center sm:justify-between gap-4">
+      
+      <p class="text-sm text-[var(--ink-soft)]">© <span id="year"></span> Molly Black. All rights reserved.</p>
+      
+      <div class="flex items-center gap-6 text-sm">
+        <a href="#" class="relative px-2 py-1 rounded-lg transition hover:text-[var(--brand)] hover:font-semibold hover:bg-[var(--highlight)]/10">Privacy</a>
+        <a href="#" class="relative px-2 py-1 rounded-lg transition hover:text-[var(--brand)] hover:font-semibold hover:bg-[var(--highlight)]/10">Terms</a>
+        
+        <a href="#booking" 
+           class="inline-flex items-center justify-center rounded-lg px-4 py-2 bg-[var(--ink)] text-white transition-all duration-300 ease-out transform hover:shadow-lg hover:bg-[var(--brand)]">
+          Book
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script>
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    if (btn && menu) {
+      btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+    }
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+  AOS.init({
+    duration: 1000,      
+    easing: 'ease-out', 
+    once: true,         
+    offset: 80,          
+    delay: 0           
+  });
+</script>
+</body>
+</html>
