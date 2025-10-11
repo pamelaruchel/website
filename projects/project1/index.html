@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Jennifer Williams</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cardo:wght@400;700&family=Mulish:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  
+      <style>
+            h1, h2, h3, h4, h5, h6 { font-family: 'Cardo', serif; }
+            body, p, span, a, li { font-family: 'Mulish', sans-serif; }
+
+            body {
+            overflow-x: hidden;
+            }
+
+      @media (min-width: 630px) and (max-width: 767px) {
+            #home {
+            min-height: 60vh; 
+            padding-top: 16rem; 
+            padding-bottom: 10rem; 
+            }
+
+            #home h1 {
+            font-size: 2.5rem;
+            line-height: 1.25;
+            text-align: center;
+            }
+
+            #home p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            text-align: center;
+            margin: 1rem auto 0 auto; 
+            max-width: 90%;
+            }
+
+            #home .mt-8 {
+            margin-top: 2rem;
+            justify-content: center;
+            display: flex;
+            flex-direction: row;
+            }
+
+            #home img {
+            display: none;
+            }
+
+            #about {
+            padding-top: 3rem; 
+            }
+
+            #menu li a {
+              font-size: 1.3rem;
+            }
+            }
+
+      @media (max-width: 450px) {
+
+            nav a {
+            font-size: 0.75rem; 
+            margin: 0 0.25rem;  
+            }
+
+            nav .p-6 {
+            padding: 1rem;
+            }
+
+            #home {
+            min-height: 70vh;
+            padding-top: 12rem;
+            padding-bottom: 1rem;
+            }
+
+            #home h1 {
+            font-size: 1.75rem; 
+            line-height: 1.2;
+            }
+
+            #menu li a {
+            font-size: 1rem;
+            }
+
+            #home p {
+            font-size: 0.9rem; 
+            line-height: 1.5;
+            max-width: 95%;
+            margin: 0.5rem auto;
+            }
+
+            #home .mt-8 a {
+            padding: 0.5rem 1rem; 
+            font-size: 0.85rem;
+            }
+
+            #about h2 {
+            font-size: 1.5rem; 
+            }
+
+            #about p {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            }
+
+            #services h2 {
+            font-size: 1rem;
+            }
+
+            #services p {
+            font-size: 0.85rem;
+            }
+
+            #calendly h2 {
+            font-size: 1.5rem;
+            }
+
+            #calendly p {
+            font-size: 0.9rem;
+            }
+
+            .testimonials h1 {
+            font-size: 1.25rem;
+            }
+
+            .testimonials p {
+            font-size: 0.9rem;
+            }
+
+            #contact h1 {
+            font-size: 1.5rem;
+            }
+
+            #contact p,
+            #contact label,
+            #contact input,
+            #contact textarea {
+            font-size: 0.9rem;
+            }
+
+            footer p {
+            font-size: 0.75rem;
+            }
+            }
+
+
+            @media (max-width: 629px) {
+
+            nav a {
+            font-size: 0.85rem; 
+            margin: 0 0.25rem;  
+            }
+
+            nav .p-6 {
+            padding: 1rem;
+            }
+
+            #home {
+            min-height: 70vh;
+            padding-top: 15rem;
+            padding-bottom: 1rem;
+            }
+
+            #home h1 {
+            font-size: 1.9rem; 
+            line-height: 1.2;
+            }
+
+            #menu li a {
+            font-size: 1rem;
+            }
+
+            #home p {
+            font-size: 1rem; 
+            line-height: 1.5;
+            max-width: 95%;
+            margin: 0.5rem auto;
+            }
+
+            #home .mt-8 a {
+            padding: 0.5rem 1rem; 
+            font-size: 0.85rem;
+            }
+}
+    </style>
+</head>
+
+<body class="overflow-x-hidden max-w-[100vw]">
+
+  <nav class="bg-[#f9f4ef] fixed w-full pt-3 top-0 left-0 z-20">
+    <div class="max-w-screen-xl flex items-center justify-between mx-auto p-4">
+  
+      <a href="#home" class="text-[#020826] text-3xl pt-1.5 font-[Parisienne]">
+        Jennifer Williams
+      </a>
+  
+      <!-- Botão de menu mobile -->
+      <button id="menu-btn" 
+              class="inline-flex items-center p-2 w-10 h-10 justify-center text-[#020826] rounded-lg lg:hidden hover:bg-[#eaddcf] focus:outline-none focus:ring-2 focus:ring-[#8c7851]">
+        <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M1 1h15M1 7h15M1 13h15"/>
+        </svg>
+      </button>
+  
+      <!-- Menu -->
+      <div id="menu"
+           class="hidden lg:block absolute lg:static right-4 top-16 lg:top-auto bg-[#f9f4ef] lg:bg-transparent rounded-lg lg:rounded-none shadow-lg lg:shadow-none w-48 lg:w-auto">
+        <ul class="flex flex-col lg:flex-row items-start lg:items-center gap-4 lg:gap-8 p-4 lg:p-0 font-medium">
+  
+          <li>
+            <a href="#home"
+               class="relative pb-1 text-[#020826] text-base lg:text-lg font-semibold after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-full after:bg-[#8c7851]">
+              Home
+            </a>
+          </li>
+  
+          <li>
+            <a href="#about"
+               class="relative pb-1 text-[#020826] text-base lg:text-lg hover:text-[#8c7851] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[#8c7851] after:transition-all hover:after:w-full">
+              About Me
+            </a>
+          </li>
+  
+          <li>
+            <a href="#services"
+               class="relative pb-1 text-[#020826] text-base lg:text-lg hover:text-[#8c7851] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[#8c7851] after:transition-all hover:after:w-full">
+              My Work
+            </a>
+          </li>
+  
+          <li>
+            <a href="#contact"
+               class="relative pb-1 text-[#020826] text-base lg:text-lg hover:text-[#8c7851] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[#8c7851] after:transition-all hover:after:w-full">
+              Contact
+            </a>
+          </li>
+  
+        </ul>
+      </div>
+  
+    </div>
+  </nav>
+
+  <section id="home" class="bg-[#f9f4ef] pt-24 min-h-[80vh] md:min-h-screen flex items-center relative overflow-hidden">
+
+    <div class="mx-auto w-full max-w-screen-xl px-4 sm:px-6 lg:px-8 grid md:grid-cols-[1.1fr_0.9fr] items-center gap-10">
+
+      <div class="flex flex-col justify-center max-w-xl mx-auto text-center md:text-left">
+        <h1 class="text-3xl sm:text-4xl md:text-[2.8rem] font-bold text-[#020826] leading-snug" data-aos="fade-down">
+          Find calm, clarity, and confidence in your 
+          <strong class="text-[#DB896B]">everyday</strong> life.
+        </h1>
+  
+        <p class="mt-6 text-base sm:text-lg text-[#716040] md:mt-8 md:max-w-md" data-aos="fade-up">
+          My approach is compassionate, practical, and tailored to your unique journey. Whether you prefer online sessions or face-to-face meetings, I provide a safe and supportive space for growth and transformation.
+        </p>
+  
+        <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start" data-aos="zoom-in">
+          <a href="#calendly" class="rounded-full border border-[#8c7851] bg-[#8c7851] px-6 py-3 font-medium text-white shadow-sm transition-colors hover:bg-[#716040] text-center">
+            Book a Session
+          </a>
+  
+          <a href="#about" class="rounded-full border border-[#8c7851] px-6 py-3 font-medium text-[#8c7851] shadow-sm transition-colors hover:bg-[#f9f4ef] hover:text-[#5c4821] text-center">
+            Learn More
+          </a>
+        </div>
+      </div>
+  
+      <div class="hidden md:flex justify-center md:justify-end items-center mt-10 md:mt-0" data-aos="fade-left">
+        <img 
+          src="brain sides-pana.svg" 
+          alt="Creativity Illustration"
+          class="min-w-[380px] md:w-[430px] lg:w-[520px] xl:w-[600px] object-contain transition-all duration-300 ease-in-out"
+        />
+      </div>
+  
+      <div class="hidden lg:block absolute bottom-0 left-0 w-full overflow-hidden">
+        <svg class="relative block w-[calc(100%+1.3px)] h-32" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M0,0 L1200,120 L0,120 Z" class="fill-[#EADDCF]"></path>
+        </svg>
+      </div>
+  
+    </div>
+  </section>  
+    
+      <!--about me-->
+      <section id="about" class="bg-[#f9f4ef] text-white pt-28 pb-20 md:pb-40 px-6 flex flex-col md:flex-row items-center justify-between gap-8" data-aos="fade-down">
+
+        <div class="w-full md:w-5/12 flex justify-center md:justify-end h-full" data-aos="fade-left">
+          <img src="this is jennifer williams.png" alt="Meet the Professional" class="w-72 h-96 md:w-80 lg:w-96 object-cover rounded-lg shadow-lg" />
+        </div>
+      
+        <div class="w-full md:w-7/12 text-center md:text-left flex flex-col items-center md:items-start relative">
+      
+          <div class="block md:hidden mb-4">
+            <div class="flex items-center justify-center gap-2">
+              <div class="w-12 h-[2px] bg-[#020826]"></div>
+              <p class="text-[#020826] text-sm tracking-widest">MORE ABOUT</p>
+              <div class="w-12 h-[2px] bg-[#020826]"></div>
+            </div>
+          </div>
+    
+          <div class="hidden md:absolute md:-left-16 md:top-6 flex items-center justify-center rotate-[-90deg] text-sm tracking-widest">
+            <div class="flex items-center gap-2">
+              <div class="w-16 h-[2px] bg-[#020826]"></div>
+              <p class="text-[#020826]">MORE ABOUT</p>
+            </div>
+          </div>
+      
+          <h2 class="text-3xl text-[#020826] md:text-5xl font-bold leading-tight mb-4">
+            Meet the <br> Professional
+          </h2>
+      
+          <p class="text-[#716040] mb-6 text-left text-sm md:text-base leading-relaxed max-w-2xl mx-auto md:mx-0" data-aos="fade-up">
+            With extensive experience in Cognitive Behavioral Therapy (CBT), I help individuals overcome anxiety, stress, and major life transitions. My approach is compassionate, practical, and tailored to your unique journey—whether you prefer online sessions or face-to-face, I provide a safe, supportive space for growth and transformation. I am dedicated to helping you build resilience, develop lasting coping strategies, and create a balanced, fulfilling life. Every session is designed to empower you to understand yourself better, take meaningful steps forward, and embrace positive change with confidence.
+          </p>
+      
+        </div>
+      
+      </section>
+      
+      
+    <!--services section-->
+    
+    <section id="services" class="bg-[#f9f4ef] pt-10 md:pt-20 text-gray-600 body-font" data-aos="fade-down">
+      <div class="container px-5 py-3 mx-auto">
+    
+        <div class="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-col" data-aos="zoom-in-up">
+          <div class="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center rounded-full bg-[#eaddcf] text-[#8c7851] flex-shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="sm:w-16 sm:h-16 w-10 h-10">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M7.864 4.243A7.5 7.5 0 0 1 19.5 10.5c0 2.92-.556 5.709-1.568 8.268M5.742 6.364A7.465 7.465 0 0 0 4.5 10.5a7.464 7.464 0 0 1-1.15 3.993m1.989 3.559A11.209 11.209 0 0 0 8.25 10.5a3.75 3.75 0 1 1 7.5 0c0 .527-.021 1.049-.064 1.565M12 10.5a14.94 14.94 0 0 1-3.6 9.75m6.633-4.596a18.666 18.666 0 0 1-2.485 5.33" />
+            </svg>
+          </div>
+          <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0">
+            <h2 class="text-[#020826] text-lg title-font font-medium mb-2">Individual Therapy</h2>
+            <p class="leading-relaxed text-base text-gray-500">One-on-one sessions designed to help you overcome personal challenges, manage stress, and develop healthier thought patterns. Perfect for tackling anxiety, building emotional resilience, and achieving personal growth at your own pace.</p>
+            <a class="mt-3 text-[#8c7851] inline-flex items-center">Learn More
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+    
+        <div class="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-col" data-aos="zoom-in-up" data-aos-delay="100">
+          <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0">
+            <h2 class="text-[#020826] text-lg title-font font-medium mb-2">Online Counseling</h2>
+            <p class="leading-relaxed text-base text-gray-500">Flexible virtual sessions that provide the same care and support from the comfort of your home. Ideal for those with busy schedules, distance constraints, or who simply prefer the privacy and convenience of online therapy.</p>
+            <a class="mt-3 text-[#8c7851] inline-flex items-center">Learn More
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+          <div class="sm:w-32 sm:order-none order-first sm:h-32 h-20 w-20 sm:ml-10 inline-flex items-center justify-center rounded-full bg-[#8c7851] text-[#eaddcf] flex-shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="sm:w-16 sm:h-16 w-10 h-10">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M4 6h11a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V8a2 2 0 012-2z" />
+            </svg>
+          </div>
+        </div>
+    
+        <!-- Life Transitions Coaching -->
+        <div class="flex items-center lg:w-3/5 mx-auto sm:flex-row flex-col" data-aos="zoom-in-up" data-aos-delay="200">
+          <div class="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center rounded-full bg-[#eaddcf] text-[#8c7851] flex-shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="sm:w-16 sm:h-16 w-10 h-10">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </div>
+          <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0">
+            <h2 class="text-[#020826] text-lg title-font font-medium mb-2">Life Transitions Coaching</h2>
+            <p class="leading-relaxed text-base text-gray-500">Navigate major life changes with clarity and confidence. From career shifts to personal growth, I provide guidance and practical strategies to help you thrive during transitions. Together, we’ll build resilience, embrace new opportunities, and transform challenges into stepping stones to a more balanced, fulfilling, and empowered life.</p>
+            <a class="mt-3 text-[#8c7851] inline-flex items-center">Learn More
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+    
+      </div>
+    </section>
+    
+
+      <!--calendly section-->
+
+    <section id="calendly" class="bg-[#f9f4ef] py-32">
+      <div class="container mx-auto pt-8 px-6 text-center">
+        <h2 class="text-4xl font-bold text-[#020826] mb-4" data-aos="fade-down">Take the first step today</h2>
+        <p class="text-lg text-gray-700 mb-8" data-aos="fade-up">
+          Scheduling your session is easy. Pick a time that suits you, online or in-person, and let’s start your path to emotional well-being together.
+        </p>
+        <div class="w-full max-w-3xl mx-auto shadow-lg rounded-lg overflow-hidden" data-aos="zoom-in">
+          <iframe 
+            src="https://calendly.com/ruchelpamela/30min" 
+            width="100%" height="600" 
+            frameborder="0">
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <!--testimonials section-->
+
+    <section class="bg-[#f9f4ef]">
+        <div class="container px-6 py-32 mx-auto">
+            <h1 class="text-2xl font-semibold text-center text-[#020826] capitalize lg:text-3xl" data-aos="fade-down">
+              Experiences Shared by my <span class="text-[#DB896B]">patients</span>
+            </h1>
+    
+            <p class="max-w-2xl mx-auto mt-6 text-center text-gray-700" data-aos="fade-down" data-aos-delay="100">
+              Patients often discover inner strengths and tools they never knew they had, gaining confidence and a greater sense of peace each day.
+            </p>
+    
+            <section class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 lg:grid-cols-2 xl:grid-cols-3" data-aos="fade-up">
+                <div class="p-8 border rounded-lg dark:border-gray-700">
+                    <p class="leading-loose text-[#716040]">
+                        “I’ve been seeing Jennifer for a few months, and her guidance has truly changed my life. She listens deeply and helps me understand my feelings in ways I never thought possible. Every session leaves me feeling supported, motivated, and more confident in facing challenges.”
+                    </p>
+    
+                    <div class="flex items-center mt-8 -mx-2">
+                        <img class="object-cover mx-2 rounded-full w-14 shrink-0 h-14 ring-4 ring-gray-300 dark:ring-gray-700" src="https://images.unsplash.com/photo-1695927621677-ec96e048dce2?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+    
+                        <div class="mx-2">
+                            <h1 class="font-semibold text-gray-800">James</h1>
+                            <span class="text-sm text-gray-500">High School Teacher, Riverside Community School</span>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="p-8 border rounded-lg dark:border-gray-700" data-aos="fade-up" data-aos-delay="100">
+                    <p class="leading-loose text-[#716040]">
+                        “Jennifer is an incredible psychologist. Her approach is warm, compassionate, and practical. She helped me navigate anxiety and stress with tools I can use every day. I always leave our sessions feeling calmer, understood, and empowered to take control of my mental health.”
+                    </p>
+    
+                    <div class="flex items-center mt-8 -mx-2">
+                        <img class="object-cover mx-2 rounded-full w-14 shrink-0 h-14 ring-4 ring-gray-300 dark:ring-gray-700" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=761&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+    
+                        <div class="mx-2">
+                            <h1 class="font-semibold text-gray-800">Emma</h1>
+                            <span class="text-sm text-gray-500">Retail Store Manager, CityMart</span>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="p-8 border rounded-lg dark:border-gray-700" data-aos="fade-up" data-aos-delay="200">
+                    <p class="leading-loose text-[#716040]">
+                        “Working with Jennifer has been amazing. She creates a safe space where I can express myself freely and honestly. Her advice is thoughtful, and her encouragement makes me feel stronger and more resilient. I can’t recommend her enough for anyone seeking genuine support and guidance.”
+                    </p>
+    
+                    <div class="flex items-center mt-8 -mx-2">
+                        <img class="object-cover mx-2 rounded-full w-14 shrink-0 h-14 ring-4 ring-gray-300 dark:ring-gray-700" src="https://images.unsplash.com/photo-1692456901043-e4f5cf63091a?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+    
+                        <div class="mx-2">
+                            <h1 class="font-semibold text-gray-800">Sarah</h1>
+                            <span class="text-sm text-gray-500">Nurse, Harmony Health Clinic</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <!--contact section-->
+
+    <section id="contact" class="min-h-screen bg-[#f9f4ef]">
+      <div class="container px-6 py-32 mx-auto">
+          <div class="lg:flex lg:items-center lg:-mx-10">
+              <div class="lg:w-1/2 lg:mx-10">
+                  <h1 class="text-2xl font-semibold text-[#020826] capitalize lg:text-3xl" data-aos="fade-down">Connect with me</h1>
+  
+                  <p class="mt-4 text-gray-700" data-aos="fade-up">
+                    Feel free to reach out with any questions
+                  </p>
+  
+                  <form class="mt-12">
+                      <div class="-mx-2 md:items-center md:flex" data-aos="fade-right">
+                          <div class="flex-1 px-2">
+                              <label class="block mb-2 text-sm text-gray-600">Full Name</label>
+                              <input type="text" placeholder="Emily Carter" class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"/>
+                          </div>
+  
+                          <div class="flex-1 px-2 mt-4 md:mt-0" data-aos="fade-right" data-aos-delay="100">
+                              <label class="block mb-2 text-sm text-gray-600">Email address</label>
+                              <input type="email" placeholder="emilycarter@example.com" class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
+                          </div>
+                      </div>
+  
+                      <div class="w-full mt-4" data-aos="fade-right" data-aos-delay="200">
+                          <label class="block mb-2 text-sm text-gray-600">Message</label>
+                          <textarea class="block w-full h-32 px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md md:h-56 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Message"></textarea>
+                      </div>
+  
+                      <button class="w-full px-6 py-3 mt-4 text-sm font-medium tracking-wide text-[#eaddcf] capitalize transition-colors duration-300 transform bg-[#8c7851] rounded-md hover:bg-[#716040] focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50" data-aos="zoom-in" data-aos-delay="300">
+                        Get in touch
+                      </button>
+                  </form>
+              </div>
+  
+              <div class="mt-12 lg:flex lg:mt-0 lg:flex-col lg:items-center lg:w-1/2 lg:mx-10" data-aos="fade-left">
+                  <img class="hidden object-cover mx-auto rounded-full lg:block shrink-0 w-96 h-96" src="jennifer-in-the-office.png" alt="">
+  
+                  <div class="mt-6 space-y-8 md:mt-8">
+                      <p class="flex items-start -mx-2">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mx-2 text-[#8c7851]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                          </svg>
+  
+                          <span class="mx-2 text-gray-700 truncate w-72">
+                            Fifth Avenue, New York, NY 10118
+                          </span>
+                      </p>
+  
+                      <p class="flex items-start -mx-2">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mx-2 text-[#8c7851]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                          </svg>
+  
+                          <span class="mx-2 text-gray-700 truncate w-72">+1 227 443 2226</span>
+                      </p>
+  
+                      <p class="flex items-start -mx-2">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mx-2 text-[#8c7851]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                              <path stroke-linecap="round" stroke-linejoin="round"  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                          </svg>
+  
+                          <span class="mx-2 text-gray-700 truncate w-72">jenwilliams@gmail.com</span>
+                      </p>
+                  </div>
+  
+                  <div class="mt-6 w-80 md:mt-8">
+                      <h3 class="text-gray-600 dark:text-gray-500 ">Follow me</h3>
+  
+                      <div class="flex mt-4 -mx-1.5 ">
+                          <a class="mx-1.5 text-gray-400 transition-colors duration-300 transform hover:text-[#8c7851]" href="#">
+                              <svg class="w-10 h-10 fill-current" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M18.6668 6.67334C18.0002 7.00001 17.3468 7.13268 16.6668 7.33334C15.9195 6.49001 14.8115 6.44334 13.7468 6.84201C12.6822 7.24068 11.9848 8.21534 12.0002 9.33334V10C9.83683 10.0553 7.91016 9.07001 6.66683 7.33334C6.66683 7.33334 3.87883 12.2887 9.3335 14.6667C8.0855 15.498 6.84083 16.0587 5.3335 16C7.53883 17.202 9.94216 17.6153 12.0228 17.0113C14.4095 16.318 16.3708 14.5293 17.1235 11.85C17.348 11.0351 17.4595 10.1932 17.4548 9.34801C17.4535 9.18201 18.4615 7.50001 18.6668 6.67268V6.67334Z" />
+                              </svg>
+                          </a>
+  
+                          <a class="mx-1.5 text-gray-400 transition-colors duration-300 transform hover:text-[#8c7851]" href="#">
+                              <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M15.2 8.80005C16.4731 8.80005 17.694 9.30576 18.5941 10.2059C19.4943 11.1061 20 12.327 20 13.6V19.2H16.8V13.6C16.8 13.1757 16.6315 12.7687 16.3314 12.4687C16.0313 12.1686 15.6244 12 15.2 12C14.7757 12 14.3687 12.1686 14.0687 12.4687C13.7686 12.7687 13.6 13.1757 13.6 13.6V19.2H10.4V13.6C10.4 12.327 10.9057 11.1061 11.8059 10.2059C12.7061 9.30576 13.927 8.80005 15.2 8.80005Z" fill="currentColor" />
+                                  <path d="M7.2 9.6001H4V19.2001H7.2V9.6001Z" fill="currentColor" />
+                                  <path d="M5.6 7.2C6.48366 7.2 7.2 6.48366 7.2 5.6C7.2 4.71634 6.48366 4 5.6 4C4.71634 4 4 4.71634 4 5.6C4 6.48366 4.71634 7.2 5.6 7.2Z" fill="currentColor" />
+                              </svg>
+                          </a>
+  
+                          <a class="mx-1.5 text-gray-400 transition-colors duration-300 transform hover:text-[#8c7851]" href="#">
+                              <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M7 10.2222V13.7778H9.66667V20H13.2222V13.7778H15.8889L16.7778 10.2222H13.2222V8.44444C13.2222 8.2087 13.3159 7.9826 13.4826 7.81591C13.6493 7.64921 13.8754 7.55556 14.1111 7.55556H16.7778V4H14.1111C12.9324 4 11.8019 4.46825 10.9684 5.30175C10.1349 6.13524 9.66667 7.2657 9.66667 8.44444V10.2222H7Z" fill="currentColor" />
+                              </svg>
+                          </a>
+  
+                          <a class="mx-1.5 text-gray-400 transition-colors duration-300 transform hover:text-[#8c7851]" href="#">
+                              <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M11.9294 7.72275C9.65868 7.72275 7.82715 9.55428 7.82715 11.825C7.82715 14.0956 9.65868 15.9271 11.9294 15.9271C14.2 15.9271 16.0316 14.0956 16.0316 11.825C16.0316 9.55428 14.2 7.72275 11.9294 7.72275ZM11.9294 14.4919C10.462 14.4919 9.26239 13.2959 9.26239 11.825C9.26239 10.354 10.4584 9.15799 11.9294 9.15799C13.4003 9.15799 14.5963 10.354 14.5963 11.825C14.5963 13.2959 13.3967 14.4919 11.9294 14.4919ZM17.1562 7.55495C17.1562 8.08692 16.7277 8.51178 16.1994 8.51178C15.6674 8.51178 15.2425 8.08335 15.2425 7.55495C15.2425 7.02656 15.671 6.59813 16.1994 6.59813C16.7277 6.59813 17.1562 7.02656 17.1562 7.55495ZM19.8731 8.52606C19.8124 7.24434 19.5197 6.10901 18.5807 5.17361C17.6453 4.23821 16.51 3.94545 15.2282 3.88118C13.9073 3.80621 9.94787 3.80621 8.62689 3.88118C7.34874 3.94188 6.21341 4.23464 5.27444 5.17004C4.33547 6.10544 4.04628 7.24077 3.98201 8.52249C3.90704 9.84347 3.90704 13.8029 3.98201 15.1238C4.04271 16.4056 4.33547 17.5409 5.27444 18.4763C6.21341 19.4117 7.34517 19.7045 8.62689 19.7687C9.94787 19.8437 13.9073 19.8437 15.2282 19.7687C16.51 19.708 17.6453 19.4153 18.5807 18.4763C19.5161 17.5409 19.8089 16.4056 19.8731 15.1238C19.9481 13.8029 19.9481 9.84704 19.8731 8.52606ZM18.1665 16.5412C17.8881 17.241 17.349 17.7801 16.6456 18.0621C15.5924 18.4799 13.0932 18.3835 11.9294 18.3835C10.7655 18.3835 8.26272 18.4763 7.21307 18.0621C6.51331 17.7837 5.9742 17.2446 5.69215 16.5412C5.27444 15.488 5.37083 12.9888 5.37083 11.825C5.37083 10.6611 5.27801 8.15832 5.69215 7.10867C5.97063 6.40891 6.50974 5.8698 7.21307 5.58775C8.26629 5.17004 10.7655 5.26643 11.9294 5.26643C13.0932 5.26643 15.596 5.17361 16.6456 5.58775C17.3454 5.86623 17.8845 6.40534 18.1665 7.10867C18.5843 8.16189 18.4879 10.6611 18.4879 11.825C18.4879 12.9888 18.5843 15.4916 18.1665 16.5412Z" fill="currentColor" />
+                              </svg>
+                          </a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <!--footer-->
+
+  <footer class="bg-[#eaddcf] text-[#020826] py-12" data-aos="fade-up">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <p class="text-sm text-[#020826]">&copy; 2025 Jennifer Williams · Psychologist</p>
+    </div>
+  </footer>
+  
+<!--cookies-->
+
+<section id="cookie-banner" class="fixed bottom-0 w-full bg-[#a69380] z-50">
+  <div class="max-w-5xl mx-auto px-4 py-4 flex items-center justify-center sm:justify-between text-[#020826]">
+    
+    <div class="flex items-center justify-center gap-3 flex-wrap text-left">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+        class="w-5 h-5 sm:w-6 sm:h-6 shrink-0 text-[#020826]">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+      </svg>
+
+      <p class="text-sm sm:text-base leading-relaxed break-words max-w-full sm:max-w-3xl">
+        We use cookies to enhance your experience. By continuing to visit this site you agree to 
+        <a href="#" class="underline transition-colors duration-200 hover:text-[#eaddcf]">our use of cookies</a>.
+      </p>
+
+      <button id="close-cookie"
+        class="flex items-center justify-center w-8 h-8 rounded-full text-[#020826] hover:bg-[#8c7851] transition-colors duration-300 focus:outline-none shrink-0">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+          <path
+            d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
+        </svg>
+      </button>
+    </div>
+
+  </div>
+</section>
+  
+  <script>
+    const cookieBanner = document.getElementById('cookie-banner');
+    const closeBtn = document.getElementById('close-cookie');
+  
+    closeBtn.addEventListener('click', () => {
+      cookieBanner.style.display = 'none';
+    });
+  </script>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true, 
+  });
+</script>
+
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const menu = document.getElementById('menu');
+
+  menuBtn.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
+</script>
+
+
+</body>
+</html>
