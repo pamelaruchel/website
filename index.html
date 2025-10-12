@@ -255,7 +255,7 @@
   <div class="max-w-6xl mx-auto grid gap-8 sm:grid-cols-2 lg:grid-cols-2">
     <div class="bg-[#1f2937] p-6 rounded-2xl shadow-md hover:shadow-blue-400 transition-all duration-300" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="700">
       <h3 class="text-lg font-semibold mb-2">Custom Design</h3>
-      <p class="text-gray-300">Your website will reflect your unique brand and personality, instead of relying on generic templates. A design that builds trust and makes you stand out online.</p>
+      <p class="text-gray-300">Your website will reflect your unique brand and personality, instead of relying on generic templates. It will feature a design that builds trust and helps you stand out online.</p>
     </div>
     
     <div class="bg-[#1f2937] p-6 rounded-2xl shadow-md hover:shadow-blue-400 transition-all duration-300" data-aos="zoom-in" data-aos-delay="200">
@@ -852,13 +852,11 @@
           ${p.key}: ${todayVal} <span>${arrow}</span>
         </span>`;
       });
-  
-      // cria ticker infinito
+
       function createLoop() {
-        tickerTrack.innerHTML = html + html; // duplica inicialmente
+        tickerTrack.innerHTML = html + html;
         const items = Array.from(tickerTrack.children);
   
-        // garante largura suficiente para mobile
         while (tickerTrack.scrollWidth < window.innerWidth * 4) {
           items.forEach(i => tickerTrack.appendChild(i.cloneNode(true)));
         }
@@ -867,11 +865,10 @@
       createLoop();
   
       let pos = 0;
-      const speed = 0.7; // ajuste manual da velocidade
+      const speed = 0.7; 
   
       function animateTicker() {
         pos -= speed;
-        // reseta suavemente usando módulo da largura de um conjunto original
         const widthOriginal = tickerTrack.scrollWidth / 2;
         if (Math.abs(pos) >= widthOriginal) pos = pos % widthOriginal;
         tickerTrack.style.transform = `translateX(${pos}px)`;
