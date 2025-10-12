@@ -839,19 +839,13 @@
       let html = "";
       const delta = 0.0001;
   
-      pairs.forEach((p) => {
+      pairs.forEach(p => {
         if (!p.today || !p.yesterday) return;
-  
         let arrow = "▬";
         let state = "neutral";
   
-        if (p.today > p.yesterday + delta) {
-          arrow = "▲";
-          state = "up";
-        } else if (p.today < p.yesterday - delta) {
-          arrow = "▼";
-          state = "down";
-        }
+        if (p.today > p.yesterday + delta) { arrow = "▲"; state = "up"; }
+        else if (p.today < p.yesterday - delta) { arrow = "▼"; state = "down"; }
   
         const todayVal = p.today.toFixed(p.key.includes("JPY") ? 4 : 2);
         html += `<span class="ticker-item ${state}">
@@ -859,27 +853,27 @@
         </span>`;
       });
   
-      tickerTrack.innerHTML = html;
+      // cria ticker infinito
+      function createLoop() {
+        tickerTrack.innerHTML = html + html; // duplica inicialmente
+        const items = Array.from(tickerTrack.children);
   
-      const originalItems = Array.from(tickerTrack.children);
-      function fillTicker() {
-        tickerTrack.innerHTML = "";
-        originalItems.forEach(i => tickerTrack.appendChild(i.cloneNode(true)));
-  
-        let currentItems = Array.from(tickerTrack.children);
+        // garante largura suficiente para mobile
         while (tickerTrack.scrollWidth < window.innerWidth * 4) {
-          currentItems.forEach(i => tickerTrack.appendChild(i.cloneNode(true)));
-          currentItems = Array.from(tickerTrack.children);
+          items.forEach(i => tickerTrack.appendChild(i.cloneNode(true)));
         }
       }
   
-      fillTicker();
+      createLoop();
   
       let pos = 0;
-      const speed = 0.7; 
+      const speed = 0.7; // ajuste manual da velocidade
+  
       function animateTicker() {
         pos -= speed;
-        if (Math.abs(pos) >= tickerTrack.scrollWidth / 2) pos = 0;
+        // reseta suavemente usando módulo da largura de um conjunto original
+        const widthOriginal = tickerTrack.scrollWidth / 2;
+        if (Math.abs(pos) >= widthOriginal) pos = pos % widthOriginal;
         tickerTrack.style.transform = `translateX(${pos}px)`;
         requestAnimationFrame(animateTicker);
       }
@@ -887,7 +881,7 @@
   
       window.addEventListener("resize", () => {
         pos = 0;
-        fillTicker();
+        createLoop();
       });
   
     } catch (err) {
@@ -895,7 +889,7 @@
       tickerTrack.innerHTML = `<span class="ticker-item neutral">Error loading market data</span>`;
     }
   })();
-  </script>
+  </script>  
 </body>
 
 </html>
