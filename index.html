@@ -129,10 +129,38 @@
       width: max-content;
       animation: marquee 30s linear infinite;
     }
+
+    .ticker-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+#ticker-track {
+  display: inline-flex;
+  white-space: nowrap;
+  will-change: transform;
+}
+
+.ticker-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0 1.5rem;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  white-space: nowrap;
+  color: #9ca3af;
+}
+
+.ticker-item.up { color: #34d399; }   
+.ticker-item.down { color: #f87171; } 
+.ticker-item.neutral { color: #9ca3af; }
   </style>
 </head>
 
 <body>
+  <div class="w-full bg-black text-gray-300 text-sm border-b border-gray-800 overflow-hidden relative ticker-container">
+    <div id="ticker-track"></div>
+  </div>
 
   <header style="padding: 1.2rem; background:var(--cor-principal);" class="relative w-full flex items-center justify-between z-[100]">
     <a href="https://pamelaruchel.github.io/site/" class="logo text-sm sm:text-base" style="font-family:'space-age', sans-serif; font-size:2rem; color:var(--text-color); cursor:default; margin-bottom:10px;">
@@ -275,8 +303,10 @@
       Building with standards seen in
     </p>
 
+    <!-- container do marquee -->
     <div class="relative w-full overflow-hidden" data-aos="zoom-in" data-aos-delay="200">
       <div class="flex animate-marquee">
+        <!--primeira-->
         <div class="flex space-x-8">
           <div class="h-16 w-32 flex items-center justify-center shrink-0">
             <img src="images/inc.png" alt="Inc." class="max-h-12 max-w-full object-contain opacity-70 scale-75">
@@ -325,7 +355,7 @@
           </div>
         </div>
 
-        <!-- segunda repetição -->
+        <!--repetição-->
         <div class="flex space-x-8">
           <div class="h-16 w-32 flex items-center justify-center shrink-0">
             <img src="images/inc.png" alt="Inc." class="max-h-12 max-w-full object-contain opacity-70 scale-75">
@@ -749,7 +779,113 @@
     })();
     </script>
 
+<script>
+  (async function () {
+    const tickerTrack = document.getElementById("ticker-track");
+  
+    function getDateOffset(days) {
+      const d = new Date();
+      d.setDate(d.getDate() + days);
+      const y = d.getUTCFullYear();
+      const m = String(d.getUTCMonth() + 1).padStart(2, "0");
+      const dayNum = String(d.getUTCDate()).padStart(2, "0");
+      return `${y}-${m}-${dayNum}`;
+    }
+  
+    const now = new Date();
+    const day = now.getUTCDay(); 
+    let todayDate, yesterdayDate;
+  
+    if (day === 0) { 
+      todayDate = getDateOffset(-2); 
+      yesterdayDate = getDateOffset(-3); 
+    } else if (day === 6) { 
+      todayDate = getDateOffset(-1); 
+      yesterdayDate = getDateOffset(-2); 
+    } else if (day === 1) { 
+      todayDate = getDateOffset(0);  
+      yesterdayDate = getDateOffset(-3); 
+    } else {
+      todayDate = getDateOffset(0);
+      yesterdayDate = getDateOffset(-1);
+    }
+  
+    try {
+      const [todayRes, yesterdayRes] = await Promise.all([
+        fetch(`https://api.frankfurter.app/${todayDate}?from=USD`),
+        fetch(`https://api.frankfurter.app/${yesterdayDate}?from=USD`)
+      ]);
+  
+      const today = await todayRes.json();
+      const yesterday = await yesterdayRes.json();
+  
+      const pairs = [
+        { key: "USD / BRL", today: today.rates.BRL, yesterday: yesterday.rates.BRL },
+        { key: "EUR / USD", today: 1 / today.rates.EUR, yesterday: 1 / yesterday.rates.EUR },
+        { key: "GBP / USD", today: 1 / today.rates.GBP, yesterday: 1 / yesterday.rates.GBP },
+        { key: "JPY / USD", today: 1 / today.rates.JPY, yesterday: 1 / yesterday.rates.JPY },
+        { key: "USD / MXN", today: today.rates.MXN, yesterday: yesterday.rates.MXN },
+        { key: "USD / CNY", today: today.rates.CNY, yesterday: yesterday.rates.CNY },
+        { key: "USD / INR", today: today.rates.INR, yesterday: yesterday.rates.INR }
+      ];
+  
+      let html = "";
+      const delta = 0.0001;
+  
+      pairs.forEach((p) => {
+        if (!p.today || !p.yesterday) return;
+  
+        let arrow = "▬";
+        let state = "neutral";
+  
+        if (p.today > p.yesterday + delta) {
+          arrow = "▲";
+          state = "up";
+        } else if (p.today < p.yesterday - delta) {
+          arrow = "▼";
+          state = "down";
+        }
+  
+        const todayVal = p.today.toFixed(p.key.includes("JPY") ? 4 : 2);
+        html += `<span class="ticker-item ${state}">
+          ${p.key}: ${todayVal} <span>${arrow}</span>
+        </span>`;
+      });
+  
+      // adiciona repetição até preencher 2x largura da tela
+      tickerTrack.innerHTML = html;
+      const items = Array.from(tickerTrack.children);
+      while (tickerTrack.scrollWidth < window.innerWidth * 2) {
+        items.forEach(i => tickerTrack.appendChild(i.cloneNode(true)));
+      }
+  
+      // animação infinita
+      let pos = 0;
+      const speed = 1; // px por frame, ajusta aqui
+      function animateTicker() {
+        pos -= speed;
+        if (Math.abs(pos) >= tickerTrack.scrollWidth / 2) pos = 0;
+        tickerTrack.style.transform = `translateX(${pos}px)`;
+        requestAnimationFrame(animateTicker);
+      }
+      animateTicker();
+  
+      // ajusta ao redimensionar a tela
+      window.addEventListener("resize", () => {
+        pos = 0;
+        tickerTrack.innerHTML = html;
+        const items = Array.from(tickerTrack.children);
+        while (tickerTrack.scrollWidth < window.innerWidth * 2) {
+          items.forEach(i => tickerTrack.appendChild(i.cloneNode(true)));
+        }
+      });
+  
+    } catch (err) {
+      console.error("Erro ao carregar cotações", err);
+      tickerTrack.innerHTML = `<span class="ticker-item neutral">Error loading market data</span>`;
+    }
+  })();
+  </script>
 </body>
-
 
 </html>
