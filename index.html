@@ -826,7 +826,14 @@
         { key: "JPY / USD", today: 1 / today.rates.JPY, yesterday: 1 / yesterday.rates.JPY },
         { key: "USD / MXN", today: today.rates.MXN, yesterday: yesterday.rates.MXN },
         { key: "USD / CNY", today: today.rates.CNY, yesterday: yesterday.rates.CNY },
-        { key: "USD / INR", today: today.rates.INR, yesterday: yesterday.rates.INR }
+        { key: "USD / INR", today: today.rates.INR, yesterday: yesterday.rates.INR },
+        { key: "USD / AUD", today: today.rates.AUD, yesterday: yesterday.rates.AUD },
+        { key: "USD / CAD", today: today.rates.CAD, yesterday: yesterday.rates.CAD },
+        { key: "USD / CHF", today: today.rates.CHF, yesterday: yesterday.rates.CHF },
+        { key: "USD / NZD", today: today.rates.NZD, yesterday: yesterday.rates.NZD },
+        { key: "USD / SEK", today: today.rates.SEK, yesterday: yesterday.rates.SEK },
+        { key: "USD / NOK", today: today.rates.NOK, yesterday: yesterday.rates.NOK },
+        { key: "USD / ZAR", today: today.rates.ZAR, yesterday: yesterday.rates.ZAR }
       ];
   
       let html = "";
@@ -860,7 +867,7 @@
         originalItems.forEach(i => tickerTrack.appendChild(i.cloneNode(true)));
   
         let currentItems = Array.from(tickerTrack.children);
-        while (tickerTrack.scrollWidth < window.innerWidth * 2) {
+        while (tickerTrack.scrollWidth < window.innerWidth * 4) {
           currentItems.forEach(i => tickerTrack.appendChild(i.cloneNode(true)));
           currentItems = Array.from(tickerTrack.children);
         }
