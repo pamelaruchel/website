@@ -851,17 +851,21 @@
           ${p.key}: ${todayVal} <span>${arrow}</span>
         </span>`;
       });
-  
-      // adiciona repetição até preencher 2x largura da tela
-      tickerTrack.innerHTML = html;
-      const items = Array.from(tickerTrack.children);
-      while (tickerTrack.scrollWidth < window.innerWidth * 2) {
-        items.forEach(i => tickerTrack.appendChild(i.cloneNode(true)));
+
+      function populateTicker() {
+        tickerTrack.innerHTML = html;
+        let items = Array.from(tickerTrack.children);
+
+        // duplicar continuamente até preencher bem a tela e garantir loop infinito
+        while (tickerTrack.scrollWidth < window.innerWidth * 3) {
+          items.forEach(i => tickerTrack.appendChild(i.cloneNode(true)));
+        }
       }
-  
-      // animação infinita
+
+      populateTicker();
+
       let pos = 0;
-      const speed = 1; // px por frame, ajusta aqui
+      const speed = 0.7; 
       function animateTicker() {
         pos -= speed;
         if (Math.abs(pos) >= tickerTrack.scrollWidth / 2) pos = 0;
@@ -870,14 +874,9 @@
       }
       animateTicker();
   
-      // ajusta ao redimensionar a tela
       window.addEventListener("resize", () => {
         pos = 0;
-        tickerTrack.innerHTML = html;
-        const items = Array.from(tickerTrack.children);
-        while (tickerTrack.scrollWidth < window.innerWidth * 2) {
-          items.forEach(i => tickerTrack.appendChild(i.cloneNode(true)));
-        }
+        populateTicker(); 
       });
   
     } catch (err) {
@@ -885,7 +884,7 @@
       tickerTrack.innerHTML = `<span class="ticker-item neutral">Error loading market data</span>`;
     }
   })();
-  </script>
+</script>
 </body>
 
 </html>
