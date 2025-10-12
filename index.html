@@ -851,19 +851,23 @@
           ${p.key}: ${todayVal} <span>${arrow}</span>
         </span>`;
       });
-
-      function populateTicker() {
-        tickerTrack.innerHTML = html;
-        let items = Array.from(tickerTrack.children);
-
-        // duplicar continuamente até preencher bem a tela e garantir loop infinito
-        while (tickerTrack.scrollWidth < window.innerWidth * 3) {
-          items.forEach(i => tickerTrack.appendChild(i.cloneNode(true)));
+  
+      tickerTrack.innerHTML = html;
+  
+      const originalItems = Array.from(tickerTrack.children);
+      function fillTicker() {
+        tickerTrack.innerHTML = "";
+        originalItems.forEach(i => tickerTrack.appendChild(i.cloneNode(true)));
+  
+        let currentItems = Array.from(tickerTrack.children);
+        while (tickerTrack.scrollWidth < window.innerWidth * 2) {
+          currentItems.forEach(i => tickerTrack.appendChild(i.cloneNode(true)));
+          currentItems = Array.from(tickerTrack.children);
         }
       }
-
-      populateTicker();
-
+  
+      fillTicker();
+  
       let pos = 0;
       const speed = 0.7; 
       function animateTicker() {
@@ -876,7 +880,7 @@
   
       window.addEventListener("resize", () => {
         pos = 0;
-        populateTicker(); 
+        fillTicker();
       });
   
     } catch (err) {
@@ -884,7 +888,7 @@
       tickerTrack.innerHTML = `<span class="ticker-item neutral">Error loading market data</span>`;
     }
   })();
-</script>
+  </script>
 </body>
 
 </html>
