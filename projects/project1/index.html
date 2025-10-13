@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Cardo:wght@400;700&family=Mulish:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cardo:wght@400;700&family=Mulish:wght@300;400;500;600&display=swap" rel="stylesheet">
   
   
       <style>
@@ -206,13 +206,51 @@
             font-size: 0.85rem;
             }
 }
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+nav, #menu-wrapper, #menu {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+/* garante que nada fique estourando em telas pequenas */
+@media (max-width: 1023px) {
+  #menu-wrapper {
+    left: 0 !important;
+    right: 0 !important;
+  }
+}
+
+/* em telas grandes, restabelece fluxo normal */
+@media (min-width: 1024px) {
+  #menu-wrapper {
+    position: static !important;
+    overflow: visible !important;
+  }
+}
+
+/* Impede o footer e seus filhos de ultrapassar a viewport */
+footer, footer * {
+  max-width: 100vw !important;
+  overflow-x: clip !important;
+  word-break: break-word !important;
+}
+
     </style>
 </head>
 
-<body class="overflow-x-hidden max-w-[100vw]">
+<body class="overflow-x-hidden">
 
-  <nav class="bg-[#f9f4ef] fixed w-full pt-3 top-0 left-0 z-50">
-    <div class="max-w-screen-xl flex items-center justify-between mx-auto p-4 relative">
+  <nav class="bg-[#f9f4ef] fixed inset-x-0 top-0 pt-3 z-50 overflow-x-clip">
+    <div class="flex items-center justify-between w-full px-4 sm:px-6 lg:px-8 relative">
   
       <a href="#home" class="text-[#020826] text-3xl pt-1.5 font-[Parisienne]">
         Jennifer Williams
@@ -227,8 +265,7 @@
           </svg>
         </button>
   
-        <div id="menu-wrapper"
-          class="absolute right-0 top-full mt-2 max-w-[90vw] overflow-hidden lg:static lg:!block">
+        <div id="menu-wrapper" class="absolute left-0 right-0 top-full mt-2 px-4 w-full overflow-x-clip overflow-y-visible lg:static lg:!block">
           <div id="menu"
             class="hidden w-44 bg-[#f9f4ef] rounded-lg shadow-lg flex flex-col space-y-3 p-3 z-50
             lg:flex lg:flex-row lg:items-center lg:space-y-0 lg:space-x-8 lg:shadow-none lg:bg-transparent lg:w-auto lg:p-0">
@@ -608,6 +645,41 @@
     </div>
   </footer>
   
+<!--cookies-->
+
+<section id="cookie-banner" class="fixed bottom-0 left-0 right-0 w-full overflow-x-hidden bg-[#a69380] z-50">
+  <div class="max-w-5xl mx-auto px-4 py-4 flex items-center justify-center sm:justify-between text-[#020826]">
+    
+    <div class="flex items-center justify-center gap-3 flex-wrap text-left">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+        class="w-5 h-5 sm:w-6 sm:h-6 shrink-0 text-[#020826]">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+      </svg>
+
+      <p class="text-sm sm:text-base leading-relaxed break-words max-w-full sm:max-w-3xl">
+        We use cookies to enhance your experience. By continuing to visit this site you agree to 
+        <a href="#" class="underline transition-colors duration-200 hover:text-[#eaddcf]">our use of cookies</a>.
+      </p>
+
+      <button id="close-cookie"
+        class="flex items-center justify-center w-8 h-8 rounded-full text-[#020826] hover:bg-[#8c7851] transition-colors duration-300 focus:outline-none shrink-0">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+          <path
+            d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
+        </svg>
+      </button>
+      <style>
+        #cookie-banner {
+  overflow-y: hidden;
+  will-change: transform;
+}
+      </style>
+    </div>
+
+  </div>
+</section>
+  
   <script>
     const cookieBanner = document.getElementById('cookie-banner');
     const closeBtn = document.getElementById('close-cookie');
@@ -633,6 +705,5 @@
   });
 </script>
 </body>
-
 
 </html>
