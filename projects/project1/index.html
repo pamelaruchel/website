@@ -6,296 +6,194 @@
     <title>Dr. Jennifer Williams</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cardo:wght@400;700&family=Mulish:wght@300;400;500;600&display=swap" rel="stylesheet">
   
   
-      <style>
+    <style>
 
-            @media (max-width: 640px) {
-              .px-4, .px-5, .px-6, .px-8 {
-              padding-left: 1rem !important;
-              padding-right: 1rem !important;
-              }
-            }
-
-            svg, img {
-              max-width: 100% !important;
-              height: auto;
-            }
-
-            [class*="-mx-"] { max-width: 100vw; }
-
-
-            #menu-wrapper, #menu { max-width: 100vw; overflow-x: hidden; }
-
-
-            h1, h2, h3, h4, h5, h6 { font-family: 'Cardo', serif; }
-            body, p, span, a, li { font-family: 'Mulish', sans-serif; }
-
-            body {
-            overflow-x: hidden;
-            }
-
+      * { box-sizing: border-box; }
+      
+      html, body {
+        margin: 0;
+        padding: 0;
+        overflow-x: clip;
+        -webkit-overflow-scrolling: touch;
+        max-width: 100vw;
+        overscroll-behavior-x: none;
+      }
+      
+      img, svg {
+        display: block;
+        max-width: 100%;
+        height: auto;
+      }
+      
+      @media (max-width: 640px) {
+        .px-4, .px-5, .px-6, .px-8 {
+          padding-left: 1rem !important;
+          padding-right: 1rem !important;
+        }
+      }
+      
+      [class*="-mx-"] { max-width: 100vw; }
+      
+      h1,h2,h3,h4,h5,h6 { font-family: 'Cardo', serif; }
+      body, p, span, a, li { font-family: 'Mulish', sans-serif; }
+      
+      .floating-image,
+      .decorative,
+      .absolute {
+        max-width: 100vw;
+        overflow-x: clip;
+      }
+      
+      iframe {
+        min-width: 0;
+        width: 100%;
+        overflow-x: hidden;
+      }
+      
+      /* NAV — comportamento geral */
+      nav,
+      #menu-wrapper,
+      #menu {
+        max-width: 100%;
+        overflow: visible !important;
+        position: absolute;
+        z-index: 9999;
+      }
+      
+      /* Ajustes mobile */
+      @media (max-width: 1023px) {
+        #menu-wrapper { left: 0 !important; right: 0 !important; }
+        #menu { right: 0.75rem !important; left: auto !important; transform: none !important; }
+      }
+      
+      /* Ajustes desktop — AQUI ESTÁ A CORREÇÃO */
+      @media (min-width: 1024px) {
+        #menu-wrapper {
+          position: static !important;
+          overflow: visible !important;
+        }
+        #menu {
+          position: static !important; /* <- Corrige o menu baixo */
+          background: transparent !important;
+          box-shadow: none !important;
+          display: flex !important;
+          align-items: center !important;
+          gap: 0.1rem !important;
+          padding: 0 !important;
+          top: auto !important;
+          left: auto !important;
+        }
+      }
+      
+      footer, footer * {
+        max-width: 100vw !important;
+        overflow-x: clip !important;
+        word-break: break-word !important;
+      }
+      
+      /* Layouts responsivos */
       @media (min-width: 630px) and (max-width: 767px) {
-            #home {
-            min-height: 60vh; 
-            padding-top: 16rem; 
-            padding-bottom: 10rem; 
-            }
-
-            #home h1 {
-            font-size: 2.5rem;
-            line-height: 1.25;
-            text-align: center;
-            }
-
-            #home p {
-            font-size: 1.2rem;
-            line-height: 1.6;
-            text-align: center;
-            margin: 1rem auto 0 auto; 
-            max-width: 90%;
-            }
-
-            #home .mt-8 {
-            margin-top: 2rem;
-            justify-content: center;
-            display: flex;
-            flex-direction: row;
-            }
-
-            #home img {
-            display: none;
-            }
-
-            #about {
-            padding-top: 3rem; 
-            }
-
-            #menu li a {
-              font-size: 1.3rem;
-            }
-            }
-
+        #home { min-height: 60vh; padding-top: 16rem; padding-bottom: 10rem; }
+        #home h1 { font-size: 2.5rem; line-height: 1.25; text-align: center; }
+        #home p { font-size: 1.2rem; line-height: 1.6; text-align: center; margin: 1rem auto 0 auto; max-width: 90%; }
+        #home .mt-8 { margin-top: 2rem; justify-content: center; display: flex; flex-direction: row; }
+        #home img { display: none; }
+        #about { padding-top: 3rem; }
+        #menu li a { font-size: 1.3rem; }
+      }
+      
       @media (max-width: 450px) {
-
-            nav a {
-            font-size: 0.75rem; 
-            margin: 0 0.25rem;  
-            }
-
-            nav .p-6 {
-            padding: 1rem;
-            }
-
-            #home {
-            min-height: 70vh;
-            padding-top: 12rem;
-            padding-bottom: 1rem;
-            }
-
-            #home h1 {
-            font-size: 1.75rem; 
-            line-height: 1.2;
-            }
-
-            #menu li a {
-            font-size: 1rem;
-            }
-
-            #home p {
-            font-size: 0.9rem; 
-            line-height: 1.5;
-            max-width: 95%;
-            margin: 0.5rem auto;
-            }
-
-            #home .mt-8 a {
-            padding: 0.5rem 1rem; 
-            font-size: 0.85rem;
-            }
-
-            #about h2 {
-            font-size: 1.5rem; 
-            }
-
-            #about p {
-            font-size: 0.9rem;
-            line-height: 1.5;
-            }
-
-            #services h2 {
-            font-size: 1rem;
-            }
-
-            #services p {
-            font-size: 0.85rem;
-            }
-
-            #calendly h2 {
-            font-size: 1.5rem;
-            }
-
-            #calendly p {
-            font-size: 0.9rem;
-            }
-
-            .testimonials h1 {
-            font-size: 1.25rem;
-            }
-
-            .testimonials p {
-            font-size: 0.9rem;
-            }
-
-            #contact h1 {
-            font-size: 1.5rem;
-            }
-
-            #contact p,
-            #contact label,
-            #contact input,
-            #contact textarea {
-            font-size: 0.9rem;
-            }
-
-            footer p {
-            font-size: 0.75rem;
-            }
-            }
-
-            #menu-wrapper { overflow-x: hidden; }
-
-            @media (max-width: 629px) {
-
-            nav a {
-            font-size: 0.85rem; 
-            margin: 0 0.25rem;  
-            }
-
-            nav .p-6 {
-            padding: 1rem;
-            }
-
-            #home {
-            min-height: 70vh;
-            padding-top: 15rem;
-            padding-bottom: 1rem;
-            }
-
-            #home h1 {
-            font-size: 1.9rem; 
-            line-height: 1.2;
-            }
-
-            #menu li a {
-            font-size: 1rem;
-            }
-
-            #home p {
-            font-size: 1rem; 
-            line-height: 1.5;
-            max-width: 95%;
-            margin: 0.5rem auto;
-            }
-
-            #home .mt-8 a {
-            padding: 0.5rem 1rem; 
-            font-size: 0.85rem;
-            }
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html, body {
-  overflow-x: hidden;
-  width: 100%;
-}
-
-nav, #menu-wrapper, #menu {
-  max-width: 100%;
-  overflow-x: clip;
-}
-
-/* garante que nada fique estourando em telas pequenas */
-@media (max-width: 1023px) {
-  #menu-wrapper {
-    left: 0 !important;
-    right: 0 !important;
-  }
-}
-
-/* em telas grandes, restabelece fluxo normal */
-@media (min-width: 1024px) {
-  #menu-wrapper {
-    position: static !important;
-    overflow: visible !important;
-  }
-}
-
-/* Impede o footer e seus filhos de ultrapassar a viewport */
-footer, footer * {
-  max-width: 100vw !important;
-  overflow-x: clip !important;
-  word-break: break-word !important;
-}
-
-    </style>
+        nav a { font-size: 0.75rem; margin: 0 0.25rem; }
+        nav .p-6 { padding: 1rem; }
+        #home { min-height: 70vh; padding-top: 12rem; padding-bottom: 1rem; }
+        #home h1 { font-size: 1.75rem; line-height: 1.2; }
+        #menu li a { font-size: 1rem; }
+        #home p { font-size: 0.9rem; line-height: 1.5; max-width: 95%; margin: 0.5rem auto; }
+        #home .mt-8 a { padding: 0.5rem 1rem; font-size: 0.85rem; }
+        #about h2 { font-size: 1.5rem; }
+        #about p { font-size: 0.9rem; line-height: 1.5; }
+        #services h2 { font-size: 1rem; }
+        #services p { font-size: 0.85rem; }
+        #calendly h2 { font-size: 1.5rem; }
+        #calendly p { font-size: 0.9rem; }
+        .testimonials h1 { font-size: 1.25rem; }
+        .testimonials p { font-size: 0.9rem; }
+        #contact h1 { font-size: 1.5rem; }
+        #contact p, #contact label, #contact input, #contact textarea { font-size: 0.9rem; }
+        footer p { font-size: 0.75rem; }
+      }
+      
+      @media (max-width: 629px) {
+        nav a { font-size: 0.85rem; margin: 0 0.25rem; }
+        nav .p-6 { padding: 1rem; }
+        #home { min-height: 70vh; padding-top: 15rem; padding-bottom: 1rem; }
+        #home h1 { font-size: 1.9rem; line-height: 1.2; }
+        #menu li a { font-size: 1rem; }
+        #home p { font-size: 1rem; line-height: 1.5; max-width: 95%; margin: 0.5rem auto; }
+        #home .mt-8 a { padding: 0.5rem 1rem; font-size: 0.85rem; }
+      }
+      
+      /* Impede deslocamentos no clique */
+      nav {
+        transform: none !important;
+        transition: none !important;
+      }
+      
+      </style>
+      
 </head>
 
 <body class="overflow-x-hidden">
 
-  <nav class="bg-[#f9f4ef] fixed inset-x-0 top-0 pt-3 z-50 overflow-x-clip">
+  <nav class="bg-[#f9f4ef] fixed inset-x-0 top-0 pt-3 z-50">
     <div class="flex items-center justify-between w-full px-4 sm:px-6 lg:px-8 relative">
-  
+      
+      <!-- Logo -->
       <a href="#home" class="text-[#020826] text-3xl pt-1.5 font-[Parisienne]">
         Jennifer Williams
       </a>
   
-      <div class="relative">
-        <button id="menu-btn" class="p-2 bg-[#f9f4ef] rounded-md shadow-md lg:hidden">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none"
-            viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
+      <!-- Botão menu -->
+      <button id="menu-btn"
+        class="p-2 bg-[#f9f4ef] rounded-md shadow-md lg:hidden relative z-[60]">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none"
+          viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
   
-        <div id="menu-wrapper" class="absolute left-0 right-0 top-full mt-2 px-4 w-full overflow-x-clip overflow-y-visible lg:static lg:!block">
-          <div id="menu"
-            class="hidden w-44 bg-[#f9f4ef] rounded-lg shadow-lg flex flex-col space-y-3 p-3 z-50
-            lg:flex lg:flex-row lg:items-center lg:space-y-0 lg:space-x-8 lg:shadow-none lg:bg-transparent lg:w-auto lg:p-0">
+      <!-- Menu -->
+      <div id="menu"
+        class="hidden fixed top-[64px] right-4 bg-[#f9f4ef] rounded-lg shadow-lg flex flex-col space-y-3 p-3 z-[70]
+        lg:static lg:flex lg:flex-row lg:items-center lg:space-y-0 lg:space-x-8 lg:shadow-none lg:bg-transparent lg:p-0">
   
-            <a href="#home"
-              class="relative pb-1 text-[#020826] text-base lg:text-lg font-semibold after:hidden lg:after:block after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-full after:bg-[#8c7851]">
-              Home
-            </a>
+        <a href="#home"
+          class="relative pb-1 text-[#020826] text-base lg:text-lg font-semibold after:hidden lg:after:block after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-full after:bg-[#8c7851]">
+          Home
+        </a>
   
-            <a href="#about"
-              class="relative pb-1 text-[#020826] text-base lg:text-lg hover:text-[#8c7851] after:hidden lg:after:block after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[#8c7851] after:transition-all hover:after:w-full">
-              About Me
-            </a>
+        <a href="#about"
+          class="relative pb-1 text-[#020826] text-base lg:text-lg hover:text-[#8c7851] after:hidden lg:after:block after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[#8c7851] after:transition-all hover:after:w-full">
+          About Me
+        </a>
   
-            <a href="#services"
-              class="relative pb-1 text-[#020826] text-base lg:text-lg hover:text-[#8c7851] after:hidden lg:after:block after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[#8c7851] after:transition-all hover:after:w-full">
-              My Work
-            </a>
+        <a href="#services"
+          class="relative pb-1 text-[#020826] text-base lg:text-lg hover:text-[#8c7851] after:hidden lg:after:block after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[#8c7851] after:transition-all hover:after:w-full">
+          My Work
+        </a>
   
-            <a href="#contact"
-              class="relative pb-1 text-[#020826] text-base lg:text-lg hover:text-[#8c7851] after:hidden lg:after:block after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[#8c7851] after:transition-all hover:after:w-full">
-              Contact
-            </a>
-          </div>
-        </div>
+        <a href="#contact"
+          class="relative pb-1 text-[#020826] text-base lg:text-lg hover:text-[#8c7851] after:hidden lg:after:block after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[#8c7851] after:transition-all hover:after:w-full">
+          Contact
+        </a>
       </div>
     </div>
-  </nav>
-  
-  
+  </nav>  
   
   <section id="home" class="bg-[#f9f4ef] pt-24 min-h-[80vh] md:min-h-screen flex items-center relative overflow-hidden">
 
@@ -541,35 +439,35 @@ footer, footer * {
               <div class="lg:w-1/2 lg:mx-10">
                   <h1 class="text-2xl font-semibold text-[#020826] capitalize lg:text-3xl" data-aos="fade-down">Connect with me</h1>
   
-                  <p class="mt-4 text-gray-700" data-aos="fade-up">
+                  <p class="mt-4 text-gray-700">
                     Feel free to reach out with any questions
                   </p>
   
                   <form class="mt-12">
-                      <div class="-mx-2 md:items-center md:flex" data-aos="fade-right">
+                      <div class="-mx-2 md:items-center md:flex">
                           <div class="flex-1 px-2">
                               <label class="block mb-2 text-sm text-gray-600">Full Name</label>
                               <input type="text" placeholder="Emily Carter" class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"/>
                           </div>
   
-                          <div class="flex-1 px-2 mt-4 md:mt-0" data-aos="fade-right" data-aos-delay="100">
+                          <div class="flex-1 px-2 mt-4 md:mt-0">
                               <label class="block mb-2 text-sm text-gray-600">Email address</label>
                               <input type="email" placeholder="emilycarter@example.com" class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
                           </div>
                       </div>
   
-                      <div class="w-full mt-4" data-aos="fade-right" data-aos-delay="200">
+                      <div class="w-full mt-4">
                           <label class="block mb-2 text-sm text-gray-600">Message</label>
                           <textarea class="block w-full h-32 px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md md:h-56 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Message"></textarea>
                       </div>
   
-                      <button class="w-full px-6 py-3 mt-4 text-sm font-medium tracking-wide text-[#eaddcf] capitalize transition-colors duration-300 transform bg-[#8c7851] rounded-md hover:bg-[#716040] focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50" data-aos="zoom-in" data-aos-delay="300">
+                      <button class="w-full px-6 py-3 mt-4 text-sm font-medium tracking-wide text-[#eaddcf] capitalize transition-colors duration-300 transform bg-[#8c7851] rounded-md hover:bg-[#716040] focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50">
                         Get in touch
                       </button>
                   </form>
               </div>
   
-              <div class="mt-12 lg:flex lg:mt-0 lg:flex-col lg:items-center lg:w-1/2 lg:mx-10" data-aos="fade-left">
+              <div class="mt-12 lg:flex lg:mt-0 lg:flex-col lg:items-center lg:w-1/2 lg:mx-10">
                   <img class="hidden object-cover mx-auto rounded-full lg:block shrink-0 w-96 h-96" src="jennifer-in-the-office.png" alt="">
   
                   <div class="mt-6 space-y-8 md:mt-8">
@@ -639,7 +537,7 @@ footer, footer * {
 
   <!--footer-->
 
-  <footer class="bg-[#eaddcf] text-[#020826] py-12" data-aos="fade-up">
+  <footer class="bg-[#eaddcf] text-[#020826] py-12">
     <div class="max-w-7xl mx-auto px-4 text-center">
       <p class="text-sm text-[#020826]">&copy; 2025 Jennifer Williams · Psychologist</p>
     </div>
@@ -688,14 +586,6 @@ footer, footer * {
       cookieBanner.style.display = 'none';
     });
   </script>
-
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init({
-    duration: 1000,
-    once: true, 
-  });
-</script>
 
 <script>
   const menuBtn = document.getElementById('menu-btn');
