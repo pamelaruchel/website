@@ -4,6 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta property="og:title" content="Pâmela Ruchel | Web Designer" />
+  <meta property="og:description" content="Elegant, modern and high-converting websites." />
+  <meta property="og:image" content="https://github.com/pamelaruchel/website/blob/main/images/og.png" />
+  <meta property="og:url" content="https://pamelaruchel.github.io/website/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://github.com/pamelaruchel/website/blob/main/images/og.png" />
+  <meta name="twitter:title" content="Pâmela Ruchel | Web Designer" />
+  <meta name="twitter:description" content="Elegant, modern and high-converting websites." />
   <title>Home | Pâmela Ruchel</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -154,6 +163,25 @@
 .ticker-item.up { color: #34d399; }   
 .ticker-item.down { color: #f87171; } 
 .ticker-item.neutral { color: #9ca3af; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-20px) scale(1.02); }
+}
+
+.animate-float {
+  animation: float 18s ease-in-out infinite;
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 0.4; }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 8s ease-in-out infinite;
+}
+
   </style>
 </head>
 
@@ -513,6 +541,46 @@
   </div>
 </section>
 
+
+<section id="spotify"
+  class="relative min-h-screen flex flex-col justify-center items-center overflow-hidden
+         bg-gradient-to-b from-[#020617] via-[#0a0f1c] to-[#111827]
+         text-gray-200 px-6 py-24">
+
+  <div class="absolute inset-0 bg-cover bg-center opacity-20 animate-pulse-slow pointer-events-none"
+       style="background-image: url('./images/stars.jpg'); background-position: center; background-size: cover;">
+  </div>
+
+  <div id="moon"
+       class="absolute top-12 right-8 w-[420px] h-[420px] bg-cover bg-no-repeat opacity-60 blur-[0.5px]
+              pointer-events-none animate-float"
+       style="background-image: url('./images/blue-moon.png'); background-position: center; background-size: cover;">
+  </div>
+
+  <div class="relative z-10 text-center mb-12 max-w-xl">
+    <h2 class="text-2xl md:text-3xl font-light mb-3" data-aos="fade-up" data-aos-duration="1000">
+      I might be listening to this while designing your layout.
+    </h2>
+    <p class="text-sm text-gray-400 uppercase tracking-widest" data-aos="fade-up" data-aos-delay="150">
+      Currently playing
+    </p>
+  </div>
+
+  <div id="current-track"
+       class="relative z-10 bg-white/5 backdrop-blur-md rounded-2xl p-6 w-full max-w-md shadow-lg border border-white/10
+              text-center transition-all duration-700 ease-in-out"
+       data-aos="fade-up" data-aos-delay="200">
+    <p class="text-gray-400">Loading current track...</p>
+  </div>
+
+  <div id="recent-tracks"
+       class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 relative z-10"
+       data-aos="fade-up" data-aos-delay="400">
+  </div>
+
+</section>
+
+
 <!--contact section-->
 <section id="contact" class="w-full bg-black text-white py-20 px-6">
   <h2 class="text-center text-3xl md:text-5xl font-bold mb-12" data-aos="slide-down" data-aos-duration="600">
@@ -691,53 +759,6 @@
   })();
 </script>
 
-<script>
-  (function(){
-    const words = ["clients","fans","results"];
-    const current = document.getElementById('typed-current');
-    const next = document.getElementById('typed-next');
-    const sizer = document.getElementById('typed-sizer');
-  
-    const longest = words.reduce((a,b)=> a.length>=b.length ? a : b, "");
-    sizer.textContent = longest;
-  
-    let idx = 0;
-    current.textContent = words[0];
-  
-    function showNext(){
-      const newWord = words[(idx+1) % words.length];
-      next.textContent = newWord;
-  
-      next.style.opacity = "0";
-      next.style.letterSpacing = "0.05em"; 
-      next.style.zIndex = "2";
-      current.style.zIndex = "1";
-  
-      void next.offsetWidth;
-  
-      current.style.transition = "opacity 700ms ease-in-out";
-      next.style.transition = "opacity 700ms ease-in-out, letter-spacing 700ms ease-in-out";
-  
-      current.style.opacity = "0";
-      next.style.opacity = "1";
-      next.style.letterSpacing = "0em"; 
-  
-      setTimeout(()=> {
-        current.textContent = newWord;
-        current.style.opacity = "1";
-        current.style.zIndex = "2";
-        next.style.opacity = "0";
-        next.style.zIndex = "1";
-        idx = (idx+1) % words.length;
-      }, 740);
-    }
-  
-    const pause = 1200; 
-    setInterval(showNext, pause + 740);
-  
-  })();
-  </script>   
-  
   <script>
     (function(){
       const words = ["clients","fans","results"];
@@ -887,6 +908,85 @@
     }
   })();
   </script>  
+
+<script>
+  window.addEventListener('scroll', () => {
+    const moon = document.getElementById('moon');
+    const scroll = window.scrollY;
+    moon.style.transform = `translateY(${scroll * 0.1}px) scale(1)`;
+  });
+
+  async function fetchCurrentTrack() {
+    try {
+      const response = await fetch('/api/spotify');
+      const data = await response.json();
+
+      const container = document.getElementById('current-track');
+      container.innerHTML = '';
+
+      if (!data || !data.item) {
+        container.innerHTML = `<p class="text-gray-400">Nothing playing right now 🎧</p>`;
+        return;
+      }
+
+      const { name, artists, album, external_urls } = data.item;
+      const artistNames = artists.map(a => a.name).join(', ');
+      const albumImage = album.images[0]?.url || '';
+      const songUrl = external_urls.spotify;
+
+      container.innerHTML = `
+        <div class="flex items-center space-x-4">
+          <img src="${albumImage}" alt="Album cover" class="w-16 h-16 rounded-lg shadow-lg">
+          <div class="flex-1 text-left">
+            <p class="font-semibold text-white truncate">${name}</p>
+            <p class="text-sm text-gray-400">${artistNames}</p>
+            <div class="h-1 bg-gray-600 mt-2 overflow-hidden rounded-full">
+              <div class="h-1 bg-[#3b82f6] w-1/2 animate-pulse"></div>
+            </div>
+            <a href="${songUrl}" target="_blank" class="text-xs text-[#3b82f6] hover:underline mt-2 inline-block">Open on Spotify</a>
+          </div>
+        </div>
+      `;
+    } catch (error) {
+      console.error('Error fetching Spotify data:', error);
+    }
+  }
+  async function fetchRecentTracks() {
+    try {
+      const response = await fetch('/api/recent');
+      const data = await response.json();
+
+      const recentContainer = document.getElementById('recent-tracks');
+      recentContainer.innerHTML = '';
+
+      if (!data || !data.tracks) {
+        recentContainer.innerHTML = `<p class="text-gray-400 col-span-4 text-center">No recent tracks found.</p>`;
+        return;
+      }
+
+      data.tracks.forEach(track => {
+        recentContainer.innerHTML += `
+          <div class="flex flex-col items-center space-y-2">
+            <a href="${track.url}" target="_blank">
+              <img src="${track.image}" alt="album" class="rounded-xl w-28 h-28 object-cover hover:scale-105 transition-transform duration-500 shadow-lg">
+            </a>
+            <p class="text-sm font-semibold text-gray-100 text-center truncate w-28">${track.name}</p>
+            <p class="text-xs text-gray-400 text-center truncate w-28">${track.artist}</p>
+          </div>
+        `;
+      });
+    } catch (error) {
+      console.error('Error fetching recent tracks:', error);
+    }
+  }
+
+  fetchCurrentTrack();
+  fetchRecentTracks();
+
+  setInterval(fetchCurrentTrack, 60000);
+  setInterval(fetchRecentTracks, 60000);
+</script>
+
 </body>
 
 </html>
