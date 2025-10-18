@@ -1,5 +1,5 @@
 export default async function handler(req, res) {
-  // CORS
+  
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "GET,OPTIONS");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
@@ -10,7 +10,6 @@ export default async function handler(req, res) {
   const client_secret = process.env.SPOTIFY_CLIENT_SECRET;
   const auth = Buffer.from(`${client_id}:${client_secret}`).toString("base64");
 
-  // novo access_token
   const tokenResponse = await fetch("https://accounts.spotify.com/api/token", {
     method: "POST",
     headers: {
@@ -23,7 +22,6 @@ export default async function handler(req, res) {
   const tokenData = await tokenResponse.json();
   const access_token = tokenData.access_token;
 
-  // música atual
   const nowPlaying = await fetch("https://api.spotify.com/v1/me/player/currently-playing", {
     headers: { Authorization: `Bearer ${access_token}` },
   });
