@@ -546,7 +546,7 @@
   class="relative min-h-screen flex flex-col justify-center items-center overflow-hidden
          bg-gradient-to-b from-[#020617] via-[#0a0f1c] to-[#111827]
          text-gray-200 px-6 py-24">
-         
+
   <div class="absolute inset-0 bg-cover bg-center opacity-20 animate-pulse-slow pointer-events-none"
        style="background-image: url('./images/stars.jpg');"></div>
 
@@ -932,15 +932,17 @@
       const songUrl = external_urls.spotify;
 
       container.innerHTML = `
-        <div class="flex items-center space-x-4">
-          <img src="${albumImage}" alt="Album cover" class="w-16 h-16 rounded-lg shadow-lg">
+        <div class="flex items-center space-x-6 fade-up">
+          <img src="${albumImage}" alt="Album cover"
+               class="w-20 h-20 rounded-xl shadow-lg hover:scale-[1.02] transition-transform duration-500">
           <div class="flex-1 text-left">
-            <p class="font-semibold text-white truncate">${name}</p>
+            <p class="font-semibold text-white text-lg truncate">${name}</p>
             <p class="text-sm text-gray-400">${artistNames}</p>
-            <div class="h-1 bg-gray-600 mt-2 overflow-hidden rounded-full">
-              <div class="h-1 bg-[#3b82f6] w-1/2 animate-pulse"></div>
+            <div class="h-1 bg-gray-600 mt-3 overflow-hidden rounded-full">
+              <div class="h-1 bg-[#3b82f6] w-3/4 animate-pulse"></div>
             </div>
-            <a href="${songUrl}" target="_blank" class="text-xs text-[#3b82f6] hover:underline mt-2 inline-block">Open on Spotify</a>
+            <a href="${songUrl}" target="_blank"
+               class="text-xs text-[#3b82f6] hover:underline mt-2 inline-block">Open on Spotify</a>
           </div>
         </div>
       `;
@@ -958,18 +960,21 @@
       recentContainer.innerHTML = '';
 
       if (!data || !data.tracks) {
-        recentContainer.innerHTML = `<p class="text-gray-400 col-span-4 text-center">No recent tracks found.</p>`;
+        recentContainer.innerHTML = `<p class="text-gray-400 col-span-2 text-center">No recent tracks found.</p>`;
         return;
       }
 
-      data.tracks.forEach(track => {
+      data.tracks.forEach((track, i) => {
+        const delay = i * 100;
         recentContainer.innerHTML += `
-          <div class="flex flex-col items-center space-y-2 transition-opacity duration-700 opacity-0 animate-fade-in">
+          <div class="flex flex-col items-center space-y-3 bg-white/5 backdrop-blur-md p-4 rounded-xl border border-white/10 shadow-md hover:scale-[1.03] transition-transform duration-500 fade-up"
+               style="animation-delay:${delay}ms">
             <a href="${track.url}" target="_blank">
-              <img src="${track.image}" alt="album" class="rounded-xl w-28 h-28 object-cover hover:scale-105 transition-transform duration-500 shadow-lg">
+              <img src="${track.image}" alt="album"
+                   class="rounded-lg w-32 h-32 object-cover hover:shadow-lg transition-shadow duration-300">
             </a>
-            <p class="text-sm font-semibold text-gray-100 text-center truncate w-28">${track.name}</p>
-            <p class="text-xs text-gray-400 text-center truncate w-28">${track.artist}</p>
+            <p class="text-sm font-semibold text-gray-100 text-center truncate w-32">${track.name}</p>
+            <p class="text-xs text-gray-400 text-center truncate w-32">${track.artist}</p>
           </div>
         `;
       });
@@ -980,10 +985,10 @@
 
   fetchCurrentTrack();
   fetchRecentTracks();
-
   setInterval(fetchCurrentTrack, 60000);
   setInterval(fetchRecentTracks, 60000);
 </script>
+
 
 </body>
 
