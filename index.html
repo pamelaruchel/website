@@ -549,7 +549,7 @@
 
   <div id="stars"
        class="absolute inset-0 bg-cover bg-center opacity-30 pointer-events-none transition-transform duration-[2000ms]"
-       style="background-image: url('./images/stars.jpg'); background-position: center; background-size: cover;">
+       style="background-image: url('./images/stars.jpg'); background-attachment: fixed;">
   </div>
 
   <div id="moon"
@@ -559,10 +559,10 @@
   </div>
 
   <div class="relative z-10 text-center mb-10 max-w-2xl">
-    <h2 class="text-3xl md:text-4xl font-light mb-2 leading-snug" data-aos="fade-up" data-aos-duration="1000">
+    <h2 class="text-3xl md:text-4xl font-light mb-1 leading-snug" data-aos="fade-up" data-aos-duration="1000">
       I might be listening to this while<br class="hidden md:block"> designing your layout.
     </h2>
-    <p class="text-xs md:text-sm text-gray-400 uppercase tracking-widest mt-1" data-aos="fade-up" data-aos-delay="150">
+    <p class="text-xs md:text-sm text-gray-400 uppercase tracking-widest mt-1 mb-4" data-aos="fade-up" data-aos-delay="150">
       Currently playing
     </p>
   </div>
@@ -577,7 +577,6 @@
        class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl w-full relative z-10"
        data-aos="fade-up" data-aos-delay="400">
   </div>
-
 </section>
 
 <!--contact section-->
@@ -909,13 +908,13 @@
   </script>  
 
 <script>
-  window.addEventListener('scroll', () => {
+   window.addEventListener('scroll', () => {
     const moon = document.getElementById('moon');
     const stars = document.getElementById('stars');
     const scroll = window.scrollY;
 
-    if (moon) moon.style.transform = `translateY(${scroll * 0.12}px) scale(1)`;
-    if (stars) stars.style.transform = `translateY(${scroll * 0.2}px)`;
+    moon.style.transform = `translateY(${scroll * 0.1}px) scale(1)`;
+    stars.style.transform = `translateY(${scroll * 0.15}px)`; 
   });
 
   async function fetchCurrentTrack() {
