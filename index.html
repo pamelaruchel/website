@@ -548,7 +548,7 @@
          text-gray-200 px-6 py-24">
 
   <div id="stars"
-       class="absolute inset-0 bg-cover bg-center opacity-30 pointer-events-none transition-transform duration-[2000ms]"
+       class="absolute inset-0 bg-center bg-no-repeat bg-cover opacity-30 pointer-events-none"
        style="background-image: url('./images/stars.jpg'); background-attachment: fixed;">
   </div>
 
@@ -558,18 +558,20 @@
        style="background-image: url('./images/blue-moon.png');">
   </div>
 
-  <div class="relative z-10 text-center mb-10 max-w-2xl">
-    <h2 class="text-3xl md:text-4xl font-light mb-1 leading-snug" data-aos="fade-up" data-aos-duration="1000">
+  <div class="relative z-10 text-center mb-6 max-w-2xl">
+    <h2 class="text-3xl md:text-4xl font-light leading-snug" data-aos="fade-up" data-aos-duration="1000">
       I might be listening to this while<br class="hidden md:block"> designing your layout.
     </h2>
-    <p class="text-xs md:text-sm text-gray-400 uppercase tracking-widest mt-1 mb-4" data-aos="fade-up" data-aos-delay="150">
-      Currently playing
-    </p>
   </div>
+
+  <p class="text-xs md:text-sm text-gray-400 uppercase tracking-widest mb-3 z-10 relative"
+     data-aos="fade-up" data-aos-delay="150">
+    Currently playing
+  </p>
 
   <div id="current-track"
        class="relative z-10 bg-white/5 backdrop-blur-md rounded-2xl p-6 sm:p-8 w-full max-w-2xl shadow-lg border border-white/10
-              text-center transition-all duration-700 ease-in-out mb-12 sm:mb-16">
+              text-center transition-all duration-700 ease-in-out mb-12 sm:mb-14">
     <p class="text-gray-400">Loading current track...</p>
   </div>
 
@@ -577,7 +579,9 @@
        class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl w-full relative z-10"
        data-aos="fade-up" data-aos-delay="400">
   </div>
+
 </section>
+
 
 <!--contact section-->
 <section id="contact" class="w-full bg-black text-white py-20 px-6">
@@ -910,11 +914,8 @@
 <script>
    window.addEventListener('scroll', () => {
     const moon = document.getElementById('moon');
-    const stars = document.getElementById('stars');
     const scroll = window.scrollY;
-
-    moon.style.transform = `translateY(${scroll * 0.1}px) scale(1)`;
-    stars.style.transform = `translateY(${scroll * 0.15}px)`; 
+    moon.style.transform = `translateY(${scroll * 0.1}px)`; 
   });
 
   async function fetchCurrentTrack() {
