@@ -194,6 +194,109 @@
     font-size: 0.7rem;
   }
 }
+
+  #sky-glow {
+  background:
+    radial-gradient(circle at 50% 40%, rgba(255,255,255,0.08), transparent 60%),
+    radial-gradient(circle at 80% 70%, rgba(61,105,180,0.06), transparent 60%),
+    radial-gradient(circle at 20% 80%, rgba(255,255,255,0.05), transparent 70%);
+  mix-blend-mode: screen;
+  animation: skyPulse 18s ease-in-out infinite alternate;
+  opacity: 0.6;
+}
+
+@keyframes skyPulse {
+  0% { opacity: 0.5; filter: brightness(1); }
+  50% { opacity: 0.8; filter: brightness(1.15); }
+  100% { opacity: 0.5; filter: brightness(1); }
+}
+
+#meteors {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background: transparent;
+  z-index: 2;
+  display: none;
+}
+
+@media (min-width: 768px) {
+  #meteors {
+    display: block;
+  }
+}
+
+@keyframes meteor {
+  0% {
+    opacity: 1;
+    margin-top: -300px;
+    margin-right: -300px;
+  }
+  12% {
+    opacity: 0.9;
+  }
+  15% {
+    margin-top: 300px;
+    margin-left: -600px;
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.meteor-1, .meteor-2, .meteor-3, .meteor-4, .meteor-5,
+.meteor-6, .meteor-7, .meteor-8, .meteor-9, .meteor-10,
+.meteor-11, .meteor-12, .meteor-13, .meteor-14, .meteor-15 {
+  position: absolute;
+  width: 300px;
+  height: 1px;
+  transform: rotate(-45deg);
+  background-image: linear-gradient(to right, #ffffff, rgba(255, 255, 255, 0));
+  opacity: 0.8;
+}
+
+.meteor-1::before,
+.meteor-2::before,
+.meteor-3::before,
+.meteor-4::before,
+.meteor-5::before,
+.meteor-6::before,
+.meteor-7::before,
+.meteor-8::before,
+.meteor-9::before,
+.meteor-10::before,
+.meteor-11::before,
+.meteor-12::before,
+.meteor-13::before,
+.meteor-14::before,
+.meteor-15::before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 5px;
+  border-radius: 50%;
+  margin-top: -2px;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 0 15px 3px #ffffff;
+}
+
+.meteor-1 { top: 80px; left: 10%; animation: meteor 4s linear infinite; }
+.meteor-2 { top: 150px; left: 20%; animation: meteor 5s linear infinite; }
+.meteor-3 { top: 300px; left: 30%; animation: meteor 6s linear infinite; }
+.meteor-4 { top: 200px; left: 40%; animation: meteor 3.5s linear infinite; }
+.meteor-5 { top: 400px; left: 50%; animation: meteor 4.5s linear infinite; }
+.meteor-6 { top: 250px; left: 60%; animation: meteor 5.5s linear infinite; }
+.meteor-7 { top: 500px; left: 15%; animation: meteor 6s linear infinite; }
+.meteor-8 { top: 350px; left: 25%; animation: meteor 5s linear infinite; }
+.meteor-9 { top: 600px; left: 35%; animation: meteor 4.8s linear infinite; }
+.meteor-10 { top: 450px; left: 45%; animation: meteor 5.2s linear infinite; }
+.meteor-11 { top: 520px; left: 55%; animation: meteor 6.2s linear infinite; }
+.meteor-12 { top: 180px; left: 65%; animation: meteor 3.8s linear infinite; }
+.meteor-13 { top: 350px; left: 75%; animation: meteor 4.6s linear infinite; }
+.meteor-14 { top: 150px; left: 85%; animation: meteor 5.8s linear infinite; }
+.meteor-15 { top: 400px; left: 95%; animation: meteor 6.5s linear infinite; }
   </style>
 </head>
 
@@ -270,7 +373,7 @@
       <a href="https://ig.me/m/pamelaruchel.dev" target="_blank"
         class="inline-flex items-center justify-center px-6 py-3 rounded-full font-semibold bg-[#3d69b4ce] text-white border border-[#3d69b4ce] 
                hover:bg-transparent hover:text-[var(--color-02)] hover:shadow-[0_0_6px_var(--color-highlight)] transition-all duration-300" data-aos="fade-right" data-aos-delay="800" data-aos-duration="800">
-        Book Your Website
+        Work With Me
       </a>
 
       <a href="#portfolio" class="btn-custom flex-none justify-center" data-aos="fade-left" data-aos-delay="1000" data-aos-duration="800">
@@ -282,15 +385,16 @@
     </div>
   </div>
 
-  <div class="w-full lg:w-5/12 flex justify-center" data-aos="zoom-in" data-aos-delay="600" data-aos-duration="1000">
-    <img src="images/me.jpeg" alt="Home Image"
-    class="w-64 h-64 sm:w-80 sm:h-80 md:w-72 md:h-72 lg:w-[440px] lg:h-[440px] mt-8 md:mt-0 mb-4 md:mt-0 rounded-full object-cover shadow-lg" />  
-  </div>
+  <div class="hidden sm:flex w-full lg:w-5/12 justify-center" 
+  data-aos="zoom-in" data-aos-delay="600" data-aos-duration="1000">
+<img src="images/me.jpeg" alt="Home Image"
+    class="w-64 h-64 sm:w-80 sm:h-80 md:w-72 md:h-72 lg:w-[440px] lg:h-[440px] mt-8 md:mt-0 mb-4 object-cover shadow-lg rounded-[40%_60%_65%_35%/35%_45%_55%_65%]" />    
+</div>
 </section>
 
 <section id="what" class="py-8 pt-24 px-4 bg-black text-white">
   <h2 class="text-3xl md:text-5xl font-bold text-center mb-12" data-aos="fade-down">
-    What <span class="text-[#3d69b4ce]">I Deliver</span>
+    What I <span class="text-[#3d69b4ce]">Deliver</span>
   </h2>
   <div class="max-w-6xl mx-auto grid gap-8 sm:grid-cols-2 lg:grid-cols-2">
     <div class="bg-[#1f2937] p-6 rounded-2xl shadow-md hover:shadow-blue-400 transition-all duration-300" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="700">
@@ -336,10 +440,63 @@
   </div>
 </section>
 
+<section id="philosophy" 
+         class="relative w-full py-32 px-6 bg-black text-gray-200 overflow-hidden">
+
+  <div class="absolute inset-0 opacity-10 bg-gradient-to-r from-blue-300/10 via-white/5 to-transparent rotate-[2deg]"></div>
+
+  <div class="relative max-w-7xl mx-auto flex flex-col items-center px-4 sm:px-8 lg:px-12">
+
+    <h2 class="text-3xl md:text-5xl font-bold mb-16 tracking-tight text-white text-center" data-aos="fade-down">
+      My Design <span class="text-[#3d69b4ce] font-bold">Philosophy</span>
+    </h2>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center w-full">
+
+      <div class="text-left" data-aos="fade-up">
+
+        <p class="text-lg md:text-xl italic text-gray-300 mb-10 leading-snug max-w-3xl">
+          A website is more than a digital presence — it’s a living extension of the therapeutic space.
+        </p>        
+
+        <div class="space-y-7 text-gray-300 text-base md:text-lg leading-snug max-w-3xl">
+          <p>
+            Every color, word, and motion carries emotional weight. My goal is to design 
+            websites that <span class="text-white font-medium">breathe calm</span>, that invite trust before a single session begins.
+          </p>
+
+          <p>
+            I believe good design is silent — it listens before it speaks. 
+            Each project I create holds the balance between softness and structure, 
+            intuition and clarity, aesthetics and meaning.
+          </p>
+        </div>
+
+        <p class="italic text-gray-400 pt-6 mt-8 border-t border-gray-700/40 text-lg md:text-xl leading-snug">
+          Every website I design mirrors your energy — grounded, warm, and quietly powerful.
+        </p>
+      </div>
+
+      <div class="relative hidden md:flex justify-center items-center" data-aos="fade-left" data-aos-delay="200">
+        <div class="relative w-full max-w-md aspect-square rounded-3xl overflow-hidden shadow-2xl">
+          <dotlottie-wc 
+            src="https://lottie.host/9af997e5-c36e-462f-80fb-7b93a2410dd9/gmksntrsaZ.lottie"
+            autoplay 
+            loop
+            style="width: 100%; height: 100%; background: transparent;">
+          </dotlottie-wc>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- logos carousel -->
-<section class="py-20 pb-6 pt-32 bg-black">
+<section class="py-16 pb-6 pt-32 bg-black">
   <div class="max-w-6xl mx-auto px-6 overflow-hidden">
-    <p class="text-white font-bold text-3xl tracking-wide pb-12 text-center" data-aos="fade-down">
+    <p class="text-white font-bold text-3xl md:text-4xl tracking-wide pb-12 text-center" data-aos="fade-down">
       Building with standards seen in
     </p>
 
@@ -450,6 +607,116 @@
   </div>
 </section>
 
+<!--the process-->
+<section id="process" class="bg-black text-white py-32 px-6">
+
+  <div class="max-w-6xl mx-auto text-center mb-6">
+    <h2 class="text-3xl md:text-5xl font-bold" data-aos="fade-down">
+      The <span class="text-[#3d69b4ce]">Process</span>
+    </h2>
+  </div>
+
+  <div class="hidden md:flex max-w-6xl mx-auto flex-row gap-16 items-start md:items-center">
+  
+    <div class="md:w-1/2">
+
+      <p class="text-white/70 text-lg leading-relaxed mb-8 mt-12 max-w-xl" data-aos="fade-up" data-aos-delay="150">
+        Every step is clear and guided. No stress, just an effortless creative flow.
+      </p>
+
+      <div class="space-y-6 text-lg font-medium tracking-wide">
+        <div class="border-t border-white/20 pt-4 cursor-pointer hover:text-[#3d69b4ce] transition-colors" data-step="1" data-aos="fade-up" data-aos-delay="200">01. Let’s connect</div>
+        <div class="border-t border-white/20 pt-4 cursor-pointer hover:text-[#3d69b4ce] transition-colors" data-step="2" data-aos="fade-up" data-aos-delay="300">02. The plan & next steps</div>
+        <div class="border-t border-white/20 pt-4 cursor-pointer hover:text-[#3d69b4ce] transition-colors" data-step="3" data-aos="fade-up" data-aos-delay="400">03. Gather your content</div>
+        <div class="border-t border-white/20 pt-4 cursor-pointer hover:text-[#3d69b4ce] transition-colors" data-step="4" data-aos="fade-up" data-aos-delay="500">04. Visual direction & preview</div>
+        <div class="border-t border-white/20 pt-4 cursor-pointer hover:text-[#3d69b4ce] transition-colors" data-step="5" data-aos="fade-up" data-aos-delay="600">05. Build & launch</div>
+      </div>
+    </div>
+
+    <div class="md:w-1/2 text-left" data-aos="fade-left" data-aos-delay="400">
+      <div id="step-content" class="transition-all duration-700 opacity-100">
+        <h3 class="text-2xl font-semibold mb-4 text-[#3d69b4ce]">Let’s connect</h3>
+        <p class="text-white/80 leading-relaxed text-[1.125rem] md:text-[1.2rem]">
+          You’ll send me a quick message sharing what you have in mind: your goals, preferences, and any examples you love.
+          I’ll personally reply to understand your vision and confirm if we’re a good fit to work together.
+          Once you’re ready to begin, we’ll secure your project with a 
+          <span class="text-[#3d69b4ce] font-medium">50% initial payment</span> and set your start date.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!--mobile-->
+  <div class="md:hidden max-w-2xl mx-auto mt-10">
+    <p class="text-white/70 text-lg leading-relaxed mb-8" data-aos="fade-up">
+      Every step is clear and guided. No stress, just an effortless creative flow.
+    </p>
+
+    <div class="divide-y divide-white/10">
+      <div class="py-4">
+        <button class="w-full flex justify-between items-center text-left text-lg font-medium text-white/90 hover:text-[#3d69b4ce] transition-colors faq-btn">
+          01. Let’s connect
+          <span class="text-[#3d69b4ce]">+</span>
+        </button>
+        <div class="faq-content hidden mt-3 text-white/80 text-base leading-relaxed">
+          You’ll send me a quick message sharing what you have in mind: your goals, preferences, and any examples you love.
+          I’ll personally reply to understand your vision and confirm if we’re a good fit to work together.
+          Once you’re ready to begin, we’ll secure your project with a 
+          <span class="text-[#3d69b4ce] font-medium">50% initial payment</span> and set your start date.
+        </div>
+      </div>
+
+      <div class="py-4">
+        <button class="w-full flex justify-between items-center text-left text-lg font-medium text-white/90 hover:text-[#3d69b4ce] transition-colors faq-btn">
+          02. The plan & next steps
+          <span class="text-[#3d69b4ce]">+</span>
+        </button>
+        <div class="faq-content hidden mt-3 text-white/80 text-base leading-relaxed">
+          Once your project is confirmed, I’ll outline the flow we’ll follow together: what I’ll need from you, what I’ll take care of, and how we’ll keep everything organized.
+          You’ll receive guidance for structure, content, and visuals, so you always know what to do next, without feeling overwhelmed.
+        </div>
+      </div>
+
+      <div class="py-4">
+        <button class="w-full flex justify-between items-center text-left text-lg font-medium text-white/90 hover:text-[#3d69b4ce] transition-colors faq-btn">
+          03. Gather your content
+          <span class="text-[#3d69b4ce]">+</span>
+        </button>
+        <div class="faq-content hidden mt-3 text-white/80 text-base leading-relaxed">
+          This is your space to bring your story to life: your words, your visuals, your essence.
+          You can send everything in your own time, and I’ll be here to guide and refine it, making sure it feels professional yet true to you.
+        </div>
+      </div>
+
+      <div class="py-4">
+        <button class="w-full flex justify-between items-center text-left text-lg font-medium text-white/90 hover:text-[#3d69b4ce] transition-colors faq-btn">
+          04. Visual direction & preview
+          <span class="text-[#3d69b4ce]">+</span>
+        </button>
+        <div class="faq-content hidden mt-3 text-white/80 text-base leading-relaxed">
+          Here I begin shaping your website’s look and flow: colors, typography, spacing, and structure.
+          You’ll receive a first preview so you can visualize how your message will take form online.
+          Together, we’ll fine-tune every detail before the build begins.
+        </div>
+      </div>
+
+      <div class="py-4">
+        <button class="w-full flex justify-between items-center text-left text-lg font-medium text-white/90 hover:text-[#3d69b4ce] transition-colors faq-btn">
+          05. Build & launch
+          <span class="text-[#3d69b4ce]">+</span>
+        </button>
+        <div class="faq-content hidden mt-3 text-white/80 text-base leading-relaxed">
+          Your website comes to life: responsive, animated, and ready to impress.
+          You’ll have time to review the full version and share feedback.
+          Once approved, you complete the remaining 
+          <span class="text-[#3d69b4ce] font-medium">50% payment</span>,
+          and your site is officially ready to launch into the world.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- portfolio section -->
 <section id="portfolio" class="w-full bg-[var(--cor-principal)] py-36 px-4">
   <h2 class="text-center mb-8 text-white text-3xl md:text-5xl font-bold" data-aos="fade-down">
@@ -553,23 +820,48 @@
   </div>
 </section>
 
-
 <section id="spotify"
   class="relative min-h-screen flex flex-col justify-center items-center overflow-hidden
          bg-gradient-to-b from-[#020617] via-[#0a0f1c] to-[#111827]
          text-gray-200 px-6 py-24">
 
+  <!-- camada de estrelas -->
   <div id="stars"
        class="absolute inset-0 bg-center bg-no-repeat bg-cover opacity-30 pointer-events-none"
        style="background-image: url('./images/stars-4.jpg'); background-attachment: fixed;">
   </div>
 
+ <!-- 🌠 chuva de meteoros -->
+<div id="meteors" class="absolute inset-0 pointer-events-none overflow-hidden z-[1]">
+  <div class="star"></div>
+  <div class="meteor-1"></div>
+  <div class="meteor-2"></div>
+  <div class="meteor-3"></div>
+  <div class="meteor-4"></div>
+  <div class="meteor-5"></div>
+  <div class="meteor-6"></div>
+  <div class="meteor-7"></div>
+  <div class="meteor-8"></div>
+  <div class="meteor-9"></div>
+  <div class="meteor-10"></div>
+  <div class="meteor-11"></div>
+  <div class="meteor-12"></div>
+  <div class="meteor-13"></div>
+  <div class="meteor-14"></div>
+  <div class="meteor-15"></div>
+</div>
+
+  <!-- camada de brilho do céu -->
+  <div id="sky-glow" class="absolute inset-0 pointer-events-none"></div>
+
+  <!-- lua -->
   <div id="moon"
        class="absolute top-12 right-8 w-[420px] h-[420px] bg-cover bg-no-repeat opacity-60 blur-[0.5px]
               pointer-events-none animate-float hidden md:block"
        style="background-image: url('./images/blue-moon.png');">
   </div>
 
+  <!-- conteúdo -->
   <div class="relative z-10 text-center mb-12 max-w-2xl">
     <h2 class="text-3xl md:text-4xl font-light leading-snug" data-aos="fade-up" data-aos-duration="1000">
       I might be listening to this while<br class="hidden md:block"> designing your layout.
@@ -1040,6 +1332,64 @@
   fetchRecentTracks();
   setInterval(fetchCurrentTrack, 10000); 
 </script>
-</body>
 
+<script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.5/dist/dotlottie-wc.js" type="module"></script>
+
+<script>
+  const contents = {
+    1: {
+      title: "Let’s connect",
+      text: "You’ll send me a quick message sharing what you have in mind: your goals, preferences, and any examples you love. I’ll personally reply to understand your vision and confirm if we’re a good fit to work together. Once you’re ready to begin, we’ll secure your project with a <span class='text-[#3d69b4ce] font-medium'>50% initial payment</span> and set your start date."
+    },
+    2: {
+      title: "The plan & next steps",
+      text: "Once your project is confirmed, I’ll outline the flow we’ll follow together: what I’ll need from you, what I’ll take care of, and how we’ll keep everything organized. You’ll receive guidance for structure, content, and visuals, so you always know what to do next, without feeling overwhelmed."
+    },
+    3: {
+      title: "Gather your content",
+      text: "This is your space to bring your story to life: your words, your visuals, your essence. You can send everything in your own time, and I’ll be here to guide and refine it, making sure it feels professional yet true to you."
+    },
+    4: {
+      title: "Visual direction & preview",
+      text: "Here I begin shaping your website’s look and flow: colors, typography, spacing, and structure. You’ll receive a first preview so you can visualize how your message will take form online. Together, we’ll fine-tune every detail before the build begins."
+    },
+    5: {
+      title: "Build & launch",
+      text: "Your website comes to life: responsive, animated, and ready to impress. You’ll have time to review the full version and share feedback. Once approved, you complete the remaining <span class='text-[#3d69b4ce] font-medium'>50% payment</span>, and your site is officially ready to launch into the world."
+    }
+  };
+
+  const steps = document.querySelectorAll('[data-step]');
+  const stepContent = document.getElementById('step-content');
+  steps.forEach(step => {
+    step.addEventListener('mouseenter', () => {
+      const id = step.getAttribute('data-step');
+      stepContent.style.opacity = 0;
+      setTimeout(() => {
+        stepContent.innerHTML = `
+          <h3 class="text-2xl font-semibold mb-4 text-[#3d69b4ce]">${contents[id].title}</h3>
+          <p class='text-white/80 leading-relaxed text-[1.125rem] md:text-[1.2rem]'>${contents[id].text}</p>
+        `;
+        stepContent.style.opacity = 1;
+      }, 200);
+    });
+  });
+
+  const faqButtons = document.querySelectorAll('.faq-btn');
+  faqButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const content = btn.nextElementSibling;
+      const plus = btn.querySelector('span');
+
+      if (content.classList.contains('hidden')) {
+        content.classList.remove('hidden');
+        plus.textContent = '–';
+      } else {
+        content.classList.add('hidden');
+        plus.textContent = '+';
+      }
+    });
+  });
+</script>
+</body>
 </html>
