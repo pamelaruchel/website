@@ -297,25 +297,6 @@
 .meteor-13 { top: 350px; left: 75%; animation: meteor 4.6s linear infinite; }
 .meteor-14 { top: 150px; left: 85%; animation: meteor 5.8s linear infinite; }
 .meteor-15 { top: 400px; left: 95%; animation: meteor 6.5s linear infinite; }
-
-#typed-word {
-  display: inline-block;
-  vertical-align: middle;
-  transform: translateY(-0.08em);
-}
-
-#typed-word::after {
-  content: "|";
-  display: inline-block;
-  margin-left: 1px;
-  vertical-align: middle;
-  animation: blink 0.8s infinite;
-}
-
-@keyframes blink {
-  0%, 50% { opacity: 1; }
-  50.01%, 100% { opacity: 0; }
-}
   </style>
 </head>
 
@@ -368,7 +349,7 @@
     data-aos-duration="1000" 
     data-aos-delay="200">
     Websites that turn <br> visitors into 
-    <span id="typed-word" class="text-[#3d69b4ce]"></span>
+    <span class="text-[#3d69b4ce]">results</span>
   </h1>  
     <p class="text-base md:text-lg md:text-left text-gray-300 mb-8 leading-snug max-w-prose mx-auto lg:mx-0 tracking-normal" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
       You’ve worked hard to build your practice. Now let your website work just as hard, building trust, showing your value, and bringing new clients straight into your calendar, every single week, without stress or wasted effort.
@@ -1090,42 +1071,6 @@
     });
   })();
 </script>
-
-<script>
-  (function(){
-    const words = ["clients", "fans", "results"];
-    const el = document.getElementById("typed-word");
-    let i = 0;    
-    let j = 0;    
-    let isDeleting = false;
-  
-    function type() {
-      const word = words[i];
-  
-      if (isDeleting) {
-        el.textContent = word.substring(0, j--);
-      } else {
-        el.textContent = word.substring(0, j++);
-      }
-  
-      if (!isDeleting && j === word.length + 1) {
-        isDeleting = true;
-        setTimeout(type, 1200); 
-        return;
-      }
-  
-      if (isDeleting && j < 0) {
-        isDeleting = false;
-        i = (i + 1) % words.length;
-        j = 0;
-      }
-  
-      setTimeout(type, isDeleting ? 60 : 120);
-    }
-  
-    type();
-  })();
-  </script>  
 
 <script>
   (async function () {
