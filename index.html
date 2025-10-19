@@ -300,21 +300,15 @@
 
 #typed-word {
   display: inline-block;
-  min-width: 6ch; 
-  white-space: nowrap;
-  line-height: 0.7; 
-  vertical-align: middle; 
-  transform: translateY(-0.1em); 
-}
-
-@keyframes blink {
-  0%, 50% { opacity: 1; }
-  50.01%, 100% { opacity: 0; }
+  vertical-align: middle;
+  transform: translateY(-0.08em);
 }
 
 #typed-word::after {
   content: "|";
   display: inline-block;
+  margin-left: 1px;
+  vertical-align: middle;
   animation: blink 0.8s infinite;
 }
 
@@ -369,7 +363,7 @@
 
   <div class="w-full lg:w-7/12 text-white text-left lg:text-left">
     <h1 
-    class="font-bold leading-snug text-3xl md:text-5xl text-center lg:text-left mb-4 mt-0 min-h-[2.5rem] md:min-h-[3rem]" 
+    class="font-bold leading-snug text-3xl sm:text-4xl md:text-5xl text-center lg:text-left mb-2 md:mb-4 mt-0"
     data-aos="fade-up" 
     data-aos-duration="1000" 
     data-aos-delay="200">
