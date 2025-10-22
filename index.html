@@ -344,16 +344,30 @@
 
   <div class="w-full lg:w-7/12 text-white text-left lg:text-left">
     <h1 
-    class="font-bold leading-snug text-3xl sm:text-4xl md:text-5xl text-center lg:text-left mb-2 md:mb-4 mt-0"
-    data-aos="fade-up" 
-    data-aos-duration="1000" 
-    data-aos-delay="200">
+    class="font-bold leading-snug
+           text-2xl
+           sm:text-3xl
+           md:text-3xl
+           lg:text-5xl
+           text-center lg:text-left
+           mb-2 md:mb-4 mt-0
+           [@media(max-width:399px)]:text-[1.6rem]
+           [@media(min-width:400px)_and_(max-width:499px)]:text-[1.7rem]
+           [@media(min-width:500px)_and_(max-width:639px)]:text-[1.9rem]"
+    data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
     Websites that turn <br> visitors into 
     <span class="text-[#3d69b4ce]">results</span>
   </h1>  
-  <p class="text-base md:text-lg md:text-left text-gray-300 mb-8 leading-snug max-w-prose mx-auto lg:mx-0 tracking-normal mt-6 md:mt-0"
+  
+  <p 
+  class="text-[1rem] [@media(min-width:400px)]:text-[1.05rem] sm:text-base md:text-lg text-gray-300 leading-relaxed 
+         max-w-[26rem] [@media(min-width:400px)]:max-w-[32rem] [@media(min-width:500px)]:max-w-[36rem] 
+         [@media(min-width:600px)]:max-w-[42rem] [@media(min-width:768px)]:max-w-[46rem] lg:max-w-[38rem] xl:max-w-prose
+         mx-auto lg:mx-0 mt-3 sm:mt-4 mb-6 sm:mb-8 tracking-normal"
   data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
-  You’ve worked hard to build your practice. Now let your website work just as hard, building trust, showing your value, and bringing new clients straight into your calendar, every single week, without stress or wasted effort.
+  You’ve worked hard to build your practice. Now let your website work just as hard, 
+  building trust, showing your value, and bringing new clients straight into your calendar, 
+  every single week, without stress or wasted effort.
 </p>
 
     <div class="social-media flex justify-center md:justify-center lg:justify-start gap-4 mb-8" data-aos="zoom-in" data-aos-delay="600" data-aos-duration="800">
@@ -398,56 +412,90 @@
 </div>
 </section>
 
-<section id="what" class="py-8 pt-24 px-4 bg-black text-white">
-  <h2 class="text-3xl md:text-5xl font-bold text-center mb-12" data-aos="fade-down">
+<section id="what" class="py-24 md:py-32 px-6 sm:px-8 bg-black text-white">
+  <h2 class="text-2xl sm:text-3xl md:text-5xl font-bold text-center mb-10 md:mb-12" data-aos="fade-down">
     What I <span class="text-[#3d69b4ce]">Deliver</span>
   </h2>
-  <div class="max-w-6xl mx-auto grid gap-8 sm:grid-cols-2 lg:grid-cols-2">
-    <div class="bg-[#1f2937] p-6 rounded-2xl shadow-md hover:shadow-blue-400 transition-all duration-300" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="700">
-      <h3 class="text-lg font-semibold mb-2">Custom Design</h3>
-      <p class="text-gray-300">Your website will reflect your unique brand and personality, instead of relying on generic templates. It will feature a design that builds trust and helps you stand out online.</p>
-    </div>
+
+  <div class="max-w-6xl mx-auto grid gap-6 sm:gap-8 sm:grid-cols-2 lg:grid-cols-2">
     
-    <div class="bg-[#1f2937] p-6 rounded-2xl shadow-md hover:shadow-blue-400 transition-all duration-300" data-aos="zoom-in" data-aos-delay="200">
-      <h3 class="text-lg font-semibold mb-2">Responsive Layout</h3>
-      <p class="text-gray-300">Whether your clients visit from a phone, tablet, or computer, your site will look and work perfectly, creating a seamless experience every time.</p>
+    <div class="bg-[#1f2937] p-4 sm:p-6 rounded-2xl shadow-md hover:shadow-blue-400 transition-all duration-300" 
+         data-aos="zoom-in" data-aos-delay="100" data-aos-duration="700">
+      <h3 class="text-base sm:text-lg font-semibold mb-1 sm:mb-2">Custom Design</h3>
+      <p class="text-sm sm:text-base text-gray-300 leading-relaxed">
+        Your website will reflect your unique brand and personality, instead of relying on generic templates. 
+        It will feature a design that builds trust and helps you stand out online.
+      </p>
     </div>
 
-    <div class="bg-[#1f2937] p-6 rounded-2xl shadow-md hover:shadow-blue-400 transition-all duration-300" data-aos="zoom-in" data-aos-delay="300">
-      <h3 class="text-lg font-semibold mb-2">Fast Delivery</h3>
-      <p class="text-gray-300">Launching your website doesn’t need to take forever. I deliver quickly, without cutting corners, so you can start connecting with clients sooner.</p>
+    <div class="bg-[#1f2937] p-4 sm:p-6 rounded-2xl shadow-md hover:shadow-blue-400 transition-all duration-300" 
+         data-aos="zoom-in" data-aos-delay="200">
+      <h3 class="text-base sm:text-lg font-semibold mb-1 sm:mb-2">Responsive Layout</h3>
+      <p class="text-sm sm:text-base text-gray-300 leading-relaxed">
+        Whether your clients visit from a phone, tablet, or computer, your site will look and work perfectly, 
+        creating a seamless experience every time.
+      </p>
     </div>
 
-    <div class="bg-[#1f2937] p-6 rounded-2xl shadow-md hover:shadow-blue-400 transition-all duration-300" data-aos="zoom-in" data-aos-delay="400">
-      <h3 class="text-lg font-semibold mb-2">Hosting Guidance</h3>
-      <p class="text-gray-300">No need to stress about the technical setup. I’ll guide you through reliable hosting and domain options, so your site runs smoothly from day one.</p>
+    <div class="bg-[#1f2937] p-4 sm:p-6 rounded-2xl shadow-md hover:shadow-blue-400 transition-all duration-300" 
+         data-aos="zoom-in" data-aos-delay="300">
+      <h3 class="text-base sm:text-lg font-semibold mb-1 sm:mb-2">Fast Delivery</h3>
+      <p class="text-sm sm:text-base text-gray-300 leading-relaxed">
+        Launching your website doesn’t need to take forever. I deliver quickly, without cutting corners, 
+        so you can start connecting with clients sooner.
+      </p>
     </div>
 
-    <div class="bg-[#1f2937] p-6 rounded-2xl shadow-md hover:shadow-blue-400 transition-all duration-300" data-aos="zoom-in" data-aos-delay="500">
-      <h3 class="text-lg font-semibold mb-2">Conversion Focus</h3>
-      <p class="text-gray-300">Your site will be built with strategy, clear messaging and calls-to-action designed to turn visitors into paying clients.</p>
+    <div class="bg-[#1f2937] p-4 sm:p-6 rounded-2xl shadow-md hover:shadow-blue-400 transition-all duration-300" 
+         data-aos="zoom-in" data-aos-delay="400">
+      <h3 class="text-base sm:text-lg font-semibold mb-1 sm:mb-2">Hosting Guidance</h3>
+      <p class="text-sm sm:text-base text-gray-300 leading-relaxed">
+        No need to stress about the technical setup. I’ll guide you through reliable hosting and domain options, 
+        so your site runs smoothly from day one.
+      </p>
     </div>
 
-    <div class="bg-[#1f2937] p-6 rounded-2xl shadow-md hover:shadow-blue-400 transition-all duration-300" data-aos="zoom-in" data-aos-delay="600">
-      <h3 class="text-lg font-semibold mb-2">Post-Launch Support</h3>
-      <p class="text-gray-300">I won’t leave you on your own after launch. You’ll have guidance and support to make sure everything keeps running as it should.</p>
+    <div class="bg-[#1f2937] p-4 sm:p-6 rounded-2xl shadow-md hover:shadow-blue-400 transition-all duration-300" 
+         data-aos="zoom-in" data-aos-delay="500">
+      <h3 class="text-base sm:text-lg font-semibold mb-1 sm:mb-2">Conversion Focus</h3>
+      <p class="text-sm sm:text-base text-gray-300 leading-relaxed">
+        Your site will be built with strategy, clear messaging and calls-to-action designed to turn visitors 
+        into paying clients.
+      </p>
     </div>
 
-    <div class="bg-[#1f2937] p-6 rounded-2xl shadow-md hover:shadow-blue-400 transition-all duration-300" data-aos="zoom-in" data-aos-delay="700">
-      <h3 class="text-lg font-semibold mb-2">SEO Ready</h3>
-      <p class="text-gray-300">Built with clean code and best SEO practices, your website will be ready to appear in search results and attract more organic traffic over time.</p>
+    <div class="bg-[#1f2937] p-4 sm:p-6 rounded-2xl shadow-md hover:shadow-blue-400 transition-all duration-300" 
+         data-aos="zoom-in" data-aos-delay="600">
+      <h3 class="text-base sm:text-lg font-semibold mb-1 sm:mb-2">Post-Launch Support</h3>
+      <p class="text-sm sm:text-base text-gray-300 leading-relaxed">
+        I won’t leave you on your own after launch. You’ll have guidance and support to make sure everything 
+        keeps running as it should.
+      </p>
     </div>
-    
-    <div class="bg-[#1f2937] p-6 rounded-2xl shadow-md hover:shadow-blue-400 transition-all duration-300" data-aos="zoom-in" data-aos-delay="800">
-      <h3 class="text-lg font-semibold mb-2">Scalability</h3>
-      <p class="text-gray-300">As your business grows, your website can grow with it, easy to expand, integrate, and scale without starting over.</p>
+
+    <div class="bg-[#1f2937] p-4 sm:p-6 rounded-2xl shadow-md hover:shadow-blue-400 transition-all duration-300" 
+         data-aos="zoom-in" data-aos-delay="700">
+      <h3 class="text-base sm:text-lg font-semibold mb-1 sm:mb-2">SEO Ready</h3>
+      <p class="text-sm sm:text-base text-gray-300 leading-relaxed">
+        Built with clean code and best SEO practices, your website will be ready to appear in search results 
+        and attract more organic traffic over time.
+      </p>
     </div>
-    
+
+    <div class="bg-[#1f2937] p-4 sm:p-6 rounded-2xl shadow-md hover:shadow-blue-400 transition-all duration-300" 
+         data-aos="zoom-in" data-aos-delay="800">
+      <h3 class="text-base sm:text-lg font-semibold mb-1 sm:mb-2">Scalability</h3>
+      <p class="text-sm sm:text-base text-gray-300 leading-relaxed">
+        As your business grows, your website can grow with it: easy to expand, integrate, and scale 
+        without starting over.
+      </p>
+    </div>
+
   </div>
 </section>
 
 <!-- logos carousel -->
-<section class="py-8 md:py-24 pb-6 pt-32 bg-black">
+<section class="pt-20 pb-24 md:pt-32 md:pb-40 bg-black">
   <div class="max-w-6xl mx-auto px-6 overflow-hidden">
     <p class="text-white font-bold text-3xl md:text-4xl tracking-wide pb-12 text-center" data-aos="fade-down">
       Building with standards seen in
@@ -561,7 +609,7 @@
 </section>
 
 <section id="philosophy" 
-         class="relative w-full py-42 px-6 bg-black text-gray-200 overflow-hidden">
+         class="relative w-full py:20 md:py-48 px-6 bg-black text-gray-200 overflow-hidden">
 
   <div class="absolute inset-0 opacity-10 bg-gradient-to-r from-blue-300/10 via-white/5 to-transparent rotate-[2deg]"></div>
 
