@@ -329,48 +329,49 @@
 </button>
 
     <div class="nav-responsive hidden fixed inset-0 bg-[var(--cor-principal)] flex flex-col items-center justify-center gap-6 z-[90]">
-  <a href="#home" class="text-2xl text-[var(--text-color)]">Home</a>
-  <a href="#what" class="text-2xl text-[var(--text-color)]">What I Deliver</a>
-  <a href="#portfolio" class="text-2xl text-[var(--text-color)]">Projects</a>
-  <a href="#about" class="text-2xl text-[var(--text-color)]">About</a>
-  <a href="#contact" class="text-2xl text-[var(--text-color)]">Contact</a>
+  <a href="#home" class="text-xl text-[var(--text-color)]">Home</a>
+  <a href="#what" class="text-xl text-[var(--text-color)]">What I Deliver</a>
+  <a href="#portfolio" class="text-xl text-[var(--text-color)]">Projects</a>
+  <a href="#about" class="text-xl text-[var(--text-color)]">About</a>
+  <a href="#contact" class="text-xl text-[var(--text-color)]">Contact</a>
 </div>
   </header>
 
 
 <!-- home section-->
 <section id="home" 
-  class="min-h-[calc(100vh-70px)] bg-black flex flex-col-reverse lg:flex-row items-center justify-center px-6 md:px-20 pt-0 gap-8 lg:gap-20">
+  class="min-h-[calc(100vh-70px)] bg-black flex flex-col lg:flex-row items-center justify-center 
+         px-6 md:px-20 pt-8 md:pt-12 gap-10 lg:gap-20">
 
-  <div class="w-full lg:w-7/12 text-white text-left lg:text-left">
+  <div class="w-full lg:w-7/12 text-white text-center lg:text-left">
     <h1 
-    class="font-bold leading-snug
-           text-2xl
-           sm:text-3xl
-           md:text-3xl
-           lg:text-5xl
-           text-center lg:text-left
-           mb-2 md:mb-4 mt-0
-           [@media(max-width:399px)]:text-[1.6rem]
-           [@media(min-width:400px)_and_(max-width:499px)]:text-[1.7rem]
-           [@media(min-width:500px)_and_(max-width:639px)]:text-[1.9rem]"
-    data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-    Websites that turn <br> visitors into 
-    <span class="text-[#3d69b4ce]">results</span>
-  </h1>  
-  
-  <p 
-  class="text-[1rem] [@media(min-width:400px)]:text-[1.05rem] sm:text-base md:text-lg text-gray-300 leading-relaxed 
-         max-w-[26rem] [@media(min-width:400px)]:max-w-[32rem] [@media(min-width:500px)]:max-w-[36rem] 
-         [@media(min-width:600px)]:max-w-[42rem] [@media(min-width:768px)]:max-w-[46rem] lg:max-w-[38rem] xl:max-w-prose
-         mx-auto lg:mx-0 mt-3 sm:mt-4 mb-6 sm:mb-8 tracking-normal"
-  data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
-  You’ve worked hard to build your practice. Now let your website work just as hard, 
-  building trust, showing your value, and bringing new clients straight into your calendar, 
-  every single week, without stress or wasted effort.
-</p>
+      class="font-bold leading-snug 
+             text-2xl
+             sm:text-3xl
+             md:text-5xl
+             text-center lg:text-left
+             mb-3 md:mb-5 mt-0
+             [@media(max-width:399px)]:text-[1.6rem]
+             [@media(min-width:400px)_and_(max-width:499px)]:text-[1.7rem]
+             [@media(min-width:500px)_and_(max-width:639px)]:text-[1.9rem]"
+      data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+      Websites that turn <br> visitors into 
+      <span class="text-[#3d69b4ce]">results</span>
+    </h1>  
 
-    <div class="social-media flex justify-center md:justify-center lg:justify-start gap-4 mb-8" data-aos="zoom-in" data-aos-delay="600" data-aos-duration="800">
+    <p 
+      class="text-[1rem] [@media(min-width:400px)]:text-[1.05rem] sm:text-base md:text-[1.15rem] text-gray-300 leading-relaxed 
+             max-w-[26rem] [@media(min-width:400px)]:max-w-[32rem] [@media(min-width:500px)]:max-w-[36rem] 
+             [@media(min-width:600px)]:max-w-[42rem] [@media(min-width:768px)]:max-w-[46rem] lg:max-w-[38rem] xl:max-w-prose
+             mx-auto lg:mx-0 mt-3 sm:mt-4 md:mt-5 mb-6 sm:mb-8 md:mb-10 tracking-normal text-center lg:text-left"
+      data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+      You’ve worked hard to build your practice. Now let your website work just as hard, 
+      building trust, showing your value, and bringing new clients straight into your calendar, 
+      every single week, without stress or wasted effort.
+    </p>
+
+    <div class="social-media flex justify-center lg:justify-start gap-4 mb-8 md:mb-10" 
+         data-aos="zoom-in" data-aos-delay="600" data-aos-duration="800">
       <a href="https://www.linkedin.com/in/pâmelahartwig" target="_blank" aria-label="LinkedIn"
         class="w-12 h-12 flex items-center justify-center rounded-full border border-[#3d69b4ce] bg-transparent text-[#3d69b4ce] hover:bg-[#3d69b4ce] hover:text-white transition">
         <i class="bx bxl-linkedin text-2xl" aria-hidden="true"></i>
@@ -389,14 +390,15 @@
       </a>
     </div>
 
-    <div class="flex flex-col sm:flex-row justify-center md:justify-center lg:justify-start gap-4">
+    <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4"
+         data-aos="fade-up" data-aos-delay="800" data-aos-duration="800">
       <a href="https://ig.me/m/pamelaruchel.dev" target="_blank"
         class="inline-flex items-center justify-center px-6 py-3 rounded-full font-semibold bg-[#3d69b4ce] text-white border border-[#3d69b4ce] 
-               hover:bg-transparent hover:text-[var(--color-02)] hover:shadow-[0_0_6px_var(--color-highlight)] transition-all duration-300" data-aos="fade-right" data-aos-delay="800" data-aos-duration="800">
+               hover:bg-transparent hover:text-[var(--color-02)] hover:shadow-[0_0_6px_var(--color-highlight)] transition-all duration-300">
         Work With Me
       </a>
 
-      <a href="#portfolio" class="btn-custom flex-none justify-center" data-aos="fade-left" data-aos-delay="1000" data-aos-duration="800">
+      <a href="#portfolio" class="btn-custom flex-none justify-center">
         <span class="text">See My Work</span>
         <svg fill="currentColor" viewBox="0 0 24 24" class="w-5 h-5 ml-2">
           <path d="M13.172 12l-4.95-4.95 1.414-1.414L16 12l-6.364 6.364-1.414-1.414z"></path>
@@ -405,11 +407,12 @@
     </div>
   </div>
 
-  <div class="hidden sm:flex w-full lg:w-5/12 justify-center" 
-  data-aos="zoom-in" data-aos-delay="600" data-aos-duration="1000">
-<img src="images/me.jpeg" alt="Home Image"
-    class="w-64 h-64 sm:w-80 sm:h-80 md:w-72 md:h-72 lg:w-[440px] lg:h-[440px] mt-8 md:mt-0 mb-4 object-cover shadow-lg rounded-[40%_60%_65%_35%/35%_45%_55%_65%]" />    
-</div>
+  <div class="hidden lg:flex w-full lg:w-5/12 justify-center" 
+       data-aos="zoom-in" data-aos-delay="600" data-aos-duration="1000">
+    <img src="images/me.jpeg" alt="Home Image"
+         class="w-64 h-64 sm:w-80 sm:h-80 md:w-72 md:h-72 lg:w-[440px] lg:h-[440px] mt-8 md:mt-0 mb-4 object-cover shadow-lg rounded-[40%_60%_65%_35%/35%_45%_55%_65%]" />    
+  </div>
+
 </section>
 
 <section id="what" class="py-24 md:py-32 px-6 sm:px-8 bg-black text-white">
@@ -609,7 +612,7 @@
 </section>
 
 <section id="philosophy" 
-         class="relative w-full py:20 md:py-48 px-6 bg-black text-gray-200 overflow-hidden">
+         class="relative w-full py-24 md:py-40 px-6 bg-black text-gray-200 overflow-hidden">
 
   <div class="absolute inset-0 opacity-10 bg-gradient-to-r from-blue-300/10 via-white/5 to-transparent rotate-[2deg]"></div>
 
@@ -662,7 +665,7 @@
 </section>
 
 <!-- the process -->
-<section id="process" class="bg-black text-white py-32 px-6">
+<section id="process" class="bg-black text-white py-24 md:py-32 px-6">
 
   <div class="hidden md:flex max-w-6xl mx-auto flex-row gap-16 items-start md:items-center">
   
@@ -834,7 +837,7 @@
 
 <!--about section-->
 
-<section id="about" class="py-20 md:py-32 bg-black text-white">
+<section id="about" class="py-24 md:py-36 bg-black text-white">
   <div class="max-w-6xl mx-auto px-6">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
