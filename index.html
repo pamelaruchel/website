@@ -1234,7 +1234,7 @@
   });
 
   let progressInterval;
-  let lastTrackId = null; 
+  let lastTrackId = null;
 
   async function fetchCurrentTrack() {
     try {
@@ -1242,14 +1242,38 @@
       const data = await response.json();
 
       const container = document.getElementById('current-track');
+      const titleEl = document.querySelector('#spotify p[data-aos-delay="150"]'); 
       container.innerHTML = '';
 
       if (!data || !data.item) {
-        container.innerHTML = `<p class="text-gray-400">Nothing playing right now 🎧</p>`;
+        const recentRes = await fetch('https://website-five-ashen-38.vercel.app/api/recent');
+        const recentData = await recentRes.json();
+        const last = recentData?.tracks?.[0];
+
+        if (last) {
+          titleEl.textContent = 'Last played';
+          container.innerHTML = `
+            <div class="flex items-center space-x-6 fade-up group relative">
+              <img src="${last.image}" alt="Album cover"
+                   class="w-20 h-20 rounded-xl shadow-lg hover:scale-[1.02] transition-transform duration-500 flex-shrink-0">
+              <div class="flex-1 text-left overflow-hidden">
+                <p class="font-semibold text-white text-base truncate max-w-full" title="${last.name}">${last.name}</p>
+                <p class="text-sm text-gray-400 truncate max-w-full" title="${last.artist}">${last.artist}</p>
+                <a href="${last.url}" target="_blank"
+                   class="text-xs text-[#3b82f6] hover:underline mt-2 inline-block whitespace-nowrap">Open on Spotify</a>
+              </div>
+            </div>
+          `;
+        } else {
+          titleEl.textContent = 'Last played';
+          container.innerHTML = `<p class="text-gray-400">No recent tracks found 🎧</p>`;
+        }
+
         clearInterval(progressInterval);
         return;
       }
 
+      titleEl.textContent = 'Currently playing';
       const { id, name, artists, album, external_urls, duration_ms } = data.item;
       const artistNames = artists.map(a => a.name).join(', ');
       const albumImage = album.images[0]?.url || '';
@@ -1337,7 +1361,7 @@
 
   fetchCurrentTrack();
   fetchRecentTracks();
-  setInterval(fetchCurrentTrack, 10000); 
+  setInterval(fetchCurrentTrack, 10000);
 </script>
 
 <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.5/dist/dotlottie-wc.js" type="module"></script>
