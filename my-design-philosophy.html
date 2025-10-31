@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta property="og:title" content="Pâmela Ruchel | Web Designer" />
+  <meta property="og:description" content="Elegant, modern and high-converting websites." />
+  <meta property="og:image" content="https://pamelaruchel.github.io/website/images/og.png" />
+  <meta property="og:url" content="https://pamelaruchel.github.io/website/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://pamelaruchel.github.io/website/images/og.png" />
+  <meta name="twitter:title" content="Pâmela Ruchel | Web Designer" />
+  <meta name="twitter:description" content="Elegant, modern and high-converting websites." />
+  <title>Home | Pâmela Ruchel</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
+
+    @font-face {
+      font-family: 'space-age';
+      src: url('fonts/space-age.ttf') format(truetype);
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    :root{
+      --main-color: #3d69b4ce;
+      --text-color: #ffffff;
+      --bg-color-01: #607D8B;
+      --bg-color-02: #5FAFE4;
+      --color-00: #0000001a;
+      --color-01: #999999;
+      --color-02: #B3E7F5;
+      --color-03: #0A1F44;
+      --color-04: #006c8d;
+      --cor-principal: #000000ee;
+      --color-highlight: #3d69b4ce;
+    }
+
+    html {
+      overflow-x: hidden;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--cor-principal);
+      color: var(--text-color);
+      min-height: 100vh;
+      overscroll-behavior-y: contain;
+    }
+
+    header, .nav-responsive, section, footer, #cookie-banner {
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
+    img, picture, video, iframe, svg {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    h1,h2,h3,h4,h5,h6 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+    }
+
+    .btn-custom {
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      padding: 12px 24px;
+      border-radius: 9999px;
+      background: transparent;
+      border: 2px solid #3d69b4ce;
+      color: #3d69b4ce;
+      display: inline-flex;
+      align-items: center;
+      font-size: 16px;
+      text-decoration: none;
+    }
+    .btn-custom:hover { background: #3d69b4ce; color: #fff; }
+    .btn-custom svg { width: 22px; height: 22px; margin-left: 10px; transition: transform 0.3s ease-in-out; }
+    .btn-custom:hover svg { transform: translateX(5px); }
+    .btn-custom:active { transform: scale(0.95); }
+
+    .nav-responsive {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      padding: 1rem; 
+      background: var(--cor-principal);
+      overflow: hidden;
+      z-index: 80;
+    }
+
+    #cookie-banner {
+      position: fixed;
+      bottom: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 95%;
+      max-width: 480px;
+      padding: 1rem;
+      margin: 0;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+      border-radius: 16px;
+      z-index: 9999;
+      overflow: hidden;
+      background: white;
+      color: #111;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      #cookie-banner { background: #0b0b0b; color: #ddd; border: 1px solid rgba(255,255,255,0.06); }
+    }
+
+    @keyframes marquee {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .animate-marquee {
+      display: flex;
+      width: max-content;
+      animation: marquee 30s linear infinite;
+    }
+
+    .ticker-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+#ticker-track {
+  display: inline-flex;
+  white-space: nowrap;
+  will-change: transform;
+}
+
+.ticker-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0 1.5rem;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  white-space: nowrap;
+  color: #9ca3af;
+}
+
+.ticker-item.up { color: #34d399; }   
+.ticker-item.down { color: #f87171; } 
+.ticker-item.neutral { color: #9ca3af; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-20px) scale(1.02); }
+}
+
+.animate-float {
+  animation: float 18s ease-in-out infinite;
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 0.4; }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 8s ease-in-out infinite;
+}
+
+@media (max-width: 768px) {
+  #recent-tracks .flex {
+    padding: 0.5rem;
+  }
+  #recent-tracks img {
+    width: 56px;
+    height: 56px;
+  }
+  #recent-tracks p {
+    font-size: 0.7rem;
+  }
+}
+
+  #sky-glow {
+  background:
+    radial-gradient(circle at 50% 40%, rgba(255,255,255,0.08), transparent 60%),
+    radial-gradient(circle at 80% 70%, rgba(61,105,180,0.06), transparent 60%),
+    radial-gradient(circle at 20% 80%, rgba(255,255,255,0.05), transparent 70%);
+  mix-blend-mode: screen;
+  animation: skyPulse 18s ease-in-out infinite alternate;
+  opacity: 0.6;
+}
+
+@keyframes skyPulse {
+  0% { opacity: 0.5; filter: brightness(1); }
+  50% { opacity: 0.8; filter: brightness(1.15); }
+  100% { opacity: 0.5; filter: brightness(1); }
+}
+
+#meteors {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background: transparent;
+  z-index: 2;
+  display: none;
+}
+
+@media (min-width: 768px) {
+  #meteors {
+    display: block;
+  }
+}
+
+@keyframes meteor {
+  0% {
+    opacity: 1;
+    margin-top: -300px;
+    margin-right: -300px;
+  }
+  12% {
+    opacity: 0.9;
+  }
+  15% {
+    margin-top: 300px;
+    margin-left: -600px;
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.meteor-1, .meteor-2, .meteor-3, .meteor-4, .meteor-5,
+.meteor-6, .meteor-7, .meteor-8, .meteor-9, .meteor-10,
+.meteor-11, .meteor-12, .meteor-13, .meteor-14, .meteor-15 {
+  position: absolute;
+  width: 300px;
+  height: 1px;
+  transform: rotate(-45deg);
+  background-image: linear-gradient(to right, #ffffff, rgba(255, 255, 255, 0));
+  opacity: 0.8;
+}
+
+.meteor-1::before,
+.meteor-2::before,
+.meteor-3::before,
+.meteor-4::before,
+.meteor-5::before,
+.meteor-6::before,
+.meteor-7::before,
+.meteor-8::before,
+.meteor-9::before,
+.meteor-10::before,
+.meteor-11::before,
+.meteor-12::before,
+.meteor-13::before,
+.meteor-14::before,
+.meteor-15::before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 5px;
+  border-radius: 50%;
+  margin-top: -2px;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 0 15px 3px #ffffff;
+}
+
+.meteor-1 { top: 80px; left: 10%; animation: meteor 4s linear infinite; }
+.meteor-2 { top: 150px; left: 20%; animation: meteor 5s linear infinite; }
+.meteor-3 { top: 300px; left: 30%; animation: meteor 6s linear infinite; }
+.meteor-4 { top: 200px; left: 40%; animation: meteor 3.5s linear infinite; }
+.meteor-5 { top: 400px; left: 50%; animation: meteor 4.5s linear infinite; }
+.meteor-6 { top: 250px; left: 60%; animation: meteor 5.5s linear infinite; }
+.meteor-7 { top: 500px; left: 15%; animation: meteor 6s linear infinite; }
+.meteor-8 { top: 350px; left: 25%; animation: meteor 5s linear infinite; }
+.meteor-9 { top: 600px; left: 35%; animation: meteor 4.8s linear infinite; }
+.meteor-10 { top: 450px; left: 45%; animation: meteor 5.2s linear infinite; }
+.meteor-11 { top: 520px; left: 55%; animation: meteor 6.2s linear infinite; }
+.meteor-12 { top: 180px; left: 65%; animation: meteor 3.8s linear infinite; }
+.meteor-13 { top: 350px; left: 75%; animation: meteor 4.6s linear infinite; }
+.meteor-14 { top: 150px; left: 85%; animation: meteor 5.8s linear infinite; }
+.meteor-15 { top: 400px; left: 95%; animation: meteor 6.5s linear infinite; }
+  </style>
+</head>
+
+<body>
+  
+    <header style="padding: 1.2rem; background:var(--cor-principal);" class="relative w-full flex items-center justify-between z-[100]">
+      <a href="https://pamelaruchel.github.io/website/" class="logo text-sm sm:text-base" style="font-family:'space-age', sans-serif; font-size:2rem; color:var(--text-color); cursor:default; margin-bottom:10px;">
+        Pâmela Ruchel
+      </a>
+  
+      <nav class="hidden lg:flex items-center space-x-6" aria-label="Main navigation">
+        <a href="#home" class="relative pb-1 text-[1.2rem] text-[var(--text-color)] font-semibold after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-full after:bg-[#93A1A7]">Home</a>
+        <a href="#what" class="relative pb-1 text-[1.2rem] text-[var(--text-color)] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[#93A1A7] after:transition-all hover:after:w-full">What I Deliver</a>
+        <a href="#portfolio" class="relative pb-1 text-[1.2rem] text-[var(--text-color)] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[#93A1A7] after:transition-all hover:after:w-full">Projects</a>
+        <a href="#about" class="relative pb-1 text-[1.2rem] text-[var(--text-color)] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[#93A1A7] after:transition-all hover:after:w-full">About</a>
+        <a href="#contact" class="relative pb-1 text-[1.2rem] text-[var(--text-color)] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[#93A1A7] after:transition-all hover:after:w-full">Contact</a>
+      </nav>
+  
+      <button 
+    class="menu-hamburguer z-[200] flex flex-col items-center justify-center gap-[0.25rem] p-2 lg:hidden" 
+    aria-expanded="false" 
+    aria-label="Open menu" 
+    type="button">
+    <span class="bar block w-8 h-[0.3rem] bg-[var(--text-color)] rounded transition-transform duration-300"></span>
+    <span class="bar block w-8 h-[0.3rem] bg-[var(--text-color)] rounded transition-opacity duration-300"></span>
+    <span class="bar block w-8 h-[0.3rem] bg-[var(--text-color)] rounded transition-transform duration-300"></span>
+  </button>
+  
+      <div class="nav-responsive hidden fixed inset-0 bg-[var(--cor-principal)] flex flex-col items-center justify-center gap-6 z-[90]">
+    <a href="#home" class="text-xl text-[var(--text-color)]">Home</a>
+    <a href="#what" class="text-xl text-[var(--text-color)]">What I Deliver</a>
+    <a href="#portfolio" class="text-xl text-[var(--text-color)]">Projects</a>
+    <a href="#about" class="text-xl text-[var(--text-color)]">About</a>
+    <a href="#contact" class="text-xl text-[var(--text-color)]">Contact</a>
+  </div>
+    </header>
+
+    <section id="philosophy" 
+    class="relative w-full py-48 pt-24 md:py-48 px-6 bg-black text-gray-200 overflow-hidden">
+
+<div class="absolute inset-0 opacity-10 bg-gradient-to-r from-blue-300/10 via-white/5 to-transparent rotate-[2deg]"></div>
+
+<div class="relative max-w-7xl mx-auto flex flex-col items-center px-4 sm:px-8 lg:px-12">
+
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center w-full md:gap-20">
+
+ <div class="text-left" data-aos="fade-up">
+
+   <h2 class="text-3xl md:text-5xl font-bold mb-12 tracking-tight text-white lg:text-left text-center" data-aos="fade-down">
+     My Design <span class="text-[#3d69b4ce] font-bold">Philosophy</span>
+   </h2>
+
+   <div class="space-y-7 text-gray-300 text-base md:text-lg leading-snug max-w-3xl">
+     <p>
+       A website is more than a digital presence, it’s a living extension of the therapeutic space.
+     </p>
+
+     <p>
+       Every color, word, and motion carries emotional weight. My goal is to design 
+       websites that <span class="text-white font-medium">breathe calm</span>, that invite trust before a single session begins.
+     </p>
+
+     <p>
+       I believe good design is silent: it listens before it speaks. 
+       Each project I create holds the balance between softness and structure, 
+       intuition and clarity, aesthetics and meaning.
+     </p>
+   </div>
+
+   <p class="italic text-gray-400 pt-6 mt-8 border-t border-gray-700/40 text-lg md:text-xl leading-snug">
+     Every website I design mirrors your energy — grounded, warm, and quietly powerful.
+   </p>
+ </div>
+
+ <div class="relative hidden lg:flex justify-center items-center" data-aos="fade-left" data-aos-delay="200">
+   <div class="relative w-full max-w-md aspect-square rounded-3xl overflow-hidden shadow-2xl">
+     <dotlottie-wc 
+       src="https://lottie.host/9af997e5-c36e-462f-80fb-7b93a2410dd9/gmksntrsaZ.lottie"
+       autoplay 
+       loop
+       style="width: 100%; height: 100%; background: transparent;">
+     </dotlottie-wc>
+     <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+   </div>
+ </div>
+
+</div>
+</div>
+</section>
+
+<script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.5/dist/dotlottie-wc.js" type="module"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<script>
+  AOS.init({
+    offset: 120, 
+    delay: 0, 
+    duration: 800, 
+    easing: 'ease-in-out',
+    once: true, 
+    mirror: false, 
+  });
+</script>
+
+<script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+<script>
+  (function () {
+    const burger = document.querySelector('.menu-hamburguer');
+    const navResp = document.querySelector('.nav-responsive');
+    if (!burger || !navResp) return;
+
+    const bars = burger.querySelectorAll('.bar');
+
+    function openMenu() {
+      burger.setAttribute('aria-expanded', 'true');
+      navResp.classList.remove('hidden');
+      bars[0].classList.add('translate-y-2', 'rotate-45');
+      bars[1].classList.add('opacity-0');
+      bars[2].classList.add('-translate-y-2', '-rotate-45');
+    }
+
+    function closeMenu() {
+      burger.setAttribute('aria-expanded', 'false');
+      navResp.classList.add('hidden');
+      bars[0].classList.remove('translate-y-2', 'rotate-45');
+      bars[1].classList.remove('opacity-0');
+      bars[2].classList.remove('-translate-y-2', '-rotate-45');
+    }
+
+    burger.addEventListener('click', function () {
+      const expanded = burger.getAttribute('aria-expanded') === 'true';
+      if (expanded) closeMenu();
+      else openMenu();
+    });
+
+    navResp.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => closeMenu());
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!navResp.classList.contains('hidden')) {
+        if (!navResp.contains(e.target) && !burger.contains(e.target)) {
+          closeMenu();
+        }
+      }
+    });
+  })();
+</script>
+  </body>
+  </html>
