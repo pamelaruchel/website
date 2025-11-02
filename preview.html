@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A calm, creative space for children, teens, and families. Therapy with warmth, art, and connection — led by Brooke Chesher.">
+    <title>Brooke Chesher - Children Therapist</title>
+
+    <!-- Tailwind & Fonts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Karla:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <style>
+      body {
+        font-family: 'Karla', sans-serif;
+        background-color: #FFFDF8;
+        overflow-x: hidden;
+      }
+
+      h1, h2, .font-[Marcellus] {
+        font-family: 'Marcellus', serif !important;
+      }
+
+      .bg-shift {
+        background: linear-gradient(120deg, #FFF9F3, #FFFDF8, #FBEFF4);
+        background-size: 200% 200%;
+        animation: shift 14s ease infinite;
+      }
+      @keyframes shift {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+
+      .hero-img {
+        position: relative;
+        overflow: hidden;
+      }
+      .hero-img::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at center, rgba(255,255,255,0.05), rgba(0,0,0,0.2));
+        pointer-events: none;
+      }
+
+      .btn-primary {
+        background-color: #E5A6B8;
+        color: #2B2B2B;
+        padding: 0.75rem 1.75rem;
+        border-radius: 0.5rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 8px 20px rgba(229,166,184,0.25);
+      }
+      .btn-primary:hover {
+        background-color: #D18CA2;
+        transform: translateY(-2px);
+        box-shadow: 0 12px 28px rgba(229,166,184,0.35);
+      }
+
+      .btn-secondary {
+        border: 2px solid #F1B9A8;
+        color: #2B2B2B;
+        padding: 0.75rem 1.75rem;
+        border-radius: 0.5rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        box-shadow: 0 8px 20px rgba(241,185,168,0.15);
+      }
+      .btn-secondary:hover {
+        background-color: #F1B9A8;
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 12px 26px rgba(241,185,168,0.25);
+      }
+
+      .card {
+        box-shadow: 0 8px 24px rgba(241,185,168,0.15);
+        transition: all 0.4s ease;
+      }
+      .card:hover {
+        transform: translateY(-5px) scale(1.02);
+        box-shadow: 0 12px 30px rgba(229,166,184,0.25);
+      }
+
+      .texture {
+        background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+        background-color: #FFFDF8;
+      }
+    </style>
+  </head>
+
+  <body class="bg-shift">
+
+    <!-- HERO -->
+    <section class="relative flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto px-6 md:px-16 py-20 gap-16">
+      <div class="w-full md:w-1/2 text-center md:text-left" data-aos="fade-right">
+        <h1 class="text-4xl md:text-5xl font-[Marcellus] text-[#2B2B2B] leading-tight mb-6">
+            A gentle, playful space<br>
+            <span class="bg-gradient-to-r from-[#E5A6B8] to-[#F1B9A8] bg-clip-text text-transparent">
+              for children to heal and flourish
+            </span>
+          </h1>          
+          <p class="text-[#2B2B2B]/80 text-lg leading-relaxed mb-8" data-aos="fade-up" data-aos-delay="200">
+            Every child deserves a space that feels warm and safe.  
+            Here, play and creativity open gentle paths for healing, confidence, and growth.
+          </p>          
+        <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start" data-aos="fade-up" data-aos-delay="400">
+          <a href="#book" class="btn-primary">Schedule a Session</a>
+          <a href="#about" class="btn-secondary">Learn More</a>
+        </div>
+      </div>
+
+      <div class="w-full md:w-1/2 flex justify-center hero-img" data-aos="fade-left">
+        <img 
+          src="https://images.unsplash.com/photo-1721042235332-45f89689cfba?ixlib=rb-4.1.0&auto=format&fit=crop&q=80&w=736" 
+          alt="Brooke Chesher smiling outdoors" 
+          class="rounded-2xl shadow-lg w-72 h-80 md:w-[420px] md:h-[480px] object-cover">
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="bg-[#FFF9F3] py-24 px-6 md:px-16 text-center">
+      <div class="mb-8 flex justify-center text-[#F1B9A8]" data-aos="zoom-in">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 21v-7"/><path d="M12 14c0-3.5 2-6.5 6-7 1.5-.2 3 .1 4 .6-1 3.9-4.3 5.9-8 5.9"/><path d="M12 14c-3.7 0-7-2-8-5.9 1-.5 2.5-.8 4-.6 4 .5 6 3.5 6 7"/>
+        </svg>
+      </div>
+
+      <div class="max-w-3xl mx-auto space-y-6" data-aos="fade-up">
+        <p class="text-[#2B2B2B] text-lg leading-relaxed">
+            Every child deserves support that feels safe and caring.  
+            I work with children and their families to create spaces where they can feel seen,  
+            understood, and confident to grow and thrive.
+          </p>          
+          <p class="text-[#2B2B2B]/90 text-lg leading-relaxed">
+            My approach is calm, creative, and rooted in play. Sessions move at each child’s pace — gentle, supportive, and focused on helping them feel understood and safe.
+          </p>          
+      </div>      
+
+      <div class="w-16 h-[2px] bg-[#EADFD4] mx-auto my-10" data-aos="zoom-in"></div>
+
+      <div class="flex flex-col sm:flex-row justify-center gap-4" data-aos="fade-up">
+        <a href="#" class="px-6 py-3 bg-[#F1B9A8] text-[#2B2B2B] font-medium rounded-md hover:bg-[#E7A699] transition shadow-[0_8px_20px_rgba(241,185,168,0.25)] hover:shadow-[0_12px_30px_rgba(241,185,168,0.35)]">
+          Play & Creative Therapy
+        </a>
+        <a href="#" class="px-6 py-3 bg-[#E5A6B8] text-[#2B2B2B] font-medium rounded-md hover:bg-[#D18CA2] transition shadow-[0_8px_20px_rgba(229,166,184,0.25)] hover:shadow-[0_12px_30px_rgba(229,166,184,0.35)]">
+          Parent Collaboration
+        </a>
+        <a href="#" class="px-6 py-3 bg-[#EADFD4] text-[#2B2B2B] font-medium rounded-md hover:bg-[#E3D3C7] transition shadow-[0_8px_20px_rgba(234,223,212,0.25)] hover:shadow-[0_12px_30px_rgba(234,223,212,0.35)]">
+          Emotional Growth Support
+        </a>
+      </div>         
+    </section>
+
+    <!-- INSIDE THE THERAPY SPACE -->
+    <section class="bg-[#FFF9F3] py-24 px-6 md:px-16 text-center">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold font-[Marcellus] text-[#2B2B2B] mb-6" data-aos="fade-up">
+            Inside the therapy space
+          </h2>
+          <p class="text-[#2B2B2B]/80 max-w-2xl mx-auto text-lg leading-relaxed mb-10" data-aos="fade-up" data-aos-delay="200">
+            A glimpse into how play, creativity, and connection help children feel safe to explore and grow 🌿
+          </p>
+
+        <div class="grid md:grid-cols-3 gap-10 mt-16 max-w-6xl mx-auto">
+          <div class="bg-white rounded-2xl p-8 card" data-aos="fade-up" data-aos-delay="100">
+            <div class="flex items-center justify-center mb-5 text-[#F1B9A8]">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 21v-7M12 14c0-3.5 2-6.5 6-7 1.5-.2 3 .1 4 .6-1 3.9-4.3 5.9-8 5.9M12 14c-3.7 0-7-2-8-5.9 1-.5 2.5-.8 4-.6 4 .5 6 3.5 6 7"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-[#2B2B2B] mb-2">Play-based Learning</h3>
+            <p class="text-[#2B2B2B] leading-relaxed">
+              Every child learns best through play: it’s how they express, explore, and connect.
+            </p>
+            </div>
+            
+            <div class="bg-white rounded-2xl p-8 card" data-aos="fade-up" data-aos-delay="250">
+              <div class="flex items-center justify-center mb-5 text-[#E5A6B8]">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 21h18M19 21V9a2 2 0 0 0-2-2h-4V3H9v4H5a2 2 0 0 0-2 2v12M9 17h6"/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold text-[#2B2B2B] mb-2">Family Connection</h3>
+              <p class="text-[#2B2B2B] leading-relaxed">
+                Sessions often involve parents, helping strengthen the bonds that matter most.
+              </p>
+            </div>
+            
+            <div class="bg-white rounded-2xl p-8 card" data-aos="fade-up" data-aos-delay="400">
+              <div class="flex items-center justify-center mb-5 text-[#F1B9A8]">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 8a6 6 0 11-12 0 6 6 0 0112 0z"/><path d="M12 14v7m-6 0h12"/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold text-[#2B2B2B] mb-2">Creative Healing</h3>
+              <p class="text-[#2B2B2B] leading-relaxed">
+                Art, music, and movement help bring emotions to life in ways words sometimes can’t.
+              </p>
+            </div>            
+    </section>
+
+    <!-- SEPARATOR -->
+    <section class="texture py-12" data-aos="fade"></section>
+
+    <!-- BOOK A SESSION -->
+<section id="book" class="bg-[#FFF9F3] py-24 px-6 md:px-16 text-center" data-aos="fade-up">
+    <div class="mb-12">
+      <h2 class="text-3xl font-bold font-[Marcellus] md:text-4xl text-[#2B2B2B] mb-4">
+        Schedule a Session
+      </h2>
+      <p class="text-[#2B2B2B] max-w-2xl mx-auto text-lg leading-relaxed">
+        Choose a time that works best for you. It’s simple, flexible, and easy to plan.
+      </p>
+    </div>
+  
+    <div class="flex justify-center">
+      <div class="w-full max-w-[800px] px-4 sm:px-6 md:px-10" data-aos="zoom-in">
+        <iframe
+          src="https://calendly.com/ruchelpamela/30min"
+          class="w-full h-[560px] md:h-[620px] rounded-2xl shadow-[0_8px_24px_rgba(241,185,168,0.15)] border border-[#EADFD4]"
+          frameborder="0"
+          title="Booking calendar">
+        </iframe>
+      </div>
+    </div>
+  </section>  
+
+    <script>
+      AOS.init({ duration: 1000, once: true });
+    </script>
+  </body>
+</html>
