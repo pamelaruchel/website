@@ -25,25 +25,25 @@
     }
 
     @font-face {
-        font-family: 'space-age';
-        src: url('fonts/space-age.ttf') format(truetype); 
-        font-weight: normal;
-        font-style: normal;    
-        }
+      font-family: 'space-age';
+      src: url('fonts/space-age.ttf') format(truetype);
+      font-weight: normal;
+      font-style: normal;
+    }
   </style>
 </head>
 
 <body class="overflow-x-hidden max-w-[100vw]">
-    <header
+  <header
     style="padding: 1.2rem; background:var(--cor-principal);"
     class="sticky top-0 left-0 w-full flex items-center justify-between z-[100]">
-  
+
     <a href="index.html"
        class="logo text-sm sm:text-base"
        style="font-family:'space-age', sans-serif; font-size:2rem; color:var(--text-color); cursor:default; margin-bottom:10px;">
       Pâmela Ruchel
     </a>
-  
+
     <nav class="hidden lg:flex items-center space-x-6 pr-12" aria-label="Main navigation">
       <a href="index.html#home" class="relative pb-1 text-[1.2rem] text-[var(--text-color)] font-semibold after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-full after:bg-[#93A1A7]">Home</a>
       <a href="index.html#what" class="relative pb-1 text-[1.2rem] text-[var(--text-color)] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[#93A1A7] after:transition-all hover:after:w-full">What I Deliver</a>
@@ -51,14 +51,14 @@
       <a href="index.html#about" class="relative pb-1 text-[1.2rem] text-[var(--text-color)] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[#93A1A7] after:transition-all hover:after:w-full">About</a>
       <a href="index.html#contact" class="relative pb-1 text-[1.2rem] text-[var(--text-color)] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[#93A1A7] after:transition-all hover:after:w-full">Contact</a>
     </nav>
-  
+
     <button class="menu-hamburguer flex flex-col items-center justify-center gap-[0.25rem] p-2 lg:hidden"
             aria-expanded="false" aria-label="Open menu" type="button">
       <span class="bar block w-8 h-[0.3rem] bg-[var(--text-color)] rounded transition-transform duration-300"></span>
       <span class="bar block w-8 h-[0.3rem] bg-[var(--text-color)] rounded transition-opacity duration-300"></span>
       <span class="bar block w-8 h-[0.3rem] bg-[var(--text-color)] rounded transition-transform duration-300"></span>
     </button>
-  
+
     <div class="nav-responsive hidden absolute top-full left-0 w-full p-4 bg-[var(--cor-principal)]">
       <a href="index.html#home" class="block text-[1.2rem] text-[var(--text-color)] py-2 hover:text-[var(--color-02)] transition">Home</a>
       <a href="index.html#what" class="block text-[1.2rem] text-[var(--text-color)] py-2 hover:text-[var(--color-02)] transition">What I Deliver</a>
@@ -68,36 +68,73 @@
     </div>
   </header>
 
+  <!-- Title -->
   <section class="max-w-3xl mx-auto px-6 pt-12">
-    <h1 class="text-3xl md:text-5xl font-bold text-center mb-8">
-      Project Jennifer Williams
+    <h1 class="text-3xl md:text-5xl font-bold text-center mb-3">
+      Psychologist Website Example
     </h1>
+
+    <p class="text-center text-gray-400 text-base md:text-lg leading-relaxed">
+      A calm, professional layout designed to build trust fast and make it easy for new clients to reach out.
+    </p>
   </section>
-  
-  <section class="w-full justify-center mb-12">
+
+  <!-- Hero image -->
+  <section class="w-full justify-center mb-12 mt-10">
     <img
       src="images/jennifer.png"
-      alt="Project Hero"
+      alt="Psychologist Website Example Preview"
       class="w-full max-w-4xl rounded-2xl shadow-lg object-cover mx-auto"
     >
   </section>
-  
+
+  <!-- Content -->
   <section class="max-w-3xl mx-auto px-6 pb-20 space-y-8">
+
     <p class="text-lg text-gray-300 leading-relaxed text-left">
-      <strong>Challenge:</strong> For Dr. Jennifer Williams, a fictional psychologist, the challenge was to design a website that feels both professional and approachable. It needed to convey calm and trust while presenting services in a clear, credible way. As a portfolio project, it also had to highlight my ability to combine aesthetics with usability.
+      <strong class="text-white">What this is designed to do:</strong>
+      Help a visitor understand, in seconds, who you help and what you offer.
+      The structure keeps the message clear, answers the main questions people have, and makes the next step obvious.
     </p>
-  
+
     <p class="text-lg text-gray-300 leading-relaxed text-left">
-      <strong>Solution:</strong> I created a clean, minimalist layout with warm neutral tones to set a welcoming atmosphere. The typography balances professionalism with approachability, while the structure guides visitors naturally through the hero, about, and services sections. Subtle animations add a modern touch without distraction, and the fully responsive design ensures a seamless experience across devices.
+      <strong class="text-white">How the page guides people:</strong>
+      It starts with a clean first impression, then moves through a simple flow.
+      Services are easy to scan, the tone feels professional but warm, and calls to action appear at the right moments.
+      Nothing feels overwhelming or confusing.
     </p>
-  
+
     <p class="text-lg text-gray-300 leading-relaxed text-left">
-      <strong>Impact:</strong> The final concept shows how thoughtful design choices can strengthen a professional’s online presence. It conveys trust and clarity, giving potential clients confidence before the first contact. For my portfolio, it serves as a strong example of how strategic structure and user-centered design can elevate service-oriented websites.
+      <strong class="text-white">What you get from a structure like this:</strong>
+      More trust, fewer vague messages, and better inquiries from people who feel aligned with your work.
+      This is built for real conversion through clarity and direction.
     </p>
-  
+
+    <div class="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+      <div class="flex flex-wrap gap-2">
+        <span class="px-3 py-1.5 rounded-full text-sm text-gray-300 border border-white/10 bg-white/[0.03]">
+          Clear service sections
+        </span>
+        <span class="px-3 py-1.5 rounded-full text-sm text-gray-300 border border-white/10 bg-white/[0.03]">
+          Trust focused design
+        </span>
+        <span class="px-3 py-1.5 rounded-full text-sm text-gray-300 border border-white/10 bg-white/[0.03]">
+          Simple booking flow
+        </span>
+        <span class="px-3 py-1.5 rounded-full text-sm text-gray-300 border border-white/10 bg-white/[0.03]">
+          Responsive build
+        </span>
+      </div>
+
+      <p class="text-gray-400 mt-4 leading-relaxed">
+        This is a representative example of the type of website I build for mental health professionals.
+        Your site is customized around your specialty, services, location, and visual preferences.
+      </p>
+    </div>
+
     <div class="flex justify-center pt-4">
       <a href="projects/project1/index.html" target="_blank"
-        class="inline-flex whitespace-nowrap items-center justify-center px-6 py-3 rounded-full font-semibold bg-[#3d69b4ce] text-white border border-[#3d69b4ce] 
+        class="inline-flex whitespace-nowrap items-center justify-center px-6 py-3 rounded-full font-semibold bg-[#3d69b4ce] text-white border border-[#3d69b4ce]
                hover:bg-transparent hover:text-[var(--color-02)] hover:shadow-[0_0_6px_var(--color-highlight)] transition-all duration-300">
         View the full website
       </a>
@@ -141,14 +178,14 @@
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 
-<script>
+  <script>
     (function () {
       const burger = document.querySelector('.menu-hamburguer');
       const navResp = document.querySelector('.nav-responsive');
       if (!burger || !navResp) return;
-  
+
       const bars = burger.querySelectorAll('.bar');
-  
+
       function openMenu() {
         burger.setAttribute('aria-expanded', 'true');
         navResp.classList.remove('hidden');
@@ -156,7 +193,7 @@
         bars[1].classList.add('opacity-0');
         bars[2].classList.add('-translate-y-2', '-rotate-45');
       }
-  
+
       function closeMenu() {
         burger.setAttribute('aria-expanded', 'false');
         navResp.classList.add('hidden');
@@ -164,17 +201,17 @@
         bars[1].classList.remove('opacity-0');
         bars[2].classList.remove('-translate-y-2', '-rotate-45');
       }
-  
+
       burger.addEventListener('click', function () {
         const expanded = burger.getAttribute('aria-expanded') === 'true';
         if (expanded) closeMenu();
         else openMenu();
       });
-  
+
       navResp.querySelectorAll('a').forEach(a => {
         a.addEventListener('click', () => closeMenu());
       });
-  
+
       document.addEventListener('click', (e) => {
         if (!navResp.classList.contains('hidden')) {
           if (!navResp.contains(e.target) && !burger.contains(e.target)) {
