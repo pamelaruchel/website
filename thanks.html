@@ -1,120 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thank you!</title>
-    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
-    <style>
-        body {
-            background-color: #000000ee;
-            font-family: 'Poppins', sans-serif;
-            text-align: center;
-            padding: 50px;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Message received</title>
+  <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-        h1 {
-            color: white;
-            font-family: 'Poppins', sans-serif;
-            font-size: 3rem;
-            text-align: center;
-            margin-bottom: 12px; 
-            margin-top: 0;
-        }
+  <style>
+    :root{
+      --bg: #06080f;
+      --card: rgba(255,255,255,.04);
+      --border: rgba(255,255,255,.10);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.66);
+      --accent: rgba(61,105,180,.85);
+      --accent2: rgba(61,105,180,.35);
+      --shadow: 0 22px 60px rgba(0,0,0,.55);
+      --radius: 26px;
+    }
 
-        span {
-            color: #3d69b4ce;
-        }
+    *{ box-sizing: border-box; }
 
-        p {
-            color: white;
-            font-family: 'Poppins', sans-serif;
-            font-size: 18px;
-            margin-bottom: 40px;
-            margin-top: 0;
-            border: none;
-            outline: none;
-        }
+    body{
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text);
+      background: radial-gradient(900px 500px at 50% -10%, rgba(61,105,180,.18), transparent 60%),
+                  radial-gradient(700px 420px at 80% 20%, rgba(61,105,180,.10), transparent 60%),
+                  radial-gradient(700px 420px at 20% 70%, rgba(61,105,180,.08), transparent 60%),
+                  var(--bg);
+      display: grid;
+      place-items: center;
+      padding: 28px 18px;
+      overflow-x: hidden;
+    }
 
-        a {
-            text-decoration: none;
-            color: #3d69b4ce;
-        }
-        
-        a:hover {
-            text-decoration: solid;
-            color: #a16210;
-            outline: none;
-            border: none;
-        }
+    .wrap{
+      width: 100%;
+      max-width: 980px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+      align-items: center;
+      justify-items: center;
+    }
 
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0);
-        }
+    .card{
+      width: 100%;
+      max-width: 720px;
+      border-radius: var(--radius);
+      background: var(--card);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      padding: 28px 22px;
+      position: relative;
+      overflow: hidden;
+    }
 
-        img {
-            max-width: 100%;
-            height: auto;
-            justify-content: center;
-            width: 70%;
-         }
+    .card::before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background: radial-gradient(500px 180px at 50% 0%, rgba(61,105,180,.25), transparent 60%);
+      pointer-events:none;
+    }
 
-        /*=== media queries ===*/
+    .top{
+      display:flex;
+      align-items:center;
+      gap: 12px;
+      margin-bottom: 18px;
+      position: relative;
+      z-index: 1;
+    }
 
-        @media (max-width: 768px) {
-            body {
-                padding: 20px;
-            }
+    .badge{
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      display:grid;
+      place-items:center;
+      background: rgba(61,105,180,.15);
+      border: 1px solid rgba(61,105,180,.35);
+      box-shadow: 0 0 24px rgba(61,105,180,.12);
+      flex: 0 0 auto;
+    }
 
-            h1 {
-                font-size: 2.5rem;
-            }
+    .badge svg{ width: 22px; height: 22px; color: rgba(61,105,180,.9); }
 
-            p {
-                font-size: 16px;
-                line-height: 150%;
-            }
+    h1{
+      margin: 0;
+      font-size: clamp(1.65rem, 2.6vw, 2.5rem);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
 
-            .container {
-                padding: 10px;
-            }
-        }
+    .accent{ color: var(--accent); }
 
+    p{
+      margin: 0;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.7;
+      position: relative;
+      z-index: 1;
+    }
 
-        @media (max-width: 480px) {
-            body {
-                padding: 10px;
-            }
+    .meta{
+      margin-top: 14px;
+      display:flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      position: relative;
+      z-index: 1;
+    }
 
-            h1 {
-                font-size: 2rem;
-            }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.10);
+      color: rgba(255,255,255,.78);
+      font-size: .92rem;
+    }
 
-            p {
-                font-size: 14px;
-            }
+    .pill svg{ width: 16px; height: 16px; color: rgba(61,105,180,.85); }
 
-            .container {
-                padding: 5px;
-            }
+    .actions{
+      margin-top: 22px;
+      display:flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      position: relative;
+      z-index: 1;
+    }
 
-        }
+    .btn{
+      appearance: none;
+      border: 1px solid rgba(255,255,255,.14);
+      background: transparent;
+      color: rgba(255,255,255,.88);
+      padding: 12px 16px;
+      border-radius: 999px;
+      font-weight: 600;
+      text-decoration: none;
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease, background .18s ease;
+      will-change: transform;
+    }
 
-/*=== /media queries ===*/
+    .btn:hover{
+      transform: translateY(-1px);
+      border-color: rgba(61,105,180,.55);
+      box-shadow: 0 0 26px rgba(61,105,180,.20);
+    }
 
-    </style>
+    .btn-primary{
+      background: rgba(61,105,180,.88);
+      border-color: rgba(61,105,180,.88);
+      color: white;
+      box-shadow: 0 10px 30px rgba(61,105,180,.18);
+    }
+
+    .btn-primary:hover{
+      background: rgba(61,105,180,.78);
+      border-color: rgba(61,105,180,.78);
+      box-shadow: 0 14px 40px rgba(61,105,180,.25);
+    }
+
+    .btn svg{ width: 18px; height: 18px; }
+
+    .footer-note{
+      margin-top: 14px;
+      font-size: .95rem;
+    }
+
+    .footer-note a{
+      color: rgba(61,105,180,.95);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(61,105,180,.35);
+    }
+
+    .footer-note a:hover{
+      border-bottom-color: rgba(61,105,180,.75);
+    }
+
+    @media (min-width: 900px){
+      .card{ padding: 34px 30px; }
+    }
+  </style>
 </head>
-<body>
-    <h1>Thank you for your <span>message</span>!</h1>
-    
-    <div class="container">
-        <p>I appreciate you getting in touch with me. I will personally get back to you as soon as possible. In the meantime, feel free to browse my <a href="https://pamelaruchel.github.io/site/">site</a> or check out my projects. Have a great day!</p>
 
-        <img src="images/thank-you.gif" alt="Thank you">
-    </div>
-    
+<body>
+  <main class="wrap">
+    <section class="card" aria-label="Message confirmation">
+      <div class="top">
+        <div class="badge" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h1>Message <span class="accent">received</span></h1>
+      </div>
+
+      <p>
+        Thanks for reaching out. I read every message personally.
+        If it is a good fit, I will reply with next steps and a clear timeline.
+      </p>
+
+      <div class="meta">
+        <span class="pill">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M12 8v5l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" stroke="currentColor" stroke-width="2"/>
+          </svg>
+          Typical reply time: within 24 hours
+        </span>
+
+        <span class="pill">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M4 6h16v12H4z" stroke="currentColor" stroke-width="2"/>
+            <path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          You can also email: pamelaruchel.dev@gmail.com
+        </span>
+      </div>
+
+      <div class="actions">
+        <a class="btn btn-primary" href="https://pamelaruchel.github.io/website/">
+          Back to site
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M10 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+
+        <a class="btn" href="https://pamelaruchel.github.io/website/#portfolio">
+          View work
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M7 17l10-10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M10 7h7v7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+
+      <p class="footer-note">
+        If your project is time sensitive, email me directly at
+        <a href="mailto:pamelaruchel.dev@gmail.com?subject=Website%20Project">pamelaruchel.dev@gmail.com</a>.
+      </p>
+    </section>
+  </main>
 </body>
 </html>
