@@ -191,16 +191,10 @@
          px-6 md:px-20 pt-8 md:pt-12 gap-10 lg:gap-20">
 
   <div class="w-full lg:w-7/12 text-white text-center lg:text-left">
-    <h1 
-      class="font-bold leading-snug text-3xl md:text-5xl text-center lg:text-left mb-3 md:mb-5 mt-0"
-      data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-      Websites for <br class="lg:hidden">
-      <span class="text-[#3d69b4ce]">mental health practices</span> <br class="lg:hidden">
-      that generate more client inquiries
-    </h1>
 
+    <!-- moved ABOVE H1 -->
     <div class="flex justify-center lg:justify-start mb-4"
-         data-aos="fade-up" data-aos-duration="900" data-aos-delay="320">
+         data-aos="fade-up" data-aos-duration="900" data-aos-delay="200">
       <span class="inline-flex items-center px-4 py-2 rounded-full 
                    border border-[#3d69b4ce] text-[#3d69b4ce] bg-white/5
                    text-sm md:text-[0.95rem]">
@@ -208,11 +202,17 @@
       </span>
     </div>
 
+    <h1 
+      class="font-bold leading-[1.15] text-3xl md:text-5xl text-center lg:text-left mb-4 md:mb-6 mt-0"
+      data-aos="fade-up" data-aos-duration="1000" data-aos-delay="320">
+      Websites for <br class="lg:hidden">
+      <span class="text-[#3d69b4ce]">mental health practices</span> <br class="lg:hidden">
+      that generate more client inquiries
+    </h1>
+
     <p 
-      class="text-[1rem] [@media(min-width:400px)]:text-[1.05rem] sm:text-base md:text-[1.15rem] text-gray-300 leading-relaxed 
-             max-w-[26rem] [@media(min-width:400px)]:max-w-[32rem] [@media(min-width:500px)]:max-w-[36rem] 
-             [@media(min-width:600px)]:max-w-[42rem] [@media(min-width:768px)]:max-w-[46rem] lg:max-w-[38rem] xl:max-w-prose
-             mx-auto lg:mx-0 mt-0 mb-6 sm:mb-8 md:mb-10 tracking-normal text-center lg:text-left"
+      class="text-[1.05rem] sm:text-[1.1rem] md:text-[1.2rem] text-gray-200/90 leading-[1.75]
+             max-w-prose mx-auto lg:mx-0 mt-0 mb-7 sm:mb-9 md:mb-10 text-center lg:text-left"
       data-aos="fade-up" data-aos-duration="1000" data-aos-delay="420">
       Built for trust, clarity, and a smooth path from “I’m interested” to “Let’s book.”
       Your services stay clear, your next step stays obvious, and your site stays easy to navigate.
@@ -240,10 +240,10 @@
 
     <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4"
          data-aos="fade-up" data-aos-delay="800" data-aos-duration="800">
-      <a href="#contact"
+      <a href="mailto:pamelaruchel.dev@gmail.com?subject=Start%20a%20Project"
         class="inline-flex items-center justify-center px-6 py-3 rounded-full font-semibold bg-[#3d69b4ce] text-white border border-[#3d69b4ce] 
                hover:bg-transparent hover:text-[var(--color-02)] hover:shadow-[0_0_6px_var(--color-highlight)] transition-all duration-300">
-        Work With Me
+        Start a Project
       </a>
 
       <a href="#portfolio" 
@@ -462,7 +462,7 @@
                 Practices with a website that feels “off”
               </h3>
               <p class="text-gray-400 mt-2 leading-relaxed">
-                Outdated, messy, or hard to navigate. We rebuild it into something calm, modern, and intentional.
+                Outdated, messy, or hard to navigate. I rebuild it into something calm, modern, and intentional.
               </p>
             </div>
           </div>
@@ -491,7 +491,7 @@
 
 <!-- Why Most Practice Websites Don’t Convert -->
 <section id="why" class="bg-black py-24 px-6 md:px-20">
-  <div class="max-w-6xl mx-auto">
+  <div class="max-w-4xl mx-auto">
 
     <h2 class="text-3xl md:text-5xl font-semibold text-white text-center mb-6"
         data-aos="fade-up" data-aos-duration="900">
@@ -505,51 +505,55 @@
       When the next step feels unclear, people leave quietly.
     </p>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-14">
+    <!-- reasons (aligned on desktop, responsive everywhere) -->
+    <div class="mt-16 space-y-10 md:space-y-12">
 
-      <!-- Card -->
-      <div class="rounded-2xl p-8 bg-[#101826] border border-white/10
-                  hover:border-[#3d69b4ce]/40 transition"
+      <!-- item 01 -->
+      <div class="grid grid-cols-1 md:grid-cols-[56px_1fr] gap-6 md:gap-10 max-w-3xl mx-auto items-start"
            data-aos="fade-up" data-aos-delay="200">
-        <p class="text-[#3d69b4ce] font-semibold mb-3">01</p>
-        <h3 class="text-white text-xl font-semibold mb-3">
-          The message is vague
-        </h3>
-        <p class="text-gray-400 leading-relaxed">
-          Visitors cannot quickly understand who you help, what you offer, or why you are the right fit.
-        </p>
+        <p class="text-[#3d69b4ce] font-semibold tracking-wide md:pt-1">01</p>
+        <div>
+          <h3 class="text-white text-xl md:text-2xl font-semibold mb-2">
+            The message is vague
+          </h3>
+          <p class="text-gray-400 leading-relaxed text-[0.98rem] md:text-[1.05rem]">
+            Visitors cannot quickly understand who you help, what you offer, or why you are the right fit.
+          </p>
+        </div>
       </div>
 
-      <!-- Card -->
-      <div class="rounded-2xl p-8 bg-[#101826] border border-white/10
-                  hover:border-[#3d69b4ce]/40 transition"
+      <!-- item 02 -->
+      <div class="grid grid-cols-1 md:grid-cols-[56px_1fr] gap-6 md:gap-10 max-w-3xl mx-auto items-start"
            data-aos="fade-up" data-aos-delay="300">
-        <p class="text-[#3d69b4ce] font-semibold mb-3">02</p>
-        <h3 class="text-white text-xl font-semibold mb-3">
-          The next step is hidden
-        </h3>
-        <p class="text-gray-400 leading-relaxed">
-          If booking feels like effort, clients hesitate. Your site should make the next action obvious and easy.
-        </p>
+        <p class="text-[#3d69b4ce] font-semibold tracking-wide md:pt-1">02</p>
+        <div>
+          <h3 class="text-white text-xl md:text-2xl font-semibold mb-2">
+            The next step is hidden
+          </h3>
+          <p class="text-gray-400 leading-relaxed text-[0.98rem] md:text-[1.05rem]">
+            If booking feels like effort, clients hesitate. Your site should make the next action obvious and easy.
+          </p>
+        </div>
       </div>
 
-      <!-- Card -->
-      <div class="rounded-2xl p-8 bg-[#101826] border border-white/10
-                  hover:border-[#3d69b4ce]/40 transition"
+      <!-- item 03 -->
+      <div class="grid grid-cols-1 md:grid-cols-[56px_1fr] gap-6 md:gap-10 max-w-3xl mx-auto items-start"
            data-aos="fade-up" data-aos-delay="400">
-        <p class="text-[#3d69b4ce] font-semibold mb-3">03</p>
-        <h3 class="text-white text-xl font-semibold mb-3">
-          Trust is not established fast
-        </h3>
-        <p class="text-gray-400 leading-relaxed">
-          People decide in seconds. Structure, tone, and clarity build confidence before they ever contact you.
-        </p>
+        <p class="text-[#3d69b4ce] font-semibold tracking-wide md:pt-1">03</p>
+        <div>
+          <h3 class="text-white text-xl md:text-2xl font-semibold mb-2">
+            Trust is not established fast
+          </h3>
+          <p class="text-gray-400 leading-relaxed text-[0.98rem] md:text-[1.05rem]">
+            People decide in seconds. Structure, tone, and clarity build confidence before they ever contact you.
+          </p>
+        </div>
       </div>
 
     </div>
 
     <!-- closer -->
-    <div class="mt-12 rounded-2xl p-8 bg-[#101826] border border-white/10"
+    <div class="mt-16 border-t border-white/10 pt-10"
          data-aos="fade-up" data-aos-delay="520">
       <p class="text-gray-300 leading-relaxed text-center max-w-3xl mx-auto
                 text-[1rem] md:text-[1.05rem]">
@@ -916,15 +920,15 @@
 <section id="outcomes" class="bg-black text-white py-20 md:py-32 px-6">
   <div class="max-w-6xl mx-auto">
 
-    <!-- Header (assimétrico, não padrão) -->
+    <!-- Header -->
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-end mb-12 md:mb-16">
       <div class="lg:col-span-7" data-aos="fade-up">
         <h2 class="text-3xl md:text-5xl font-bold leading-tight">
           What you <span class="text-[#3d69b4ce]">get</span>
         </h2>
         <p class="text-white/70 text-base md:text-lg leading-relaxed mt-5 max-w-2xl">
-          Beyond design, you get outcomes that make your website feel calm, intentional,
-          and effective for the right clients.
+          Not just a nicer website. A stronger first impression, better fit clients,
+          and a smoother intake experience that supports your practice.
         </p>
       </div>
 
@@ -932,14 +936,14 @@
       <div class="lg:col-span-5" data-aos="fade-up" data-aos-delay="120">
         <div class="rounded-3xl border border-white/10 bg-white/5 p-6 md:p-8">
           <p class="text-white/80 leading-relaxed">
-            A website that quietly does the work for you:
-            explaining, guiding, and building confidence before you ever reply.
+            Your website becomes your quiet front desk,
+            helping the right people self select, feel safe, and take the next step.
           </p>
         </div>
       </div>
     </div>
 
-    <!-- Outcomes list (alternating flow, not cards grid) -->
+    <!-- Outcomes list -->
     <div class="space-y-6 md:space-y-8">
 
       <!-- Outcome 1 -->
@@ -949,11 +953,11 @@
           <span class="text-[#3d69b4ce] font-semibold">01</span>
           <div>
             <h3 class="text-xl md:text-2xl font-semibold">
-              More confident inquiries
+              Higher quality leads
             </h3>
             <p class="text-white/70 leading-relaxed mt-2 max-w-2xl">
-              Visitors understand who you help, what you offer, and whether you are the right fit,
-              before they ever reach out.
+              People reach out with clearer intent. They already understand your focus,
+              your approach, and what working with you feels like.
             </p>
           </div>
         </div>
@@ -966,11 +970,11 @@
           <span class="text-[#3d69b4ce] font-semibold">02</span>
           <div>
             <h3 class="text-xl md:text-2xl font-semibold">
-              Fewer unnecessary emails
+              Less time explaining the basics
             </h3>
             <p class="text-white/70 leading-relaxed mt-2 max-w-2xl">
-              Clear structure and messaging answer common questions upfront,
-              reducing back-and-forth and setting expectations early.
+              Your website answers common questions upfront,
+              reducing unnecessary back and forth before the first session.
             </p>
           </div>
         </div>
@@ -983,11 +987,11 @@
           <span class="text-[#3d69b4ce] font-semibold">03</span>
           <div>
             <h3 class="text-xl md:text-2xl font-semibold">
-              A clearer path to booking
+              A calmer intake experience
             </h3>
             <p class="text-white/70 leading-relaxed mt-2 max-w-2xl">
-              Calls to action feel natural, not pushy.
-              The next step is always visible and easy to take.
+              The process feels simple and reassuring.
+              The next step is clear, and visitors do not feel rushed or confused.
             </p>
           </div>
         </div>
@@ -1000,11 +1004,11 @@
           <span class="text-[#3d69b4ce] font-semibold">04</span>
           <div>
             <h3 class="text-xl md:text-2xl font-semibold">
-              A presence that feels aligned
+              A premium presence that matches your work
             </h3>
             <p class="text-white/70 leading-relaxed mt-2 max-w-2xl">
-              Visuals, tone, and structure reflect your practice with clarity and calm,
-              so your site finally feels like an extension of your work.
+              Your site communicates credibility and care at a glance,
+              reflecting the level of your practice with clarity and calm.
             </p>
           </div>
         </div>
@@ -1211,26 +1215,24 @@
     Let’s <span class="text-[#3d69b4ce]">talk</span>
   </h2>
 
-  <form action="https://formsubmit.co/ruchelpamela@gmail.com" method="POST" autocomplete="on"
+  <form autocomplete="on"
         class="max-w-2xl mx-auto border border-[var(--cor-principal)] rounded-2xl p-8 text-center shadow-lg">
-    
-    <input type="hidden" name="_next" value="https://pamelaruchel.github.io/site/thanks.html">
 
     <div class="flex flex-wrap justify-between gap-4 mb-6">
-      <input type="text" name="name" placeholder="Full Name"
+      <input type="text" name="name" placeholder="Full Name" required
              class="w-full md:w-[48%] px-5 py-4 text-lg text-white bg-[var(--cor-principal)] border border-[var(--color-02)] rounded-lg placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-[var(--color-02)] transition"
              data-aos="slide-right" data-aos-duration="600" data-aos-delay="50">
 
-      <input type="email" name="email" placeholder="E-mail"
+      <input type="email" name="email" placeholder="E-mail" required
              class="w-full md:w-[48%] px-5 py-4 text-lg text-white bg-[var(--cor-principal)] border border-[var(--color-02)] rounded-lg placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-[var(--color-02)] transition"
              data-aos="slide-left" data-aos-duration="600" data-aos-delay="100">
     </div>
 
-    <textarea name="message" rows="7" placeholder="Message"
+    <textarea name="message" rows="7" placeholder="Message" required
               class="w-full px-5 py-4 text-lg text-white bg-[var(--cor-principal)] border border-[var(--color-02)] rounded-lg placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-[var(--color-02)] transition resize-none mb-6"
               data-aos="slide-up" data-aos-duration="600" data-aos-delay="150"></textarea>
 
-    <button type="submit"
+    <button type="button" onclick="sendEmail()"
             class="inline-block px-10 py-3 rounded-full font-semibold tracking-wide text-[var(--cor-principal)] bg-[var(--color-highlight)] hover:bg-transparent hover:text-[var(--color-02)] hover:shadow-[0_0_6px_var(--color-highlight)] transition-all duration-300"
             data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
       Send Message
@@ -1481,6 +1483,31 @@
       }
     });
   });
+</script>
+
+<script>
+  function sendEmail() {
+    const name = document.querySelector('input[name="name"]').value.trim();
+    const email = document.querySelector('input[name="email"]').value.trim();
+    const message = document.querySelector('textarea[name="message"]').value.trim();
+
+    if (!name || !email || !message) {
+      alert("Please fill out all fields before sending.");
+      return;
+    }
+
+    const subject = encodeURIComponent("Start a Website Project");
+    const body = encodeURIComponent(
+      "Name: " + name + "\n" +
+      "Email: " + email + "\n\n" +
+      "Message:\n" + message
+    );
+
+    window.location.href =
+      "mailto:pamelaruchel.dev@gmail.com" +
+      "?subject=" + subject +
+      "&body=" + body;
+  }
 </script>
 </body>
 </html>
