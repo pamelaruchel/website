@@ -1215,8 +1215,11 @@
     Let’s <span class="text-[#3d69b4ce]">talk</span>
   </h2>
 
-  <form autocomplete="on"
+  <form action="https://formspree.io/f/xaqnggjk" method="POST" autocomplete="on"
         class="max-w-2xl mx-auto border border-[var(--cor-principal)] rounded-2xl p-8 text-center shadow-lg">
+
+    <!-- optional redirect after submit -->
+    <input type="hidden" name="_redirect" value="https://pamelaruchel.github.io/site/thanks.html">
 
     <div class="flex flex-wrap justify-between gap-4 mb-6">
       <input type="text" name="name" placeholder="Full Name" required
@@ -1232,12 +1235,45 @@
               class="w-full px-5 py-4 text-lg text-white bg-[var(--cor-principal)] border border-[var(--color-02)] rounded-lg placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-[var(--color-02)] transition resize-none mb-6"
               data-aos="slide-up" data-aos-duration="600" data-aos-delay="150"></textarea>
 
-    <button type="button" onclick="sendEmail()"
-            class="inline-block px-10 py-3 rounded-full font-semibold tracking-wide text-[var(--cor-principal)] bg-[var(--color-highlight)] hover:bg-transparent hover:text-[var(--color-02)] hover:shadow-[0_0_6px_var(--color-highlight)] transition-all duration-300"
+    <!-- IMPORTANT: back to submit -->
+    <button type="submit"
+            class="inline-block px-10 py-3 rounded-full font-semibold tracking-wide text-[var(--cor-principal)] bg-[var(--color-highlight)]
+                   hover:bg-transparent hover:text-[var(--color-02)] hover:shadow-[0_0_6px_var(--color-highlight)]
+                   transition-all duration-300"
             data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
       Send Message
     </button>
+
+    <p class="mt-6 text-sm text-gray-400">
+      Or email me directly at
+      <a href="mailto:pamelaruchel.dev@gmail.com?subject=Start%20a%20Website%20Project"
+         class="text-[#3d69b4ce] underline underline-offset-4">
+        pamelaruchel.dev@gmail.com
+      </a>
+    </p>
+
   </form>
+<div id="contact-toast"
+class="fixed left-1/2 bottom-8 z-[9999]
+       -translate-x-1/2 translate-y-6 opacity-0
+       pointer-events-none
+       transition-all duration-300 ease-out">
+<div class="flex items-center gap-3 rounded-xl
+         bg-[#0b1220]/95 backdrop-blur
+         border border-white/10
+         px-5 py-3 shadow-xl">
+<svg class="w-5 h-5 text-[#3d69b4ce]" viewBox="0 0 24 24" fill="none">
+ <path d="M5 13l4 4L19 7"
+       stroke="currentColor"
+       stroke-width="2"
+       stroke-linecap="round"
+       stroke-linejoin="round"/>
+</svg>
+<p class="text-sm text-white/90">
+ Message sent successfully.
+</p>
+</div>
+</div>
 </section>
 
 <!--footer-->
@@ -1486,27 +1522,20 @@
 </script>
 
 <script>
-  function sendEmail() {
-    const name = document.querySelector('input[name="name"]').value.trim();
-    const email = document.querySelector('input[name="email"]').value.trim();
-    const message = document.querySelector('textarea[name="message"]').value.trim();
+  const contactForm = document.querySelector('#contact form');
+  const contactToast = document.getElementById('contact-toast');
 
-    if (!name || !email || !message) {
-      alert("Please fill out all fields before sending.");
-      return;
-    }
+  if (contactForm && contactToast) {
+    contactForm.addEventListener('submit', () => {
 
-    const subject = encodeURIComponent("Start a Website Project");
-    const body = encodeURIComponent(
-      "Name: " + name + "\n" +
-      "Email: " + email + "\n\n" +
-      "Message:\n" + message
-    );
+      contactToast.classList.remove('opacity-0', 'translate-y-6');
+      contactToast.classList.add('opacity-100', 'translate-y-0');
 
-    window.location.href =
-      "mailto:pamelaruchel.dev@gmail.com" +
-      "?subject=" + subject +
-      "&body=" + body;
+      setTimeout(() => {
+        contactToast.classList.remove('opacity-100', 'translate-y-0');
+        contactToast.classList.add('opacity-0', 'translate-y-6');
+      }, 3000);
+    });
   }
 </script>
 </body>
