@@ -52,6 +52,8 @@
       -webkit-overflow-scrolling: touch;
     }
 
+    html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
       font-family: 'Montserrat', sans-serif;
@@ -192,18 +194,21 @@
 
   <div class="w-full lg:w-7/12 text-white text-center lg:text-left">
 
-    <!-- moved ABOVE H1 -->
-    <div class="flex justify-center lg:justify-start mb-4"
+    <!-- badge -->
+    <div class="flex justify-center lg:justify-start mb-8 sm:mb-6 md:mb-5"
          data-aos="fade-up" data-aos-duration="900" data-aos-delay="200">
       <span class="inline-flex items-center px-4 py-2 rounded-full 
                    border border-[#3d69b4ce] text-[#3d69b4ce] bg-white/5
-                   text-sm md:text-[0.95rem]">
+                   text-sm md:text-[0.95rem] tracking-wide">
         Serving clients across the U.S., Europe & Australia
       </span>
     </div>
 
+    <!-- headline -->
     <h1 
-      class="font-bold leading-[1.15] text-3xl md:text-5xl text-center lg:text-left mb-4 md:mb-6 mt-0"
+      class="font-bold leading-[1.18] text-3xl md:text-5xl
+             text-left sm:text-center lg:text-left
+             mt-0 mb-5 md:mb-6"
       data-aos="fade-up" data-aos-duration="1000" data-aos-delay="320">
       Websites for <br class="lg:hidden">
       <span class="text-[#3d69b4ce]">mental health practices</span> <br class="lg:hidden">
@@ -212,7 +217,8 @@
 
     <p 
       class="text-[1.05rem] sm:text-[1.1rem] md:text-[1.2rem] text-gray-200/90 leading-[1.75]
-             max-w-prose mx-auto lg:mx-0 mt-0 mb-7 sm:mb-9 md:mb-10 text-center lg:text-left"
+             max-w-prose mx-auto lg:mx-0 mt-0 mb-7 sm:mb-9 md:mb-10
+             text-left sm:text-center lg:text-left"
       data-aos="fade-up" data-aos-duration="1000" data-aos-delay="420">
       Built for trust, clarity, and a smooth path from “I’m interested” to “Let’s book.”
       Your services stay clear, your next step stays obvious, and your site stays easy to navigate.
@@ -240,7 +246,8 @@
 
     <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4"
          data-aos="fade-up" data-aos-delay="800" data-aos-duration="800">
-      <a href="mailto:pamelaruchel.dev@gmail.com?subject=Start%20a%20Project"
+
+      <a href="#contact"
         class="inline-flex items-center justify-center px-6 py-3 rounded-full font-semibold bg-[#3d69b4ce] text-white border border-[#3d69b4ce] 
                hover:bg-transparent hover:text-[var(--color-02)] hover:shadow-[0_0_6px_var(--color-highlight)] transition-all duration-300">
         Start a Project
