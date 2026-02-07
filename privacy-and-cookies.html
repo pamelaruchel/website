@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy & Cookies | Pâmela Ruchel</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #000;
+      color: #fff;
+    }
+
+    :root {
+      --main-color: #3d69b4ce;
+      --text-color: #ffffff;
+      --cor-principal: #000000ee;
+      --color-02: #B3E7F5;
+      --color-highlight: #3d69b4ce;
+    }
+
+    @font-face {
+        font-family: 'space-age';
+        src: url('fonts/space-age.ttf') format(truetype); 
+        font-weight: normal;
+        font-style: normal;    
+        }
+  </style>
+</head>
+
+<body class="overflow-x-hidden max-w-[100vw]">
+    <header
+    style="padding: 1.2rem; background:var(--cor-principal);"
+    class="sticky top-0 left-0 w-full flex items-center justify-between z-[100]">
+  
+    <a href="index.html"
+       class="logo text-sm sm:text-base"
+       style="font-family:'space-age', sans-serif; font-size:2rem; color:var(--text-color); cursor:default; margin-bottom:10px;">
+      Pâmela Ruchel
+    </a>
+  
+    <nav class="hidden lg:flex items-center space-x-6 pr-12" aria-label="Main navigation">
+      <a href="index.html#home" class="relative pb-1 text-[1.2rem] text-[var(--text-color)] font-semibold after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-full after:bg-[#93A1A7]">Home</a>
+      <a href="index.html#what" class="relative pb-1 text-[1.2rem] text-[var(--text-color)] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[#93A1A7] after:transition-all hover:after:w-full">What I Deliver</a>
+      <a href="index.html#portfolio" class="relative pb-1 text-[1.2rem] text-[var(--text-color)] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[#93A1A7] after:transition-all hover:after:w-full">Projects</a>
+      <a href="index.html#about" class="relative pb-1 text-[1.2rem] text-[var(--text-color)] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[#93A1A7] after:transition-all hover:after:w-full">About</a>
+      <a href="index.html#contact" class="relative pb-1 text-[1.2rem] text-[var(--text-color)] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[#93A1A7] after:transition-all hover:after:w-full">Contact</a>
+    </nav>
+  
+    <button class="menu-hamburguer flex flex-col items-center justify-center gap-[0.25rem] p-2 lg:hidden"
+            aria-expanded="false" aria-label="Open menu" type="button">
+      <span class="bar block w-8 h-[0.3rem] bg-[var(--text-color)] rounded transition-transform duration-300"></span>
+      <span class="bar block w-8 h-[0.3rem] bg-[var(--text-color)] rounded transition-opacity duration-300"></span>
+      <span class="bar block w-8 h-[0.3rem] bg-[var(--text-color)] rounded transition-transform duration-300"></span>
+    </button>
+  
+    <div class="nav-responsive hidden absolute top-full left-0 w-full p-4 bg-[var(--cor-principal)]">
+      <a href="index.html#home" class="block text-[1.2rem] text-[var(--text-color)] py-2 hover:text-[var(--color-02)] transition">Home</a>
+      <a href="index.html#what" class="block text-[1.2rem] text-[var(--text-color)] py-2 hover:text-[var(--color-02)] transition">What I Deliver</a>
+      <a href="index.html#portfolio" class="block text-[1.2rem] text-[var(--text-color)] py-2 hover:text-[var(--color-02)] transition">Projects</a>
+      <a href="index.html#about" class="block text-[1.2rem] text-[var(--text-color)] py-2 hover:text-[var(--color-02)] transition">About</a>
+      <a href="index.html#contact" class="block text-[1.2rem] text-[var(--text-color)] py-2 hover:text-[var(--color-02)] transition">Contact</a>
+    </div>
+  </header>
+
+  <section id="privacy" class="w-full bg-black text-gray-300 py-20 px-6">
+    <div class="max-w-4xl mx-auto space-y-10">
+  
+      <h1 class="text-3xl md:text-4xl font-semibold text-[#3d69b4ce]">
+        Privacy & Cookies
+      </h1>      
+  
+      <div class="space-y-6 text-sm md:text-base leading-relaxed">
+  
+        <div>
+          <h2 class="text-white font-medium mb-2">Who We Are</h2>
+          <p>
+            This website is owned and operated by <span class="text-white">Pâmela Ruchel</span>, web designer and developer.
+            For any privacy-related questions, you may contact:
+            <span class="text-[#3d69b4ce]">pamelaruchel.dev@gmail.com</span>
+          </p>
+        </div>
+  
+        <div>
+          <h2 class="text-white font-medium mb-2">What Data We Collect</h2>
+          <p>
+            We collect only limited information necessary to improve the website experience and respond to inquiries.
+          </p>
+          <ul class="list-disc pl-5 mt-2 space-y-1">
+            <li>Name, email and message submitted through the contact form.</li>
+            <li>Anonymous analytics data such as pages visited, device type and general location.</li>
+          </ul>
+        </div>
+  
+        <div>
+          <h2 class="text-white font-medium mb-2">How We Use Your Data</h2>
+          <p>
+            Your information is used only to respond to messages, improve website usability,
+            and understand general visitor behavior. We do not sell or share personal data for marketing.
+          </p>
+        </div>
+  
+        <div>
+          <h2 class="text-white font-medium mb-2">Third-Party Services</h2>
+          <p>
+            This website uses <span class="text-white">Google Analytics</span> to understand traffic patterns and
+            <span class="text-white">Formspree</span> to securely process contact form submissions.
+            These tools may store limited technical data necessary for functionality.
+          </p>
+        </div>
+  
+        <div>
+          <h2 class="text-white font-medium mb-2">Cookies</h2>
+          <p>
+            Cookies are small files stored on your device to help the website function and provide anonymous usage insights.
+            You may disable cookies in your browser settings if you prefer.
+          </p>
+        </div>
+  
+        <div>
+          <h2 class="text-white font-medium mb-2">Data Security</h2>
+          <p>
+            Reasonable measures are taken to protect submitted information,
+            but no online transmission is 100% secure.
+          </p>
+        </div>
+  
+        <div>
+          <h2 class="text-white font-medium mb-2">Your Choices</h2>
+          <p>
+            You may decline cookies, avoid submitting personal information through forms,
+            or use browser tools to opt out of analytics tracking if desired.
+          </p>
+        </div>
+  
+        <div>
+          <h2 class="text-white font-medium mb-2">Updates</h2>
+          <p>
+            This policy may be updated occasionally to reflect changes in tools or practices.
+          </p>
+        </div>
+  
+        <div>
+          <h2 class="text-white font-medium mb-2">Contact</h2>
+          <p>
+            For privacy-related inquiries:
+            <span class="text-[#3d69b4ce]">pamelaruchel.dev@gmail.com</span>
+          </p>
+        </div>
+  
+      </div>
+    </div>
+  </section>  
+
+  <footer class="bg-[var(--cor-principal)] text-[var(--text-color)] py-8">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 px-6">
+  
+      <div class="flex-1 flex justify-center sm:justify-start order-1 sm:order-1">
+        <a href="../index.html" class="text-xl md:text-2xl" style="font-family:'space-age', sans-serif;">
+          Pâmela Ruchel
+        </a>
+      </div>
+  
+      <div class="flex-1 flex justify-center sm:justify-end gap-3 order-2 sm:order-3">
+        <a href="https://www.linkedin.com/in/pâmelahartwig" target="_blank" aria-label="LinkedIn"
+           class="w-8 h-8 flex items-center justify-center rounded-full border border-[#3d69b4ce] text-[#3d69b4ce] hover:bg-[#3d69b4ce] hover:text-white transition">
+          <i class="bx bxl-linkedin text-base"></i>
+        </a>
+        <a href="https://www.instagram.com/pamelaruchel.dev" target="_blank" aria-label="Instagram"
+           class="w-8 h-8 flex items-center justify-center rounded-full border border-[#3d69b4ce] text-[#3d69b4ce] hover:bg-[#3d69b4ce] hover:text-white transition">
+          <i class="bx bxl-instagram text-base"></i>
+        </a>
+        <a href="https://github.com/pamelaruchel" target="_blank" aria-label="GitHub"
+           class="w-8 h-8 flex items-center justify-center rounded-full border border-[#3d69b4ce] text-[#3d69b4ce] hover:bg-[#3d69b4ce] hover:text-white transition">
+          <i class="bx bxl-github text-base"></i>
+        </a>
+        <a href="https://x.com/pamelaruchel" target="_blank" aria-label="X / Twitter"
+           class="w-8 h-8 flex items-center justify-center rounded-full border border-[#3d69b4ce] text-[#3d69b4ce] hover:bg-[#3d69b4ce] hover:text-white transition">
+          <i class="bx bxl-twitter text-base"></i>
+        </a>
+      </div>
+  
+      <div class="flex-1 flex justify-center order-3 sm:order-2">
+        <p class="text-sm text-[var(--text-color)] text-center">
+          © <span id="year"></span> Pâmela Ruchel. All rights reserved.
+        </p>
+      </div>
+  
+    </div>
+  </footer>  
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+<script>
+    (function () {
+      const burger = document.querySelector('.menu-hamburguer');
+      const navResp = document.querySelector('.nav-responsive');
+      if (!burger || !navResp) return;
+  
+      const bars = burger.querySelectorAll('.bar');
+  
+      function openMenu() {
+        burger.setAttribute('aria-expanded', 'true');
+        navResp.classList.remove('hidden');
+        bars[0].classList.add('translate-y-2', 'rotate-45');
+        bars[1].classList.add('opacity-0');
+        bars[2].classList.add('-translate-y-2', '-rotate-45');
+      }
+  
+      function closeMenu() {
+        burger.setAttribute('aria-expanded', 'false');
+        navResp.classList.add('hidden');
+        bars[0].classList.remove('translate-y-2', 'rotate-45');
+        bars[1].classList.remove('opacity-0');
+        bars[2].classList.remove('-translate-y-2', '-rotate-45');
+      }
+  
+      burger.addEventListener('click', function () {
+        const expanded = burger.getAttribute('aria-expanded') === 'true';
+        if (expanded) closeMenu();
+        else openMenu();
+      });
+  
+      navResp.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => closeMenu());
+      });
+  
+      document.addEventListener('click', (e) => {
+        if (!navResp.classList.contains('hidden')) {
+          if (!navResp.contains(e.target) && !burger.contains(e.target)) {
+            closeMenu();
+          }
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
