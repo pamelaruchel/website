@@ -90,7 +90,11 @@
       flex: 0 0 auto;
     }
 
-    .badge svg{ width: 22px; height: 22px; color: rgba(61,105,180,.9); }
+    .badge svg{
+      width: 22px;
+      height: 22px;
+      color: rgba(61,105,180,.9);
+    }
 
     h1{
       margin: 0;
@@ -99,7 +103,9 @@
       letter-spacing: -0.02em;
     }
 
-    .accent{ color: var(--accent); }
+    .accent{
+      color: var(--accent);
+    }
 
     p{
       margin: 0;
@@ -131,7 +137,12 @@
       font-size: .92rem;
     }
 
-    .pill svg{ width: 16px; height: 16px; color: rgba(61,105,180,.85); }
+    .pill svg{
+      width: 16px;
+      height: 16px;
+      color: rgba(61,105,180,.85);
+      flex: 0 0 auto;
+    }
 
     .actions{
       margin-top: 22px;
@@ -177,7 +188,10 @@
       box-shadow: 0 14px 40px rgba(61,105,180,.25);
     }
 
-    .btn svg{ width: 18px; height: 18px; }
+    .btn svg{
+      width: 18px;
+      height: 18px;
+    }
 
     .footer-note{
       margin-top: 14px;
@@ -195,7 +209,9 @@
     }
 
     @media (min-width: 900px){
-      .card{ padding: 34px 30px; }
+      .card{
+        padding: 34px 30px;
+      }
     }
   </style>
 </head>
@@ -203,59 +219,125 @@
 <body>
   <main class="wrap">
     <section class="card" aria-label="Message confirmation">
+
       <div class="top">
         <div class="badge" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none">
-            <path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path
+              d="M5 13l4 4L19 7"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
           </svg>
         </div>
-        <h1>Message <span class="accent">received</span></h1>
+
+        <h1>
+          Message <span class="accent">received</span>
+        </h1>
       </div>
 
       <p>
-        Thanks for reaching out. I read every message personally.
-        If it is a good fit, I will reply with next steps and a clear timeline.
+        Thanks for reaching out! I’ve received your message and will get back
+        to you within 1–2 business days using the email address you provided.
       </p>
 
       <div class="meta">
+
         <span class="pill">
           <svg viewBox="0 0 24 24" fill="none">
-            <path d="M12 8v5l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" stroke="currentColor" stroke-width="2"/>
+            <path
+              d="M12 8v5l3 2"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+              stroke="currentColor"
+              stroke-width="2"
+            />
           </svg>
-          Typical reply time: within 24 hours
+
+          Typical reply time: within 1–2 business days
         </span>
 
         <span class="pill">
           <svg viewBox="0 0 24 24" fill="none">
-            <path d="M4 6h16v12H4z" stroke="currentColor" stroke-width="2"/>
-            <path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path
+              d="M4 6h16v12H4z"
+              stroke="currentColor"
+              stroke-width="2"
+            />
+            <path
+              d="M4 7l8 6 8-6"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
           </svg>
-          You can also email: pamelaruchel.dev@gmail.com
+
+          Please check your inbox and spam folder
         </span>
+
       </div>
 
       <div class="actions">
-        <a class="btn btn-primary" href="https://pamelaruchel.github.io/website/">
+
+        <a
+          class="btn btn-primary"
+          href="https://pamelaruchel.github.io/website/"
+        >
           Back to site
+
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M10 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path
+              d="M10 6l6 6-6 6"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
           </svg>
         </a>
 
-        <a class="btn" href="https://pamelaruchel.github.io/website/#portfolio">
+        <a
+          class="btn"
+          href="https://pamelaruchel.github.io/website/#portfolio"
+        >
           View work
+
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M7 17l10-10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            <path d="M10 7h7v7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path
+              d="M7 17l10-10"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+            <path
+              d="M10 7h7v7"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
           </svg>
         </a>
+
       </div>
 
       <p class="footer-note">
         If your project is time sensitive, email me directly at
-        <a href="mailto:pamelaruchel.dev@gmail.com?subject=Website%20Project">pamelaruchel.dev@gmail.com</a>.
+        <a
+          href="mailto:pamelaruchel.dev@gmail.com?subject=Website%20Project"
+        >
+          pamelaruchel.dev@gmail.com
+        </a>.
       </p>
+
     </section>
   </main>
 </body>
